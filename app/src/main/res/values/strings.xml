@@ -1,0 +1,1452 @@
+<resources>
+    <string name="app_name">FindHouse</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="titleTabNews">Bảng tin</string>
+    <string name="titleTabMap">Bản đồ</string>
+    <string name="titleTabProfile">Hồ sơ</string>
+
+    <string name="postNewsNow">Đăng tin ngay</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="facebook_app_id">156232565074229</string>
+    <string name="fb_login_protocol_scheme">fb156232565074229</string>
+    <string name="title_activity_maps">Map</string>
+
+
+    <string name="web_client_id">960517487936-03m690eqmh7aaro4kidh7o2qaa60qcde.apps.googleusercontent.com</string>
+
+
+    <string-array name="town_arr">
+        <item>Quận Ba Đình</item>
+        <item>Quận Hoàn Kiếm</item>
+        <item>Quận Tây Hồ</item>
+        <item>Quận Long Biên</item>
+        <item>Quận Cầu Giấy</item>
+        <item>Quận Đống Đa</item>
+        <item>Quận Hai Bà Trưng</item>
+        <item>Quận Hoàng Mai</item>
+        <item>Quận Thanh Xuân</item>
+        <item>Huyện Sóc Sơn</item>
+        <item>Huyện Đông Anh</item>
+        <item>Huyện Gia Lâm</item>
+        <item>Quận Nam Từ Liêm</item>
+        <item>Huyện Thanh Trì</item>
+        <item>Quận Bắc Từ Liêm</item>
+        <item>Huyện Mê Linh</item>
+        <item>Quận Hà Đông</item>
+        <item>Thị xã Sơn Tây</item>
+        <item>Huyện Ba Vì</item>
+        <item>Huyện Phúc Thọ</item>
+        <item>Huyện Đan Phượng</item>
+        <item>Huyện Hoài Đức</item>
+        <item>Huyện Quốc Oai</item>
+        <item>Huyện Thạch Thất</item>
+        <item>Huyện Chương Mỹ</item>
+        <item>Huyện Thanh Oai</item>
+        <item>Huyện Thường Tín</item>
+        <item>Huyện Phú Xuyên</item>
+        <item>Huyện Ứng Hòa</item>
+        <item>Huyện Mỹ Đức</item>
+        <item>Thành phố Hà Giang</item>
+        <item>Huyện Đồng Văn</item>
+        <item>Huyện Mèo Vạc</item>
+        <item>Huyện Yên Minh</item>
+        <item>Huyện Quản Bạ</item>
+        <item>Huyện Vị Xuyên</item>
+        <item>Huyện Bắc Mê</item>
+        <item>Huyện Hoàng Su Phì</item>
+        <item>Huyện Xín Mần</item>
+        <item>Huyện Bắc Quang</item>
+        <item>Huyện Quang Bình</item>
+        <item>Thành phố Cao Bằng</item>
+        <item>Huyện Bảo Lâm</item>
+        <item>Huyện Bảo Lạc</item>
+        <item>Huyện Thông Nông</item>
+        <item>Huyện Hà Quảng</item>
+        <item>Huyện Trà Lĩnh</item>
+        <item>Huyện Trùng Khánh</item>
+        <item>Huyện Hạ Lang</item>
+        <item>Huyện Quảng Uyên</item>
+        <item>Huyện Phục Hoà</item>
+        <item>Huyện Hoà An</item>
+        <item>Huyện Nguyên Bình</item>
+        <item>Huyện Thạch An</item>
+        <item>Thành Phố Bắc Kạn</item>
+        <item>Huyện Pác Nặm</item>
+        <item>Huyện Ba Bể</item>
+        <item>Huyện Ngân Sơn</item>
+        <item>Huyện Bạch Thông</item>
+        <item>Huyện Chợ Đồn</item>
+        <item>Huyện Chợ Mới</item>
+        <item>Huyện Na Rì</item>
+        <item>Thành phố Tuyên Quang</item>
+        <item>Huyện Lâm Bình</item>
+        <item>Huyện Nà Hang</item>
+        <item>Huyện Chiêm Hóa</item>
+        <item>Huyện Hàm Yên</item>
+        <item>Huyện Yên Sơn</item>
+        <item>Huyện Sơn Dương</item>
+        <item>Thành phố Lào Cai</item>
+        <item>Huyện Bát Xát</item>
+        <item>Huyện Mường Khương</item>
+        <item>Huyện Si Ma Cai</item>
+        <item>Huyện Bắc Hà</item>
+        <item>Huyện Bảo Thắng</item>
+        <item>Huyện Bảo Yên</item>
+        <item>Huyện Sa Pa</item>
+        <item>Huyện Văn Bàn</item>
+        <item>Thành phố Điện Biên Phủ</item>
+        <item>Thị Xã Mường Lay</item>
+        <item>Huyện Mường Nhé</item>
+        <item>Huyện Mường Chà</item>
+        <item>Huyện Tủa Chùa</item>
+        <item>Huyện Tuần Giáo</item>
+        <item>Huyện Điện Biên</item>
+        <item>Huyện Điện Biên Đông</item>
+        <item>Huyện Mường Ảng</item>
+        <item>Huyện Nậm Pồ</item>
+        <item>Thành phố Lai Châu</item>
+        <item>Huyện Tam Đường</item>
+        <item>Huyện Mường Tè</item>
+        <item>Huyện Sìn Hồ</item>
+        <item>Huyện Phong Thổ</item>
+        <item>Huyện Than Uyên</item>
+        <item>Huyện Tân Uyên</item>
+        <item>Huyện Nậm Nhùn</item>
+        <item>Thành phố Sơn La</item>
+        <item>Huyện Quỳnh Nhai</item>
+        <item>Huyện Thuận Châu</item>
+        <item>Huyện Mường La</item>
+        <item>Huyện Bắc Yên</item>
+        <item>Huyện Phù Yên</item>
+        <item>Huyện Mộc Châu</item>
+        <item>Huyện Yên Châu</item>
+        <item>Huyện Mai Sơn</item>
+        <item>Huyện Sông Mã</item>
+        <item>Huyện Sốp Cộp</item>
+        <item>Huyện Vân Hồ</item>
+        <item>Thành phố Yên Bái</item>
+        <item>Thị xã Nghĩa Lộ</item>
+        <item>Huyện Lục Yên</item>
+        <item>Huyện Văn Yên</item>
+        <item>Huyện Mù Căng Chải</item>
+        <item>Huyện Trấn Yên</item>
+        <item>Huyện Trạm Tấu</item>
+        <item>Huyện Văn Chấn</item>
+        <item>Huyện Yên Bình</item>
+        <item>Thành phố Hòa Bình</item>
+        <item>Huyện Đà Bắc</item>
+        <item>Huyện Kỳ Sơn</item>
+        <item>Huyện Lương Sơn</item>
+        <item>Huyện Kim Bôi</item>
+        <item>Huyện Cao Phong</item>
+        <item>Huyện Tân Lạc</item>
+        <item>Huyện Mai Châu</item>
+        <item>Huyện Lạc Sơn</item>
+        <item>Huyện Yên Thủy</item>
+        <item>Huyện Lạc Thủy</item>
+        <item>Thành phố Thái Nguyên</item>
+        <item>Thành phố Sông Công</item>
+        <item>Huyện Định Hóa</item>
+        <item>Huyện Phú Lương</item>
+        <item>Huyện Đồng Hỷ</item>
+        <item>Huyện Võ Nhai</item>
+        <item>Huyện Đại Từ</item>
+        <item>Thị xã Phổ Yên</item>
+        <item>Huyện Phú Bình</item>
+        <item>Thành phố Lạng Sơn</item>
+        <item>Huyện Tràng Định</item>
+        <item>Huyện Bình Gia</item>
+        <item>Huyện Văn Lãng</item>
+        <item>Huyện Cao Lộc</item>
+        <item>Huyện Văn Quan</item>
+        <item>Huyện Bắc Sơn</item>
+        <item>Huyện Hữu Lũng</item>
+        <item>Huyện Chi Lăng</item>
+        <item>Huyện Lộc Bình</item>
+        <item>Huyện Đình Lập</item>
+        <item>Thành phố Hạ Long</item>
+        <item>Thành phố Móng Cái</item>
+        <item>Thành phố Cẩm Phả</item>
+        <item>Thành phố Uông Bí</item>
+        <item>Huyện Bình Liêu</item>
+        <item>Huyện Tiên Yên</item>
+        <item>Huyện Đầm Hà</item>
+        <item>Huyện Hải Hà</item>
+        <item>Huyện Ba Chẽ</item>
+        <item>Huyện Vân Đồn</item>
+        <item>Huyện Hoành Bồ</item>
+        <item>Thị xã Đông Triều</item>
+        <item>Thị xã Quảng Yên</item>
+        <item>Huyện Cô Tô</item>
+        <item>Thành phố Bắc Giang</item>
+        <item>Huyện Yên Thế</item>
+        <item>Huyện Tân Yên</item>
+        <item>Huyện Lạng Giang</item>
+        <item>Huyện Lục Nam</item>
+        <item>Huyện Lục Ngạn</item>
+        <item>Huyện Sơn Động</item>
+        <item>Huyện Yên Dũng</item>
+        <item>Huyện Việt Yên</item>
+        <item>Huyện Hiệp Hòa</item>
+        <item>Thành phố Việt Trì</item>
+        <item>Thị xã Phú Thọ</item>
+        <item>Huyện Đoan Hùng</item>
+        <item>Huyện Hạ Hoà</item>
+        <item>Huyện Thanh Ba</item>
+        <item>Huyện Phù Ninh</item>
+        <item>Huyện Yên Lập</item>
+        <item>Huyện Cẩm Khê</item>
+        <item>Huyện Tam Nông</item>
+        <item>Huyện Lâm Thao</item>
+        <item>Huyện Thanh Sơn</item>
+        <item>Huyện Thanh Thuỷ</item>
+        <item>Huyện Tân Sơn</item>
+        <item>Thành phố Vĩnh Yên</item>
+        <item>Thị xã Phúc Yên</item>
+        <item>Huyện Lập Thạch</item>
+        <item>Huyện Tam Dương</item>
+        <item>Huyện Tam Đảo</item>
+        <item>Huyện Bình Xuyên</item>
+        <item>Huyện Yên Lạc</item>
+        <item>Huyện Vĩnh Tường</item>
+        <item>Huyện Sông Lô</item>
+        <item>Thành phố Bắc Ninh</item>
+        <item>Huyện Yên Phong</item>
+        <item>Huyện Quế Võ</item>
+        <item>Huyện Tiên Du</item>
+        <item>Thị xã Từ Sơn</item>
+        <item>Huyện Thuận Thành</item>
+        <item>Huyện Gia Bình</item>
+        <item>Huyện Lương Tài</item>
+        <item>Thành phố Hải Dương</item>
+        <item>Thị xã Chí Linh</item>
+        <item>Huyện Nam Sách</item>
+        <item>Huyện Kinh Môn</item>
+        <item>Huyện Kim Thành</item>
+        <item>Huyện Thanh Hà</item>
+        <item>Huyện Cẩm Giàng</item>
+        <item>Huyện Bình Giang</item>
+        <item>Huyện Gia Lộc</item>
+        <item>Huyện Tứ Kỳ</item>
+        <item>Huyện Ninh Giang</item>
+        <item>Huyện Thanh Miện</item>
+        <item>Quận Hồng Bàng</item>
+        <item>Quận Ngô Quyền</item>
+        <item>Quận Lê Chân</item>
+        <item>Quận Hải An</item>
+        <item>Quận Kiến An</item>
+        <item>Quận Đồ Sơn</item>
+        <item>Quận Dương Kinh</item>
+        <item>Huyện Thuỷ Nguyên</item>
+        <item>Huyện An Dương</item>
+        <item>Huyện An Lão</item>
+        <item>Huyện Kiến Thuỵ</item>
+        <item>Huyện Tiên Lãng</item>
+        <item>Huyện Vĩnh Bảo</item>
+        <item>Huyện Cát Hải</item>
+        <item>Huyện Bạch Long Vĩ</item>
+        <item>Thành phố Hưng Yên</item>
+        <item>Huyện Văn Lâm</item>
+        <item>Huyện Văn Giang</item>
+        <item>Huyện Yên Mỹ</item>
+        <item>Huyện Mỹ Hào</item>
+        <item>Huyện Ân Thi</item>
+        <item>Huyện Khoái Châu</item>
+        <item>Huyện Kim Động</item>
+        <item>Huyện Tiên Lữ</item>
+        <item>Huyện Phù Cừ</item>
+        <item>Thành phố Thái Bình</item>
+        <item>Huyện Quỳnh Phụ</item>
+        <item>Huyện Hưng Hà</item>
+        <item>Huyện Đông Hưng</item>
+        <item>Huyện Thái Thụy</item>
+        <item>Huyện Tiền Hải</item>
+        <item>Huyện Kiến Xương</item>
+        <item>Huyện Vũ Thư</item>
+        <item>Thành phố Phủ Lý</item>
+        <item>Huyện Duy Tiên</item>
+        <item>Huyện Kim Bảng</item>
+        <item>Huyện Thanh Liêm</item>
+        <item>Huyện Bình Lục</item>
+        <item>Huyện Lý Nhân</item>
+        <item>Thành phố Nam Định</item>
+        <item>Huyện Mỹ Lộc</item>
+        <item>Huyện Vụ Bản</item>
+        <item>Huyện Ý Yên</item>
+        <item>Huyện Nghĩa Hưng</item>
+        <item>Huyện Nam Trực</item>
+        <item>Huyện Trực Ninh</item>
+        <item>Huyện Xuân Trường</item>
+        <item>Huyện Giao Thủy</item>
+        <item>Huyện Hải Hậu</item>
+        <item>Thành phố Ninh Bình</item>
+        <item>Thành phố Tam Điệp</item>
+        <item>Huyện Nho Quan</item>
+        <item>Huyện Gia Viễn</item>
+        <item>Huyện Hoa Lư</item>
+        <item>Huyện Yên Khánh</item>
+        <item>Huyện Kim Sơn</item>
+        <item>Huyện Yên Mô</item>
+        <item>Thành phố Thanh Hóa</item>
+        <item>Thị xã Bỉm Sơn</item>
+        <item>Thành phố Sầm Sơn</item>
+        <item>Huyện Mường Lát</item>
+        <item>Huyện Quan Hóa</item>
+        <item>Huyện Bá Thước</item>
+        <item>Huyện Quan Sơn</item>
+        <item>Huyện Lang Chánh</item>
+        <item>Huyện Ngọc Lặc</item>
+        <item>Huyện Cẩm Thủy</item>
+        <item>Huyện Thạch Thành</item>
+        <item>Huyện Hà Trung</item>
+        <item>Huyện Vĩnh Lộc</item>
+        <item>Huyện Yên Định</item>
+        <item>Huyện Thọ Xuân</item>
+        <item>Huyện Thường Xuân</item>
+        <item>Huyện Triệu Sơn</item>
+        <item>Huyện Thiệu Hóa</item>
+        <item>Huyện Hoằng Hóa</item>
+        <item>Huyện Hậu Lộc</item>
+        <item>Huyện Nga Sơn</item>
+        <item>Huyện Như Xuân</item>
+        <item>Huyện Như Thanh</item>
+        <item>Huyện Nông Cống</item>
+        <item>Huyện Đông Sơn</item>
+        <item>Huyện Quảng Xương</item>
+        <item>Huyện Tĩnh Gia</item>
+        <item>Thành phố Vinh</item>
+        <item>Thị xã Cửa Lò</item>
+        <item>Thị xã Thái Hoà</item>
+        <item>Huyện Quế Phong</item>
+        <item>Huyện Quỳ Châu</item>
+        <item>Huyện Kỳ Sơn</item>
+        <item>Huyện Tương Dương</item>
+        <item>Huyện Nghĩa Đàn</item>
+        <item>Huyện Quỳ Hợp</item>
+        <item>Huyện Quỳnh Lưu</item>
+        <item>Huyện Con Cuông</item>
+        <item>Huyện Tân Kỳ</item>
+        <item>Huyện Anh Sơn</item>
+        <item>Huyện Diễn Châu</item>
+        <item>Huyện Yên Thành</item>
+        <item>Huyện Đô Lương</item>
+        <item>Huyện Thanh Chương</item>
+        <item>Huyện Nghi Lộc</item>
+        <item>Huyện Nam Đàn</item>
+        <item>Huyện Hưng Nguyên</item>
+        <item>Thị xã Hoàng Mai</item>
+        <item>Thành phố Hà Tĩnh</item>
+        <item>Thị xã Hồng Lĩnh</item>
+        <item>Huyện Hương Sơn</item>
+        <item>Huyện Đức Thọ</item>
+        <item>Huyện Vũ Quang</item>
+        <item>Huyện Nghi Xuân</item>
+        <item>Huyện Can Lộc</item>
+        <item>Huyện Hương Khê</item>
+        <item>Huyện Thạch Hà</item>
+        <item>Huyện Cẩm Xuyên</item>
+        <item>Huyện Kỳ Anh</item>
+        <item>Huyện Lộc Hà</item>
+        <item>Thị xã Kỳ Anh</item>
+        <item>Thành Phố Đồng Hới</item>
+        <item>Huyện Minh Hóa</item>
+        <item>Huyện Tuyên Hóa</item>
+        <item>Huyện Quảng Trạch</item>
+        <item>Huyện Bố Trạch</item>
+        <item>Huyện Quảng Ninh</item>
+        <item>Huyện Lệ Thủy</item>
+        <item>Thị xã Ba Đồn</item>
+        <item>Thành phố Đông Hà</item>
+        <item>Thị xã Quảng Trị</item>
+        <item>Huyện Vĩnh Linh</item>
+        <item>Huyện Hướng Hóa</item>
+        <item>Huyện Gio Linh</item>
+        <item>Huyện Đa Krông</item>
+        <item>Huyện Cam Lộ</item>
+        <item>Huyện Triệu Phong</item>
+        <item>Huyện Hải Lăng</item>
+        <item>Huyện Cồn Cỏ</item>
+        <item>Thành phố Huế</item>
+        <item>Huyện Phong Điền</item>
+        <item>Huyện Quảng Điền</item>
+        <item>Huyện Phú Vang</item>
+        <item>Thị xã Hương Thủy</item>
+        <item>Thị xã Hương Trà</item>
+        <item>Huyện A Lưới</item>
+        <item>Huyện Phú Lộc</item>
+        <item>Huyện Nam Đông</item>
+        <item>Quận Liên Chiểu</item>
+        <item>Quận Thanh Khê</item>
+        <item>Quận Hải Châu</item>
+        <item>Quận Sơn Trà</item>
+        <item>Quận Ngũ Hành Sơn</item>
+        <item>Quận Cẩm Lệ</item>
+        <item>Huyện Hòa Vang</item>
+        <item>Huyện Hoàng Sa</item>
+        <item>Thành phố Tam Kỳ</item>
+        <item>Thành phố Hội An</item>
+        <item>Huyện Tây Giang</item>
+        <item>Huyện Đông Giang</item>
+        <item>Huyện Đại Lộc</item>
+        <item>Thị xã Điện Bàn</item>
+        <item>Huyện Duy Xuyên</item>
+        <item>Huyện Quế Sơn</item>
+        <item>Huyện Nam Giang</item>
+        <item>Huyện Phước Sơn</item>
+        <item>Huyện Hiệp Đức</item>
+        <item>Huyện Thăng Bình</item>
+        <item>Huyện Tiên Phước</item>
+        <item>Huyện Bắc Trà My</item>
+        <item>Huyện Nam Trà My</item>
+        <item>Huyện Núi Thành</item>
+        <item>Huyện Phú Ninh</item>
+        <item>Huyện Nông Sơn</item>
+        <item>Thành phố Quảng Ngãi</item>
+        <item>Huyện Bình Sơn</item>
+        <item>Huyện Trà Bồng</item>
+        <item>Huyện Tây Trà</item>
+        <item>Huyện Sơn Tịnh</item>
+        <item>Huyện Tư Nghĩa</item>
+        <item>Huyện Sơn Hà</item>
+        <item>Huyện Sơn Tây</item>
+        <item>Huyện Minh Long</item>
+        <item>Huyện Nghĩa Hành</item>
+        <item>Huyện Mộ Đức</item>
+        <item>Huyện Đức Phổ</item>
+        <item>Huyện Ba Tơ</item>
+        <item>Huyện Lý Sơn</item>
+        <item>Thành phố Qui Nhơn</item>
+        <item>Huyện An Lão</item>
+        <item>Huyện Hoài Nhơn</item>
+        <item>Huyện Hoài Ân</item>
+        <item>Huyện Phù Mỹ</item>
+        <item>Huyện Vĩnh Thạnh</item>
+        <item>Huyện Tây Sơn</item>
+        <item>Huyện Phù Cát</item>
+        <item>Thị xã An Nhơn</item>
+        <item>Huyện Tuy Phước</item>
+        <item>Huyện Vân Canh</item>
+        <item>Thành phố Tuy Hoà</item>
+        <item>Thị xã Sông Cầu</item>
+        <item>Huyện Đồng Xuân</item>
+        <item>Huyện Tuy An</item>
+        <item>Huyện Sơn Hòa</item>
+        <item>Huyện Sông Hinh</item>
+        <item>Huyện Tây Hoà</item>
+        <item>Huyện Phú Hoà</item>
+        <item>Huyện Đông Hòa</item>
+        <item>Thành phố Nha Trang</item>
+        <item>Thành phố Cam Ranh</item>
+        <item>Huyện Cam Lâm</item>
+        <item>Huyện Vạn Ninh</item>
+        <item>Thị xã Ninh Hòa</item>
+        <item>Huyện Khánh Vĩnh</item>
+        <item>Huyện Diên Khánh</item>
+        <item>Huyện Khánh Sơn</item>
+        <item>Huyện Trường Sa</item>
+        <item>Thành phố Phan Rang-Tháp Chàm</item>
+        <item>Huyện Bác Ái</item>
+        <item>Huyện Ninh Sơn</item>
+        <item>Huyện Ninh Hải</item>
+        <item>Huyện Ninh Phước</item>
+        <item>Huyện Thuận Bắc</item>
+        <item>Huyện Thuận Nam</item>
+        <item>Thành phố Phan Thiết</item>
+        <item>Thị xã La Gi</item>
+        <item>Huyện Tuy Phong</item>
+        <item>Huyện Bắc Bình</item>
+        <item>Huyện Hàm Thuận Bắc</item>
+        <item>Huyện Hàm Thuận Nam</item>
+        <item>Huyện Tánh Linh</item>
+        <item>Huyện Đức Linh</item>
+        <item>Huyện Hàm Tân</item>
+        <item>Huyện Phú Quí</item>
+        <item>Thành phố Kon Tum</item>
+        <item>Huyện Đắk Glei</item>
+        <item>Huyện Ngọc Hồi</item>
+        <item>Huyện Đắk Tô</item>
+        <item>Huyện Kon Plông</item>
+        <item>Huyện Kon Rẫy</item>
+        <item>Huyện Đắk Hà</item>
+        <item>Huyện Sa Thầy</item>
+        <item>Huyện Tu Mơ Rông</item>
+        <item>Huyện Ia H' Drai</item>
+        <item>Thành phố Pleiku</item>
+        <item>Thị xã An Khê</item>
+        <item>Thị xã Ayun Pa</item>
+        <item>Huyện KBang</item>
+        <item>Huyện Đăk Đoa</item>
+        <item>Huyện Chư Păh</item>
+        <item>Huyện Ia Grai</item>
+        <item>Huyện Mang Yang</item>
+        <item>Huyện Kông Chro</item>
+        <item>Huyện Đức Cơ</item>
+        <item>Huyện Chư Prông</item>
+        <item>Huyện Chư Sê</item>
+        <item>Huyện Đăk Pơ</item>
+        <item>Huyện Ia Pa</item>
+        <item>Huyện Krông Pa</item>
+        <item>Huyện Phú Thiện</item>
+        <item>Huyện Chư Pưh</item>
+        <item>Thành phố Buôn Ma Thuột</item>
+        <item>Thị Xã Buôn Hồ</item>
+        <item>Huyện Ea H'leo</item>
+        <item>Huyện Ea Súp</item>
+        <item>Huyện Buôn Đôn</item>
+        <item>Huyện Cư M'gar</item>
+        <item>Huyện Krông Búk</item>
+        <item>Huyện Krông Năng</item>
+        <item>Huyện Ea Kar</item>
+        <item>Huyện M'Đrắk</item>
+        <item>Huyện Krông Bông</item>
+        <item>Huyện Krông Pắc</item>
+        <item>Huyện Krông A Na</item>
+        <item>Huyện Lắk</item>
+        <item>Huyện Cư Kuin</item>
+        <item>Thị xã Gia Nghĩa</item>
+        <item>Huyện Đăk Glong</item>
+        <item>Huyện Cư Jút</item>
+        <item>Huyện Đắk Mil</item>
+        <item>Huyện Krông Nô</item>
+        <item>Huyện Đắk Song</item>
+        <item>Huyện Đắk R'Lấp</item>
+        <item>Huyện Tuy Đức</item>
+        <item>Thành phố Đà Lạt</item>
+        <item>Thành phố Bảo Lộc</item>
+        <item>Huyện Đam Rông</item>
+        <item>Huyện Lạc Dương</item>
+        <item>Huyện Lâm Hà</item>
+        <item>Huyện Đơn Dương</item>
+        <item>Huyện Đức Trọng</item>
+        <item>Huyện Di Linh</item>
+        <item>Huyện Bảo Lâm</item>
+        <item>Huyện Đạ Huoai</item>
+        <item>Huyện Đạ Tẻh</item>
+        <item>Huyện Cát Tiên</item>
+        <item>Thị xã Phước Long</item>
+        <item>Thị xã Đồng Xoài</item>
+        <item>Thị xã Bình Long</item>
+        <item>Huyện Bù Gia Mập</item>
+        <item>Huyện Lộc Ninh</item>
+        <item>Huyện Bù Đốp</item>
+        <item>Huyện Hớn Quản</item>
+        <item>Huyện Đồng Phú</item>
+        <item>Huyện Bù Đăng</item>
+        <item>Huyện Chơn Thành</item>
+        <item>Huyện Phú Riềng</item>
+        <item>Thành phố Tây Ninh</item>
+        <item>Huyện Tân Biên</item>
+        <item>Huyện Tân Châu</item>
+        <item>Huyện Dương Minh Châu</item>
+        <item>Huyện Châu Thành</item>
+        <item>Huyện Hòa Thành</item>
+        <item>Huyện Gò Dầu</item>
+        <item>Huyện Bến Cầu</item>
+        <item>Huyện Trảng Bàng</item>
+        <item>Thành phố Thủ Dầu Một</item>
+        <item>Huyện Bàu Bàng</item>
+        <item>Huyện Dầu Tiếng</item>
+        <item>Thị xã Bến Cát</item>
+        <item>Huyện Phú Giáo</item>
+        <item>Thị xã Tân Uyên</item>
+        <item>Thị xã Dĩ An</item>
+        <item>Thị xã Thuận An</item>
+        <item>Huyện Bắc Tân Uyên</item>
+        <item>Thành phố Biên Hòa</item>
+        <item>Thị xã Long Khánh</item>
+        <item>Huyện Tân Phú</item>
+        <item>Huyện Vĩnh Cửu</item>
+        <item>Huyện Định Quán</item>
+        <item>Huyện Trảng Bom</item>
+        <item>Huyện Thống Nhất</item>
+        <item>Huyện Cẩm Mỹ</item>
+        <item>Huyện Long Thành</item>
+        <item>Huyện Xuân Lộc</item>
+        <item>Huyện Nhơn Trạch</item>
+        <item>Thành phố Vũng Tàu</item>
+        <item>Thành phố Bà Rịa</item>
+        <item>Huyện Châu Đức</item>
+        <item>Huyện Xuyên Mộc</item>
+        <item>Huyện Long Điền</item>
+        <item>Huyện Đất Đỏ</item>
+        <item>Huyện Tân Thành</item>
+        <item>Huyện Côn Đảo</item>
+        <item>Quận 1</item>
+        <item>Quận 12</item>
+        <item>Quận Thủ Đức</item>
+        <item>Quận 9</item>
+        <item>Quận Gò Vấp</item>
+        <item>Quận Bình Thạnh</item>
+        <item>Quận Tân Bình</item>
+        <item>Quận Tân Phú</item>
+        <item>Quận Phú Nhuận</item>
+        <item>Quận 2</item>
+        <item>Quận 3</item>
+        <item>Quận 10</item>
+        <item>Quận 11</item>
+        <item>Quận 4</item>
+        <item>Quận 5</item>
+        <item>Quận 6</item>
+        <item>Quận 8</item>
+        <item>Quận Bình Tân</item>
+        <item>Quận 7</item>
+        <item>Huyện Củ Chi</item>
+        <item>Huyện Hóc Môn</item>
+        <item>Huyện Bình Chánh</item>
+        <item>Huyện Nhà Bè</item>
+        <item>Huyện Cần Giờ</item>
+        <item>Thành phố Tân An</item>
+        <item>Thị xã Kiến Tường</item>
+        <item>Huyện Tân Hưng</item>
+        <item>Huyện Vĩnh Hưng</item>
+        <item>Huyện Mộc Hóa</item>
+        <item>Huyện Tân Thạnh</item>
+        <item>Huyện Thạnh Hóa</item>
+        <item>Huyện Đức Huệ</item>
+        <item>Huyện Đức Hòa</item>
+        <item>Huyện Bến Lức</item>
+        <item>Huyện Thủ Thừa</item>
+        <item>Huyện Tân Trụ</item>
+        <item>Huyện Cần Đước</item>
+        <item>Huyện Cần Giuộc</item>
+        <item>Huyện Châu Thành</item>
+        <item>Thành phố Mỹ Tho</item>
+        <item>Thị xã Gò Công</item>
+        <item>Thị xã Cai Lậy</item>
+        <item>Huyện Tân Phước</item>
+        <item>Huyện Cái Bè</item>
+        <item>Huyện Cai Lậy</item>
+        <item>Huyện Châu Thành</item>
+        <item>Huyện Chợ Gạo</item>
+        <item>Huyện Gò Công Tây</item>
+        <item>Huyện Gò Công Đông</item>
+        <item>Huyện Tân Phú Đông</item>
+        <item>Thành phố Bến Tre</item>
+        <item>Huyện Châu Thành</item>
+        <item>Huyện Chợ Lách</item>
+        <item>Huyện Mỏ Cày Nam</item>
+        <item>Huyện Giồng Trôm</item>
+        <item>Huyện Bình Đại</item>
+        <item>Huyện Ba Tri</item>
+        <item>Huyện Thạnh Phú</item>
+        <item>Huyện Mỏ Cày Bắc</item>
+        <item>Thành phố Trà Vinh</item>
+        <item>Huyện Càng Long</item>
+        <item>Huyện Cầu Kè</item>
+        <item>Huyện Tiểu Cần</item>
+        <item>Huyện Châu Thành</item>
+        <item>Huyện Cầu Ngang</item>
+        <item>Huyện Trà Cú</item>
+        <item>Huyện Duyên Hải</item>
+        <item>Thị xã Duyên Hải</item>
+        <item>Thành phố Vĩnh Long</item>
+        <item>Huyện Long Hồ</item>
+        <item>Huyện Mang Thít</item>
+        <item>Huyện  Vũng Liêm</item>
+        <item>Huyện Tam Bình</item>
+        <item>Thị xã Bình Minh</item>
+        <item>Huyện Trà Ôn</item>
+        <item>Huyện Bình Tân</item>
+        <item>Thành phố Cao Lãnh</item>
+        <item>Thành phố Sa Đéc</item>
+        <item>Thị xã Hồng Ngự</item>
+        <item>Huyện Tân Hồng</item>
+        <item>Huyện Hồng Ngự</item>
+        <item>Huyện Tam Nông</item>
+        <item>Huyện Tháp Mười</item>
+        <item>Huyện Cao Lãnh</item>
+        <item>Huyện Thanh Bình</item>
+        <item>Huyện Lấp Vò</item>
+        <item>Huyện Lai Vung</item>
+        <item>Huyện Châu Thành</item>
+        <item>Thành phố Long Xuyên</item>
+        <item>Thành phố Châu Đốc</item>
+        <item>Huyện An Phú</item>
+        <item>Thị xã Tân Châu</item>
+        <item>Huyện Phú Tân</item>
+        <item>Huyện Châu Phú</item>
+        <item>Huyện Tịnh Biên</item>
+        <item>Huyện Tri Tôn</item>
+        <item>Huyện Châu Thành</item>
+        <item>Huyện Chợ Mới</item>
+        <item>Huyện Thoại Sơn</item>
+        <item>Thành phố Rạch Giá</item>
+        <item>Thị xã Hà Tiên</item>
+        <item>Huyện Kiên Lương</item>
+        <item>Huyện Hòn Đất</item>
+        <item>Huyện Tân Hiệp</item>
+        <item>Huyện Châu Thành</item>
+        <item>Huyện Giồng Riềng</item>
+        <item>Huyện Gò Quao</item>
+        <item>Huyện An Biên</item>
+        <item>Huyện An Minh</item>
+        <item>Huyện Vĩnh Thuận</item>
+        <item>Huyện Phú Quốc</item>
+        <item>Huyện Kiên Hải</item>
+        <item>Huyện U Minh Thượng</item>
+        <item>Huyện Giang Thành</item>
+        <item>Quận Ninh Kiều</item>
+        <item>Quận Ô Môn</item>
+        <item>Quận Bình Thuỷ</item>
+        <item>Quận Cái Răng</item>
+        <item>Quận Thốt Nốt</item>
+        <item>Huyện Vĩnh Thạnh</item>
+        <item>Huyện Cờ Đỏ</item>
+        <item>Huyện Phong Điền</item>
+        <item>Huyện Thới Lai</item>
+        <item>Thành phố Vị Thanh</item>
+        <item>Thị xã Ngã Bảy</item>
+        <item>Huyện Châu Thành A</item>
+        <item>Huyện Châu Thành</item>
+        <item>Huyện Phụng Hiệp</item>
+        <item>Huyện Vị Thuỷ</item>
+        <item>Huyện Long Mỹ</item>
+        <item>Thị xã Long Mỹ</item>
+        <item>Thành phố Sóc Trăng</item>
+        <item>Huyện Châu Thành</item>
+        <item>Huyện Kế Sách</item>
+        <item>Huyện Mỹ Tú</item>
+        <item>Huyện Cù Lao Dung</item>
+        <item>Huyện Long Phú</item>
+        <item>Huyện Mỹ Xuyên</item>
+        <item>Thị xã Ngã Năm</item>
+        <item>Huyện Thạnh Trị</item>
+        <item>Thị xã Vĩnh Châu</item>
+        <item>Huyện Trần Đề</item>
+        <item>Thành phố Bạc Liêu</item>
+        <item>Huyện Hồng Dân</item>
+        <item>Huyện Phước Long</item>
+        <item>Huyện Vĩnh Lợi</item>
+        <item>Thị xã Giá Rai</item>
+        <item>Huyện Đông Hải</item>
+        <item>Huyện Hoà Bình</item>
+        <item>Thành phố Cà Mau</item>
+        <item>Huyện U Minh</item>
+        <item>Huyện Thới Bình</item>
+        <item>Huyện Trần Văn Thời</item>
+        <item>Huyện Cái Nước</item>
+        <item>Huyện Đầm Dơi</item>
+        <item>Huyện Năm Căn</item>
+        <item>Huyện Phú Tân</item>
+        <item>Huyện Ngọc Hiển</item>
+    </string-array>
+
+    <string-array name="province_arr">
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Thành phố Hà Nội</item>
+        <item>Tỉnh Hà Giang</item>
+        <item>Tỉnh Hà Giang</item>
+        <item>Tỉnh Hà Giang</item>
+        <item>Tỉnh Hà Giang</item>
+        <item>Tỉnh Hà Giang</item>
+        <item>Tỉnh Hà Giang</item>
+        <item>Tỉnh Hà Giang</item>
+        <item>Tỉnh Hà Giang</item>
+        <item>Tỉnh Hà Giang</item>
+        <item>Tỉnh Hà Giang</item>
+        <item>Tỉnh Hà Giang</item>
+        <item>Tỉnh Cao Bằng</item>
+        <item>Tỉnh Cao Bằng</item>
+        <item>Tỉnh Cao Bằng</item>
+        <item>Tỉnh Cao Bằng</item>
+        <item>Tỉnh Cao Bằng</item>
+        <item>Tỉnh Cao Bằng</item>
+        <item>Tỉnh Cao Bằng</item>
+        <item>Tỉnh Cao Bằng</item>
+        <item>Tỉnh Cao Bằng</item>
+        <item>Tỉnh Cao Bằng</item>
+        <item>Tỉnh Cao Bằng</item>
+        <item>Tỉnh Cao Bằng</item>
+        <item>Tỉnh Cao Bằng</item>
+        <item>Tỉnh Bắc Kạn</item>
+        <item>Tỉnh Bắc Kạn</item>
+        <item>Tỉnh Bắc Kạn</item>
+        <item>Tỉnh Bắc Kạn</item>
+        <item>Tỉnh Bắc Kạn</item>
+        <item>Tỉnh Bắc Kạn</item>
+        <item>Tỉnh Bắc Kạn</item>
+        <item>Tỉnh Bắc Kạn</item>
+        <item>Tỉnh Tuyên Quang</item>
+        <item>Tỉnh Tuyên Quang</item>
+        <item>Tỉnh Tuyên Quang</item>
+        <item>Tỉnh Tuyên Quang</item>
+        <item>Tỉnh Tuyên Quang</item>
+        <item>Tỉnh Tuyên Quang</item>
+        <item>Tỉnh Tuyên Quang</item>
+        <item>Tỉnh Lào Cai</item>
+        <item>Tỉnh Lào Cai</item>
+        <item>Tỉnh Lào Cai</item>
+        <item>Tỉnh Lào Cai</item>
+        <item>Tỉnh Lào Cai</item>
+        <item>Tỉnh Lào Cai</item>
+        <item>Tỉnh Lào Cai</item>
+        <item>Tỉnh Lào Cai</item>
+        <item>Tỉnh Lào Cai</item>
+        <item>Tỉnh Điện Biên</item>
+        <item>Tỉnh Điện Biên</item>
+        <item>Tỉnh Điện Biên</item>
+        <item>Tỉnh Điện Biên</item>
+        <item>Tỉnh Điện Biên</item>
+        <item>Tỉnh Điện Biên</item>
+        <item>Tỉnh Điện Biên</item>
+        <item>Tỉnh Điện Biên</item>
+        <item>Tỉnh Điện Biên</item>
+        <item>Tỉnh Điện Biên</item>
+        <item>Tỉnh Lai Châu</item>
+        <item>Tỉnh Lai Châu</item>
+        <item>Tỉnh Lai Châu</item>
+        <item>Tỉnh Lai Châu</item>
+        <item>Tỉnh Lai Châu</item>
+        <item>Tỉnh Lai Châu</item>
+        <item>Tỉnh Lai Châu</item>
+        <item>Tỉnh Lai Châu</item>
+        <item>Tỉnh Sơn La</item>
+        <item>Tỉnh Sơn La</item>
+        <item>Tỉnh Sơn La</item>
+        <item>Tỉnh Sơn La</item>
+        <item>Tỉnh Sơn La</item>
+        <item>Tỉnh Sơn La</item>
+        <item>Tỉnh Sơn La</item>
+        <item>Tỉnh Sơn La</item>
+        <item>Tỉnh Sơn La</item>
+        <item>Tỉnh Sơn La</item>
+        <item>Tỉnh Sơn La</item>
+        <item>Tỉnh Sơn La</item>
+        <item>Tỉnh Yên Bái</item>
+        <item>Tỉnh Yên Bái</item>
+        <item>Tỉnh Yên Bái</item>
+        <item>Tỉnh Yên Bái</item>
+        <item>Tỉnh Yên Bái</item>
+        <item>Tỉnh Yên Bái</item>
+        <item>Tỉnh Yên Bái</item>
+        <item>Tỉnh Yên Bái</item>
+        <item>Tỉnh Yên Bái</item>
+        <item>Tỉnh Hoà Bình</item>
+        <item>Tỉnh Hoà Bình</item>
+        <item>Tỉnh Hoà Bình</item>
+        <item>Tỉnh Hoà Bình</item>
+        <item>Tỉnh Hoà Bình</item>
+        <item>Tỉnh Hoà Bình</item>
+        <item>Tỉnh Hoà Bình</item>
+        <item>Tỉnh Hoà Bình</item>
+        <item>Tỉnh Hoà Bình</item>
+        <item>Tỉnh Hoà Bình</item>
+        <item>Tỉnh Hoà Bình</item>
+        <item>Tỉnh Thái Nguyên</item>
+        <item>Tỉnh Thái Nguyên</item>
+        <item>Tỉnh Thái Nguyên</item>
+        <item>Tỉnh Thái Nguyên</item>
+        <item>Tỉnh Thái Nguyên</item>
+        <item>Tỉnh Thái Nguyên</item>
+        <item>Tỉnh Thái Nguyên</item>
+        <item>Tỉnh Thái Nguyên</item>
+        <item>Tỉnh Thái Nguyên</item>
+        <item>Tỉnh Lạng Sơn</item>
+        <item>Tỉnh Lạng Sơn</item>
+        <item>Tỉnh Lạng Sơn</item>
+        <item>Tỉnh Lạng Sơn</item>
+        <item>Tỉnh Lạng Sơn</item>
+        <item>Tỉnh Lạng Sơn</item>
+        <item>Tỉnh Lạng Sơn</item>
+        <item>Tỉnh Lạng Sơn</item>
+        <item>Tỉnh Lạng Sơn</item>
+        <item>Tỉnh Lạng Sơn</item>
+        <item>Tỉnh Lạng Sơn</item>
+        <item>Tỉnh Quảng Ninh</item>
+        <item>Tỉnh Quảng Ninh</item>
+        <item>Tỉnh Quảng Ninh</item>
+        <item>Tỉnh Quảng Ninh</item>
+        <item>Tỉnh Quảng Ninh</item>
+        <item>Tỉnh Quảng Ninh</item>
+        <item>Tỉnh Quảng Ninh</item>
+        <item>Tỉnh Quảng Ninh</item>
+        <item>Tỉnh Quảng Ninh</item>
+        <item>Tỉnh Quảng Ninh</item>
+        <item>Tỉnh Quảng Ninh</item>
+        <item>Tỉnh Quảng Ninh</item>
+        <item>Tỉnh Quảng Ninh</item>
+        <item>Tỉnh Quảng Ninh</item>
+        <item>Tỉnh Bắc Giang</item>
+        <item>Tỉnh Bắc Giang</item>
+        <item>Tỉnh Bắc Giang</item>
+        <item>Tỉnh Bắc Giang</item>
+        <item>Tỉnh Bắc Giang</item>
+        <item>Tỉnh Bắc Giang</item>
+        <item>Tỉnh Bắc Giang</item>
+        <item>Tỉnh Bắc Giang</item>
+        <item>Tỉnh Bắc Giang</item>
+        <item>Tỉnh Bắc Giang</item>
+        <item>Tỉnh Phú Thọ</item>
+        <item>Tỉnh Phú Thọ</item>
+        <item>Tỉnh Phú Thọ</item>
+        <item>Tỉnh Phú Thọ</item>
+        <item>Tỉnh Phú Thọ</item>
+        <item>Tỉnh Phú Thọ</item>
+        <item>Tỉnh Phú Thọ</item>
+        <item>Tỉnh Phú Thọ</item>
+        <item>Tỉnh Phú Thọ</item>
+        <item>Tỉnh Phú Thọ</item>
+        <item>Tỉnh Phú Thọ</item>
+        <item>Tỉnh Phú Thọ</item>
+        <item>Tỉnh Phú Thọ</item>
+        <item>Tỉnh Vĩnh Phúc</item>
+        <item>Tỉnh Vĩnh Phúc</item>
+        <item>Tỉnh Vĩnh Phúc</item>
+        <item>Tỉnh Vĩnh Phúc</item>
+        <item>Tỉnh Vĩnh Phúc</item>
+        <item>Tỉnh Vĩnh Phúc</item>
+        <item>Tỉnh Vĩnh Phúc</item>
+        <item>Tỉnh Vĩnh Phúc</item>
+        <item>Tỉnh Vĩnh Phúc</item>
+        <item>Tỉnh Bắc Ninh</item>
+        <item>Tỉnh Bắc Ninh</item>
+        <item>Tỉnh Bắc Ninh</item>
+        <item>Tỉnh Bắc Ninh</item>
+        <item>Tỉnh Bắc Ninh</item>
+        <item>Tỉnh Bắc Ninh</item>
+        <item>Tỉnh Bắc Ninh</item>
+        <item>Tỉnh Bắc Ninh</item>
+        <item>Tỉnh Hải Dương</item>
+        <item>Tỉnh Hải Dương</item>
+        <item>Tỉnh Hải Dương</item>
+        <item>Tỉnh Hải Dương</item>
+        <item>Tỉnh Hải Dương</item>
+        <item>Tỉnh Hải Dương</item>
+        <item>Tỉnh Hải Dương</item>
+        <item>Tỉnh Hải Dương</item>
+        <item>Tỉnh Hải Dương</item>
+        <item>Tỉnh Hải Dương</item>
+        <item>Tỉnh Hải Dương</item>
+        <item>Tỉnh Hải Dương</item>
+        <item>Thành phố Hải Phòng</item>
+        <item>Thành phố Hải Phòng</item>
+        <item>Thành phố Hải Phòng</item>
+        <item>Thành phố Hải Phòng</item>
+        <item>Thành phố Hải Phòng</item>
+        <item>Thành phố Hải Phòng</item>
+        <item>Thành phố Hải Phòng</item>
+        <item>Thành phố Hải Phòng</item>
+        <item>Thành phố Hải Phòng</item>
+        <item>Thành phố Hải Phòng</item>
+        <item>Thành phố Hải Phòng</item>
+        <item>Thành phố Hải Phòng</item>
+        <item>Thành phố Hải Phòng</item>
+        <item>Thành phố Hải Phòng</item>
+        <item>Thành phố Hải Phòng</item>
+        <item>Tỉnh Hưng Yên</item>
+        <item>Tỉnh Hưng Yên</item>
+        <item>Tỉnh Hưng Yên</item>
+        <item>Tỉnh Hưng Yên</item>
+        <item>Tỉnh Hưng Yên</item>
+        <item>Tỉnh Hưng Yên</item>
+        <item>Tỉnh Hưng Yên</item>
+        <item>Tỉnh Hưng Yên</item>
+        <item>Tỉnh Hưng Yên</item>
+        <item>Tỉnh Hưng Yên</item>
+        <item>Tỉnh Thái Bình</item>
+        <item>Tỉnh Thái Bình</item>
+        <item>Tỉnh Thái Bình</item>
+        <item>Tỉnh Thái Bình</item>
+        <item>Tỉnh Thái Bình</item>
+        <item>Tỉnh Thái Bình</item>
+        <item>Tỉnh Thái Bình</item>
+        <item>Tỉnh Thái Bình</item>
+        <item>Tỉnh Hà Nam</item>
+        <item>Tỉnh Hà Nam</item>
+        <item>Tỉnh Hà Nam</item>
+        <item>Tỉnh Hà Nam</item>
+        <item>Tỉnh Hà Nam</item>
+        <item>Tỉnh Hà Nam</item>
+        <item>Tỉnh Nam Định</item>
+        <item>Tỉnh Nam Định</item>
+        <item>Tỉnh Nam Định</item>
+        <item>Tỉnh Nam Định</item>
+        <item>Tỉnh Nam Định</item>
+        <item>Tỉnh Nam Định</item>
+        <item>Tỉnh Nam Định</item>
+        <item>Tỉnh Nam Định</item>
+        <item>Tỉnh Nam Định</item>
+        <item>Tỉnh Nam Định</item>
+        <item>Tỉnh Ninh Bình</item>
+        <item>Tỉnh Ninh Bình</item>
+        <item>Tỉnh Ninh Bình</item>
+        <item>Tỉnh Ninh Bình</item>
+        <item>Tỉnh Ninh Bình</item>
+        <item>Tỉnh Ninh Bình</item>
+        <item>Tỉnh Ninh Bình</item>
+        <item>Tỉnh Ninh Bình</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Thanh Hóa</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Nghệ An</item>
+        <item>Tỉnh Hà Tĩnh</item>
+        <item>Tỉnh Hà Tĩnh</item>
+        <item>Tỉnh Hà Tĩnh</item>
+        <item>Tỉnh Hà Tĩnh</item>
+        <item>Tỉnh Hà Tĩnh</item>
+        <item>Tỉnh Hà Tĩnh</item>
+        <item>Tỉnh Hà Tĩnh</item>
+        <item>Tỉnh Hà Tĩnh</item>
+        <item>Tỉnh Hà Tĩnh</item>
+        <item>Tỉnh Hà Tĩnh</item>
+        <item>Tỉnh Hà Tĩnh</item>
+        <item>Tỉnh Hà Tĩnh</item>
+        <item>Tỉnh Hà Tĩnh</item>
+        <item>Tỉnh Quảng Bình</item>
+        <item>Tỉnh Quảng Bình</item>
+        <item>Tỉnh Quảng Bình</item>
+        <item>Tỉnh Quảng Bình</item>
+        <item>Tỉnh Quảng Bình</item>
+        <item>Tỉnh Quảng Bình</item>
+        <item>Tỉnh Quảng Bình</item>
+        <item>Tỉnh Quảng Bình</item>
+        <item>Tỉnh Quảng Trị</item>
+        <item>Tỉnh Quảng Trị</item>
+        <item>Tỉnh Quảng Trị</item>
+        <item>Tỉnh Quảng Trị</item>
+        <item>Tỉnh Quảng Trị</item>
+        <item>Tỉnh Quảng Trị</item>
+        <item>Tỉnh Quảng Trị</item>
+        <item>Tỉnh Quảng Trị</item>
+        <item>Tỉnh Quảng Trị</item>
+        <item>Tỉnh Quảng Trị</item>
+        <item>Tỉnh Thừa Thiên Huế</item>
+        <item>Tỉnh Thừa Thiên Huế</item>
+        <item>Tỉnh Thừa Thiên Huế</item>
+        <item>Tỉnh Thừa Thiên Huế</item>
+        <item>Tỉnh Thừa Thiên Huế</item>
+        <item>Tỉnh Thừa Thiên Huế</item>
+        <item>Tỉnh Thừa Thiên Huế</item>
+        <item>Tỉnh Thừa Thiên Huế</item>
+        <item>Tỉnh Thừa Thiên Huế</item>
+        <item>Thành phố Đà Nẵng</item>
+        <item>Thành phố Đà Nẵng</item>
+        <item>Thành phố Đà Nẵng</item>
+        <item>Thành phố Đà Nẵng</item>
+        <item>Thành phố Đà Nẵng</item>
+        <item>Thành phố Đà Nẵng</item>
+        <item>Thành phố Đà Nẵng</item>
+        <item>Thành phố Đà Nẵng</item>
+        <item>Tỉnh Quảng Nam</item>
+        <item>Tỉnh Quảng Nam</item>
+        <item>Tỉnh Quảng Nam</item>
+        <item>Tỉnh Quảng Nam</item>
+        <item>Tỉnh Quảng Nam</item>
+        <item>Tỉnh Quảng Nam</item>
+        <item>Tỉnh Quảng Nam</item>
+        <item>Tỉnh Quảng Nam</item>
+        <item>Tỉnh Quảng Nam</item>
+        <item>Tỉnh Quảng Nam</item>
+        <item>Tỉnh Quảng Nam</item>
+        <item>Tỉnh Quảng Nam</item>
+        <item>Tỉnh Quảng Nam</item>
+        <item>Tỉnh Quảng Nam</item>
+        <item>Tỉnh Quảng Nam</item>
+        <item>Tỉnh Quảng Nam</item>
+        <item>Tỉnh Quảng Nam</item>
+        <item>Tỉnh Quảng Nam</item>
+        <item>Tỉnh Quảng Ngãi</item>
+        <item>Tỉnh Quảng Ngãi</item>
+        <item>Tỉnh Quảng Ngãi</item>
+        <item>Tỉnh Quảng Ngãi</item>
+        <item>Tỉnh Quảng Ngãi</item>
+        <item>Tỉnh Quảng Ngãi</item>
+        <item>Tỉnh Quảng Ngãi</item>
+        <item>Tỉnh Quảng Ngãi</item>
+        <item>Tỉnh Quảng Ngãi</item>
+        <item>Tỉnh Quảng Ngãi</item>
+        <item>Tỉnh Quảng Ngãi</item>
+        <item>Tỉnh Quảng Ngãi</item>
+        <item>Tỉnh Quảng Ngãi</item>
+        <item>Tỉnh Quảng Ngãi</item>
+        <item>Tỉnh Bình Định</item>
+        <item>Tỉnh Bình Định</item>
+        <item>Tỉnh Bình Định</item>
+        <item>Tỉnh Bình Định</item>
+        <item>Tỉnh Bình Định</item>
+        <item>Tỉnh Bình Định</item>
+        <item>Tỉnh Bình Định</item>
+        <item>Tỉnh Bình Định</item>
+        <item>Tỉnh Bình Định</item>
+        <item>Tỉnh Bình Định</item>
+        <item>Tỉnh Bình Định</item>
+        <item>Tỉnh Phú Yên</item>
+        <item>Tỉnh Phú Yên</item>
+        <item>Tỉnh Phú Yên</item>
+        <item>Tỉnh Phú Yên</item>
+        <item>Tỉnh Phú Yên</item>
+        <item>Tỉnh Phú Yên</item>
+        <item>Tỉnh Phú Yên</item>
+        <item>Tỉnh Phú Yên</item>
+        <item>Tỉnh Phú Yên</item>
+        <item>Tỉnh Khánh Hòa</item>
+        <item>Tỉnh Khánh Hòa</item>
+        <item>Tỉnh Khánh Hòa</item>
+        <item>Tỉnh Khánh Hòa</item>
+        <item>Tỉnh Khánh Hòa</item>
+        <item>Tỉnh Khánh Hòa</item>
+        <item>Tỉnh Khánh Hòa</item>
+        <item>Tỉnh Khánh Hòa</item>
+        <item>Tỉnh Khánh Hòa</item>
+        <item>Tỉnh Ninh Thuận</item>
+        <item>Tỉnh Ninh Thuận</item>
+        <item>Tỉnh Ninh Thuận</item>
+        <item>Tỉnh Ninh Thuận</item>
+        <item>Tỉnh Ninh Thuận</item>
+        <item>Tỉnh Ninh Thuận</item>
+        <item>Tỉnh Ninh Thuận</item>
+        <item>Tỉnh Bình Thuận</item>
+        <item>Tỉnh Bình Thuận</item>
+        <item>Tỉnh Bình Thuận</item>
+        <item>Tỉnh Bình Thuận</item>
+        <item>Tỉnh Bình Thuận</item>
+        <item>Tỉnh Bình Thuận</item>
+        <item>Tỉnh Bình Thuận</item>
+        <item>Tỉnh Bình Thuận</item>
+        <item>Tỉnh Bình Thuận</item>
+        <item>Tỉnh Bình Thuận</item>
+        <item>Tỉnh Kon Tum</item>
+        <item>Tỉnh Kon Tum</item>
+        <item>Tỉnh Kon Tum</item>
+        <item>Tỉnh Kon Tum</item>
+        <item>Tỉnh Kon Tum</item>
+        <item>Tỉnh Kon Tum</item>
+        <item>Tỉnh Kon Tum</item>
+        <item>Tỉnh Kon Tum</item>
+        <item>Tỉnh Kon Tum</item>
+        <item>Tỉnh Kon Tum</item>
+        <item>Tỉnh Gia Lai</item>
+        <item>Tỉnh Gia Lai</item>
+        <item>Tỉnh Gia Lai</item>
+        <item>Tỉnh Gia Lai</item>
+        <item>Tỉnh Gia Lai</item>
+        <item>Tỉnh Gia Lai</item>
+        <item>Tỉnh Gia Lai</item>
+        <item>Tỉnh Gia Lai</item>
+        <item>Tỉnh Gia Lai</item>
+        <item>Tỉnh Gia Lai</item>
+        <item>Tỉnh Gia Lai</item>
+        <item>Tỉnh Gia Lai</item>
+        <item>Tỉnh Gia Lai</item>
+        <item>Tỉnh Gia Lai</item>
+        <item>Tỉnh Gia Lai</item>
+        <item>Tỉnh Gia Lai</item>
+        <item>Tỉnh Gia Lai</item>
+        <item>Tỉnh Đắk Lắk</item>
+        <item>Tỉnh Đắk Lắk</item>
+        <item>Tỉnh Đắk Lắk</item>
+        <item>Tỉnh Đắk Lắk</item>
+        <item>Tỉnh Đắk Lắk</item>
+        <item>Tỉnh Đắk Lắk</item>
+        <item>Tỉnh Đắk Lắk</item>
+        <item>Tỉnh Đắk Lắk</item>
+        <item>Tỉnh Đắk Lắk</item>
+        <item>Tỉnh Đắk Lắk</item>
+        <item>Tỉnh Đắk Lắk</item>
+        <item>Tỉnh Đắk Lắk</item>
+        <item>Tỉnh Đắk Lắk</item>
+        <item>Tỉnh Đắk Lắk</item>
+        <item>Tỉnh Đắk Lắk</item>
+        <item>Tỉnh Đắk Nông</item>
+        <item>Tỉnh Đắk Nông</item>
+        <item>Tỉnh Đắk Nông</item>
+        <item>Tỉnh Đắk Nông</item>
+        <item>Tỉnh Đắk Nông</item>
+        <item>Tỉnh Đắk Nông</item>
+        <item>Tỉnh Đắk Nông</item>
+        <item>Tỉnh Đắk Nông</item>
+        <item>Tỉnh Lâm Đồng</item>
+        <item>Tỉnh Lâm Đồng</item>
+        <item>Tỉnh Lâm Đồng</item>
+        <item>Tỉnh Lâm Đồng</item>
+        <item>Tỉnh Lâm Đồng</item>
+        <item>Tỉnh Lâm Đồng</item>
+        <item>Tỉnh Lâm Đồng</item>
+        <item>Tỉnh Lâm Đồng</item>
+        <item>Tỉnh Lâm Đồng</item>
+        <item>Tỉnh Lâm Đồng</item>
+        <item>Tỉnh Lâm Đồng</item>
+        <item>Tỉnh Lâm Đồng</item>
+        <item>Tỉnh Bình Phước</item>
+        <item>Tỉnh Bình Phước</item>
+        <item>Tỉnh Bình Phước</item>
+        <item>Tỉnh Bình Phước</item>
+        <item>Tỉnh Bình Phước</item>
+        <item>Tỉnh Bình Phước</item>
+        <item>Tỉnh Bình Phước</item>
+        <item>Tỉnh Bình Phước</item>
+        <item>Tỉnh Bình Phước</item>
+        <item>Tỉnh Bình Phước</item>
+        <item>Tỉnh Bình Phước</item>
+        <item>Tỉnh Tây Ninh</item>
+        <item>Tỉnh Tây Ninh</item>
+        <item>Tỉnh Tây Ninh</item>
+        <item>Tỉnh Tây Ninh</item>
+        <item>Tỉnh Tây Ninh</item>
+        <item>Tỉnh Tây Ninh</item>
+        <item>Tỉnh Tây Ninh</item>
+        <item>Tỉnh Tây Ninh</item>
+        <item>Tỉnh Tây Ninh</item>
+        <item>Tỉnh Bình Dương</item>
+        <item>Tỉnh Bình Dương</item>
+        <item>Tỉnh Bình Dương</item>
+        <item>Tỉnh Bình Dương</item>
+        <item>Tỉnh Bình Dương</item>
+        <item>Tỉnh Bình Dương</item>
+        <item>Tỉnh Bình Dương</item>
+        <item>Tỉnh Bình Dương</item>
+        <item>Tỉnh Bình Dương</item>
+        <item>Tỉnh Đồng Nai</item>
+        <item>Tỉnh Đồng Nai</item>
+        <item>Tỉnh Đồng Nai</item>
+        <item>Tỉnh Đồng Nai</item>
+        <item>Tỉnh Đồng Nai</item>
+        <item>Tỉnh Đồng Nai</item>
+        <item>Tỉnh Đồng Nai</item>
+        <item>Tỉnh Đồng Nai</item>
+        <item>Tỉnh Đồng Nai</item>
+        <item>Tỉnh Đồng Nai</item>
+        <item>Tỉnh Đồng Nai</item>
+        <item>Tỉnh Bà Rịa - Vũng Tàu</item>
+        <item>Tỉnh Bà Rịa - Vũng Tàu</item>
+        <item>Tỉnh Bà Rịa - Vũng Tàu</item>
+        <item>Tỉnh Bà Rịa - Vũng Tàu</item>
+        <item>Tỉnh Bà Rịa - Vũng Tàu</item>
+        <item>Tỉnh Bà Rịa - Vũng Tàu</item>
+        <item>Tỉnh Bà Rịa - Vũng Tàu</item>
+        <item>Tỉnh Bà Rịa - Vũng Tàu</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Thành phố Hồ Chí Minh</item>
+        <item>Tỉnh Long An</item>
+        <item>Tỉnh Long An</item>
+        <item>Tỉnh Long An</item>
+        <item>Tỉnh Long An</item>
+        <item>Tỉnh Long An</item>
+        <item>Tỉnh Long An</item>
+        <item>Tỉnh Long An</item>
+        <item>Tỉnh Long An</item>
+        <item>Tỉnh Long An</item>
+        <item>Tỉnh Long An</item>
+        <item>Tỉnh Long An</item>
+        <item>Tỉnh Long An</item>
+        <item>Tỉnh Long An</item>
+        <item>Tỉnh Long An</item>
+        <item>Tỉnh Long An</item>
+        <item>Tỉnh Tiền Giang</item>
+        <item>Tỉnh Tiền Giang</item>
+        <item>Tỉnh Tiền Giang</item>
+        <item>Tỉnh Tiền Giang</item>
+        <item>Tỉnh Tiền Giang</item>
+        <item>Tỉnh Tiền Giang</item>
+        <item>Tỉnh Tiền Giang</item>
+        <item>Tỉnh Tiền Giang</item>
+        <item>Tỉnh Tiền Giang</item>
+        <item>Tỉnh Tiền Giang</item>
+        <item>Tỉnh Tiền Giang</item>
+        <item>Tỉnh Bến Tre</item>
+        <item>Tỉnh Bến Tre</item>
+        <item>Tỉnh Bến Tre</item>
+        <item>Tỉnh Bến Tre</item>
+        <item>Tỉnh Bến Tre</item>
+        <item>Tỉnh Bến Tre</item>
+        <item>Tỉnh Bến Tre</item>
+        <item>Tỉnh Bến Tre</item>
+        <item>Tỉnh Bến Tre</item>
+        <item>Tỉnh Trà Vinh</item>
+        <item>Tỉnh Trà Vinh</item>
+        <item>Tỉnh Trà Vinh</item>
+        <item>Tỉnh Trà Vinh</item>
+        <item>Tỉnh Trà Vinh</item>
+        <item>Tỉnh Trà Vinh</item>
+        <item>Tỉnh Trà Vinh</item>
+        <item>Tỉnh Trà Vinh</item>
+        <item>Tỉnh Trà Vinh</item>
+        <item>Tỉnh Vĩnh Long</item>
+        <item>Tỉnh Vĩnh Long</item>
+        <item>Tỉnh Vĩnh Long</item>
+        <item>Tỉnh Vĩnh Long</item>
+        <item>Tỉnh Vĩnh Long</item>
+        <item>Tỉnh Vĩnh Long</item>
+        <item>Tỉnh Vĩnh Long</item>
+        <item>Tỉnh Vĩnh Long</item>
+        <item>Tỉnh Đồng Tháp</item>
+        <item>Tỉnh Đồng Tháp</item>
+        <item>Tỉnh Đồng Tháp</item>
+        <item>Tỉnh Đồng Tháp</item>
+        <item>Tỉnh Đồng Tháp</item>
+        <item>Tỉnh Đồng Tháp</item>
+        <item>Tỉnh Đồng Tháp</item>
+        <item>Tỉnh Đồng Tháp</item>
+        <item>Tỉnh Đồng Tháp</item>
+        <item>Tỉnh Đồng Tháp</item>
+        <item>Tỉnh Đồng Tháp</item>
+        <item>Tỉnh Đồng Tháp</item>
+        <item>Tỉnh An Giang</item>
+        <item>Tỉnh An Giang</item>
+        <item>Tỉnh An Giang</item>
+        <item>Tỉnh An Giang</item>
+        <item>Tỉnh An Giang</item>
+        <item>Tỉnh An Giang</item>
+        <item>Tỉnh An Giang</item>
+        <item>Tỉnh An Giang</item>
+        <item>Tỉnh An Giang</item>
+        <item>Tỉnh An Giang</item>
+        <item>Tỉnh An Giang</item>
+        <item>Tỉnh Kiên Giang</item>
+        <item>Tỉnh Kiên Giang</item>
+        <item>Tỉnh Kiên Giang</item>
+        <item>Tỉnh Kiên Giang</item>
+        <item>Tỉnh Kiên Giang</item>
+        <item>Tỉnh Kiên Giang</item>
+        <item>Tỉnh Kiên Giang</item>
+        <item>Tỉnh Kiên Giang</item>
+        <item>Tỉnh Kiên Giang</item>
+        <item>Tỉnh Kiên Giang</item>
+        <item>Tỉnh Kiên Giang</item>
+        <item>Tỉnh Kiên Giang</item>
+        <item>Tỉnh Kiên Giang</item>
+        <item>Tỉnh Kiên Giang</item>
+        <item>Tỉnh Kiên Giang</item>
+        <item>Thành phố Cần Thơ</item>
+        <item>Thành phố Cần Thơ</item>
+        <item>Thành phố Cần Thơ</item>
+        <item>Thành phố Cần Thơ</item>
+        <item>Thành phố Cần Thơ</item>
+        <item>Thành phố Cần Thơ</item>
+        <item>Thành phố Cần Thơ</item>
+        <item>Thành phố Cần Thơ</item>
+        <item>Thành phố Cần Thơ</item>
+        <item>Tỉnh Hậu Giang</item>
+        <item>Tỉnh Hậu Giang</item>
+        <item>Tỉnh Hậu Giang</item>
+        <item>Tỉnh Hậu Giang</item>
+        <item>Tỉnh Hậu Giang</item>
+        <item>Tỉnh Hậu Giang</item>
+        <item>Tỉnh Hậu Giang</item>
+        <item>Tỉnh Hậu Giang</item>
+        <item>Tỉnh Sóc Trăng</item>
+        <item>Tỉnh Sóc Trăng</item>
+        <item>Tỉnh Sóc Trăng</item>
+        <item>Tỉnh Sóc Trăng</item>
+        <item>Tỉnh Sóc Trăng</item>
+        <item>Tỉnh Sóc Trăng</item>
+        <item>Tỉnh Sóc Trăng</item>
+        <item>Tỉnh Sóc Trăng</item>
+        <item>Tỉnh Sóc Trăng</item>
+        <item>Tỉnh Sóc Trăng</item>
+        <item>Tỉnh Sóc Trăng</item>
+        <item>Tỉnh Bạc Liêu</item>
+        <item>Tỉnh Bạc Liêu</item>
+        <item>Tỉnh Bạc Liêu</item>
+        <item>Tỉnh Bạc Liêu</item>
+        <item>Tỉnh Bạc Liêu</item>
+        <item>Tỉnh Bạc Liêu</item>
+        <item>Tỉnh Bạc Liêu</item>
+        <item>Tỉnh Cà Mau</item>
+        <item>Tỉnh Cà Mau</item>
+        <item>Tỉnh Cà Mau</item>
+        <item>Tỉnh Cà Mau</item>
+        <item>Tỉnh Cà Mau</item>
+        <item>Tỉnh Cà Mau</item>
+        <item>Tỉnh Cà Mau</item>
+        <item>Tỉnh Cà Mau</item>
+        <item>Tỉnh Cà Mau</item>
+    </string-array>
+</resources>

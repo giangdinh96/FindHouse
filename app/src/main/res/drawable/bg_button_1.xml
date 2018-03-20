@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Use: postNow in content_post_news-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <corners android:radius="5dp" />
+            <padding android:bottom="@dimen/button_padding" android:left="@dimen/button_padding" android:right="@dimen/button_padding" android:top="@dimen/button_padding" />
+            <solid android:color="@color/colorPrimary" />
+        </shape>
+    </item>
+</selector>

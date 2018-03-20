@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.giangdinh.returnnotfound.findhouse.UI.Information.InformationActivity"
+    tools:showIn="@layout/activity_information">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="\t\t\t\tNgày nay nhu cầu tìm kiếm nhà trọ để thuê, cũng như tìm thuê mặt bằng làm văn phòng đại diện, địa điểm giao dịch là rất lớn. Nhưng bằng cánh nào để người cần thuê gặp được chủ nhà một cách cách dễ dàng và thuê được căn nhà ưng ý nhất ?
+        \n\n\t\t\t\tHiện nay, nhu cầu tìm kiếm mọi thông tin trên internet đã trở nên khá phổ biến. Chính vì thế, tôi xây dựng ứng dụng tìm nhà trọ trên di động để đóng vai trò trung gian giúp cho người thuê nhà và người cho thuê có thể tiếp cận được với nhau.
+        \n\n\t\t\t\tVới phần mềm này người cho thuê nhà có thế đăng tin cho thuê nhà để những người muốn thuê nhà có thể biết và liên hệ với chủ nhà trọ, còn đối với người muốn thuê phòng thì sẽ có thể tìm được các nhà trọ đang cho thuê một cách dễ dàng và nhanh chóng, có thể xem được các thông tin cơ bản của phòng như các hình ảnh, giá phòng, địa chỉ, diện tích vị trí trên bản đồ, xem chỉ đường từ vị trí hiện tại tới phòng trọ cho thuê,…, Ngoài ra người tìm kiếm phòng trọ thể tìm kiếm theo vị trí tỉnh thành, huyện, giá phòng, diện tích, thời gian để có thể lọc được các phòng trọ theo mong muốn tìm kiếm. "
+        android:textColor="@android:color/black" />
+</LinearLayout>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "960517487936",
+    "firebase_url": "https://findhouse-b89be.firebaseio.com",
+    "project_id": "findhouse-b89be",
+    "storage_bucket": "findhouse-b89be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:960517487936:android:82ebbd3782776b78",
+        "android_client_info": {
+          "package_name": "com.giangdinh.returnnotfound.findhouse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "960517487936-uersjcgvt86op2cgj22kb3frf79hmlf4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.giangdinh.returnnotfound.findhouse",
+            "certificate_hash": "da8a737a1d70308519f99da991836125f6949c74"
+          }
+        },
+        {
+          "client_id": "960517487936-03m690eqmh7aaro4kidh7o2qaa60qcde.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-olAq2l8cLhVGmcJ5TbVvqBt-LLNK5WM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "960517487936-03m690eqmh7aaro4kidh7o2qaa60qcde.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
