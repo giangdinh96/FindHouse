@@ -37,7 +37,7 @@ public class ViewUtils {
 
                     @Override
                     public void onAnimationEnd(Animator animation) {
-                        view.animate().setInterpolator(new LinearInterpolator());
+//                        view.animate().setInterpolator(new LinearInterpolator());
                     }
 
                     @Override

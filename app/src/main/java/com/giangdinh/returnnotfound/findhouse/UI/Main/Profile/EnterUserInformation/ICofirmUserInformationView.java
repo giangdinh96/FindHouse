@@ -7,6 +7,8 @@ import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
  */
 
 public interface ICofirmUserInformationView {
+    void showDialogConfirmLoading(String title, String content);
+
     void showDialogConfirmSuccess(String title, String content, SweetAlertDialog.OnSweetClickListener onSweetClickListener);
 
     void showDialogConfirmFailue(String title, String content, SweetAlertDialog.OnSweetClickListener onSweetClickListener);

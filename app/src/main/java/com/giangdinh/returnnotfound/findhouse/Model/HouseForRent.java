@@ -10,7 +10,7 @@ import java.util.HashMap;
  * Created by GiangDinh on 25/01/2018.
  */
 
-public class NewHouseFirst implements Serializable {
+public class HouseForRent implements Serializable {
     private Address address;
     private String description;
     private String email;
@@ -26,7 +26,7 @@ public class NewHouseFirst implements Serializable {
     private HashMap<String, Object> usersHide;
     private HashMap<String, Object> usersLike;
 
-    public NewHouseFirst() {
+    public HouseForRent() {
         this.address = new Address();
         this.description = "";
         this.email = "";
@@ -209,7 +209,7 @@ public class NewHouseFirst implements Serializable {
 
     @Exclude
     public void putPicture(String name) {
-        pictures.put(name, "News/NewsHouseFirst" + "/" + id + "/" + name);
+        pictures.put(name, "News/HouseForRent" + "/" + id + "/" + name);
     }
 
     @Exclude
@@ -237,15 +237,15 @@ public class NewHouseFirst implements Serializable {
     }
 
     @Exclude
-    public void copyFromNewHouseFirst(NewHouseFirst newHouseFirst) {
-
+    public void copyFrom(HouseForRent houseForRent) {
+        this.usersLike = houseForRent.usersLike;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        NewHouseFirst newHouseFirst = (NewHouseFirst) o;
-        return id.equals(newHouseFirst.id);
+        HouseForRent houseForRent = (HouseForRent) o;
+        return id.equals(houseForRent.id);
     }
 }

@@ -17,9 +17,26 @@
         android:layout_height="0.5dp"
         android:background="@color/colorDivider" />
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vpNews"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vpNews"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_margin="@dimen/fab_margin_right"
+            android:clickable="true"
+            android:src="@drawable/ic_post"
+            app:elevation="10dp"
+            app:rippleColor="#d1ffffff" />
+    </FrameLayout>
+
 
 </LinearLayout>

@@ -1,7 +1,9 @@
 package com.giangdinh.returnnotfound.findhouse.UI.Main.News;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -14,20 +16,26 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.giangdinh.returnnotfound.findhouse.R;
+import com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst.PostHouseForRentActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by GiangDinh on 14/03/2018.
  */
 
-public class NewsFragment extends Fragment {
+public class NewsFragment extends Fragment implements INewsView {
+    private INewsPresenter iNewsPresenter;
 
     @BindView(R.id.tlNews)
     TabLayout tlNews;
     @BindView(R.id.vpNews)
     ViewPager vpNews;
+
+    @BindView(R.id.fabPost)
+    FloatingActionButton fabPost;
 
     public NewsFragment() {
         setHasOptionsMenu(true);
@@ -39,10 +47,16 @@ public class NewsFragment extends Fragment {
         setHasOptionsMenu(true);
         View view = inflater.inflate(R.layout.fragment_news, container, false);
         ButterKnife.bind(this, view);
+        iNewsPresenter = new NewsPresenter(this);
 
-        initPager();
+        initView();
 
         return view;
+    }
+
+    ////// Init views
+    private void initView() {
+        initPager();
     }
 
     private void initPager() {
@@ -52,6 +66,14 @@ public class NewsFragment extends Fragment {
         tlNews.setupWithViewPager(vpNews);
     }
 
+    ////// Init events
+    @OnClick(R.id.fabPost)
+    public void postClick() {
+        iNewsPresenter.handlePostClick();
+    }
+
+
+    ////// Override
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         menu.clear();
@@ -67,5 +89,16 @@ public class NewsFragment extends Fragment {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void navigateToPostHouseNewFist() {
+        Intent intentPostHouseForRent = new Intent(getContext(), PostHouseForRentActivity.class);
+        startActivity(intentPostHouseForRent);
+    }
+
+    @Override
+    public void showMessage(String message) {
+        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
     }
 }

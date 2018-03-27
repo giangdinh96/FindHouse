@@ -53,13 +53,11 @@ public class ConfirmUserInformationDialog extends DialogFragment implements ICof
     EditText etEmail;
     @BindView(R.id.etCmtnd)
     EditText etCmtnd;
-    @BindView(R.id.rbOne)
 
+    @BindView(R.id.rbOne)
     RadioButton rbOne;
     @BindView(R.id.rbTwo)
     RadioButton rbTwo;
-    @BindView(R.id.rbThree)
-    RadioButton rbThree;
 
     private RequestManager requestManager;
     private SweetAlertDialog confirmDialog;
@@ -129,6 +127,7 @@ public class ConfirmUserInformationDialog extends DialogFragment implements ICof
     }
 
     public void handleConfirmClick() {
+        showDialogConfirmLoading("Xác nhận", "Đang xác nhận...");
         if (checkError().equals("")) {
             // Assign data to user
             user.setPhone(etPhone.getText().toString());
@@ -138,8 +137,6 @@ public class ConfirmUserInformationDialog extends DialogFragment implements ICof
                 user.setRole("1");
             if (rbTwo.isChecked())
                 user.setRole("2");
-            if (rbThree.isChecked())
-                user.setRole("3");
             // Sync to firebase
 
             if (!InternetUtils.isNetworkConnected(getContext())) {
@@ -196,6 +193,14 @@ public class ConfirmUserInformationDialog extends DialogFragment implements ICof
                 iConfirmUserInformationDialogListener.onConfirmInformationCancelClick();
             }
         }, 100);
+    }
+
+    @Override
+    public void showDialogConfirmLoading(String title, String content) {
+        confirmDialog.changeAlertType(SweetAlertDialog.PROGRESS_TYPE);
+        confirmDialog.setTitleText(title);
+        confirmDialog.setContentText(content);
+        confirmDialog.show();
     }
 
     @Override

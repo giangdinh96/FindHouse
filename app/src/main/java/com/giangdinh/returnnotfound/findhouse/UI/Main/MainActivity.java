@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity implements IMainView {
     @BindView(R.id.nsvpMain)
     NonSwipeableViewPager nsvpMain;
 
-    @BindView(R.id.fabMain)
-    FloatingActionButton fabMain;
     @BindView(R.id.ahbnMain)
     AHBottomNavigation ahbnMain;
 
@@ -84,11 +82,6 @@ public class MainActivity extends AppCompatActivity implements IMainView {
                 return true;
             }
         });
-    }
-
-    @OnClick(R.id.fabMain)
-    public void floatActionClick(View view) {
-        Toast.makeText(this, "Action Click", Toast.LENGTH_SHORT).show();
     }
 
     ////// IMainView override

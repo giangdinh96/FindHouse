@@ -1,13 +1,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.giangdinh.returnnotfound.findhouse.UI.Main.News.NewsFirst.NewsFirstFragment">
+    tools:context="com.giangdinh.returnnotfound.findhouse.UI.Main.News.HouseForRent.HouseForRentFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="News Third" />
+        android:text="News Second" />
 
 </LinearLayout>

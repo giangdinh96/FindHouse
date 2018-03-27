@@ -1,10 +1,9 @@
-package com.giangdinh.returnnotfound.findhouse.UI.PostNewHouseFirst;
+package com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
@@ -44,9 +43,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class PostNewHouseFirstActivity extends AppCompatActivity implements IPostNewHouseFirstView, OnMapReadyCallback {
+public class PostHouseForRentActivity extends AppCompatActivity implements IPostHouseForRentView, OnMapReadyCallback {
 
-    private IPostNewHouseFirstPresenter iPostNewHouseFirstPresenter;
+    private IPostHouseForRentPresenter iPostHouseForRentPresenter;
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -97,11 +96,10 @@ public class PostNewHouseFirstActivity extends AppCompatActivity implements IPos
     private GoogleMap map;
     private Marker currentHouseMarker;
 
-    @BindView(R.id.btnPostNow)
-    Button btnPostNow;
+    @BindView(R.id.btnPost)
+    Button btnPost;
 
-
-    private SweetAlertDialog dialog;
+    private SweetAlertDialog postDialog;
 
     public static final int RC_PICK_1 = 1;
     public static final int RC_PICK_2 = 2;
@@ -117,11 +115,11 @@ public class PostNewHouseFirstActivity extends AppCompatActivity implements IPos
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_new_house_first);
         ButterKnife.bind(this);
-        iPostNewHouseFirstPresenter = new PostNewHouseFirstPresenter(this);
+        iPostHouseForRentPresenter = new PostHouseForRentPresenter(this);
 
         initViews();
         initMapView(savedInstanceState);
-        iPostNewHouseFirstPresenter.getProvinces();
+        iPostHouseForRentPresenter.getProvinces();
 
         initEvents();
     }
@@ -139,7 +137,7 @@ public class PostNewHouseFirstActivity extends AppCompatActivity implements IPos
     }
 
     public void initDialog() {
-        dialog = new SweetAlertDialog(this);
+        postDialog = new SweetAlertDialog(this);
     }
 
     public void initSpinnerProvince() {
@@ -161,7 +159,7 @@ public class PostNewHouseFirstActivity extends AppCompatActivity implements IPos
         housePictureOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                iPostNewHouseFirstPresenter.handleHousePictureClick(view);
+                iPostHouseForRentPresenter.handleHousePictureClick(view);
             }
         };
         ivHousePictureFirst.setOnClickListener(housePictureOnClickListener);
@@ -174,7 +172,7 @@ public class PostNewHouseFirstActivity extends AppCompatActivity implements IPos
         sProvinces.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                iPostNewHouseFirstPresenter.handleProvinceSelected(provinces.get(i), i);
+                iPostHouseForRentPresenter.handleProvinceSelected(provinces.get(i), i);
             }
 
             @Override
@@ -186,7 +184,7 @@ public class PostNewHouseFirstActivity extends AppCompatActivity implements IPos
         sTowns.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                iPostNewHouseFirstPresenter.handleTownSelected(towns.get(i), i);
+                iPostHouseForRentPresenter.handleTownSelected(towns.get(i), i);
             }
 
             @Override
@@ -196,59 +194,54 @@ public class PostNewHouseFirstActivity extends AppCompatActivity implements IPos
         });
     }
 
-    @OnClick(R.id.btnPostNow)
-    public void postNowClick(View view) {
-        ViewUtils.delayAfterPress(view, 1000);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                String addressDetail = etAddressDetail.getText().toString();
-                String price = etPrice.getText().toString();
-                String stretch = etStretch.getText().toString();
-                String phone = etPhone.getText().toString();
-                String email = etEmail.getText().toString();
-                String describe = etDescription.getText().toString();
-                iPostNewHouseFirstPresenter.handlePostClick(addressDetail, price, stretch, phone, email, describe);
-            }
-        }, 100);
+    @OnClick(R.id.btnPost)
+    public void postClick(View view) {
+        ViewUtils.delayAfterPress(view, 500);
+        String addressDetail = etAddressDetail.getText().toString();
+        String price = etPrice.getText().toString();
+        String stretch = etStretch.getText().toString();
+        String phone = etPhone.getText().toString();
+        String email = etEmail.getText().toString();
+        String describe = etDescription.getText().toString();
+        iPostHouseForRentPresenter.handlePostClick(addressDetail, price, stretch, phone, email, describe);
     }
 
     @OnClick(R.id.fabChooseHouseLocation)
     public void chooseHouseLocationClick() {
-        iPostNewHouseFirstPresenter.handleChooseHouseLocationClick();
+        iPostHouseForRentPresenter.handleChooseHouseLocationClick();
     }
 
     ////// Implement IView
     @Override
     public void showDialogPostSuccess(String title, String content, SweetAlertDialog.OnSweetClickListener onSweetClickListener) {
-        dialog.changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
-        dialog.setCancelable(false);
-        dialog.setTitleText(title).setContentText(content);
-        dialog.setConfirmClickListener(onSweetClickListener);
-        dialog.show();
+        postDialog.changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
+        postDialog.setCancelable(false);
+        postDialog.setTitleText(title).setContentText(content);
+        postDialog.setConfirmClickListener(onSweetClickListener);
+        postDialog.show();
     }
 
     @Override
     public void showDialogPostLoading(String title, String content) {
-        dialog.changeAlertType(SweetAlertDialog.PROGRESS_TYPE);
-        dialog.setCancelable(false);
-        dialog.setTitleText(title).setContentText(content);
-        dialog.show();
+        postDialog.changeAlertType(SweetAlertDialog.PROGRESS_TYPE);
+        postDialog.setCancelable(false);
+        postDialog.setTitleText(title).setContentText(content);
+        postDialog.show();
     }
 
     @Override
     public void showDialogPostFailue(String title, String content, SweetAlertDialog.OnSweetClickListener onSweetClickListener) {
-        dialog.changeAlertType(SweetAlertDialog.ERROR_TYPE);
-        dialog.setCancelable(false);
-        dialog.setTitleText(title).setContentText(content);
-        dialog.setConfirmClickListener(onSweetClickListener);
-        dialog.show();
+        postDialog.changeAlertType(SweetAlertDialog.ERROR_TYPE);
+        postDialog.setCancelable(false);
+        postDialog.setTitleText(title).setContentText(content);
+        postDialog.setConfirmClickListener(onSweetClickListener);
+        postDialog.show();
     }
 
     @Override
     public void hideDialogPost() {
-        if (dialog.isShowing())
-            dialog.dismiss();
+        if (postDialog.isShowing())
+            postDialog.dismiss();
     }
 
     @Override
@@ -385,7 +378,7 @@ public class PostNewHouseFirstActivity extends AppCompatActivity implements IPos
     public void onMapReady(GoogleMap googleMap) {
         map = googleMap;
         map.getUiSettings().setAllGesturesEnabled(false);
-        iPostNewHouseFirstPresenter.handleGetCurrentHouseLocation(true, false, 14);
+        iPostHouseForRentPresenter.handleGetCurrentHouseLocation(true, false, 14);
     }
 
     @Override
@@ -397,7 +390,7 @@ public class PostNewHouseFirstActivity extends AppCompatActivity implements IPos
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        iPostNewHouseFirstPresenter.handleOnActivityResult(requestCode, resultCode, data);
+        iPostHouseForRentPresenter.handleOnActivityResult(requestCode, resultCode, data);
     }
 
     @Override

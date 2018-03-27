@@ -4,9 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.giangdinh.returnnotfound.findhouse.UI.Main.Map.MapFirst.MapFirstFragment;
-import com.giangdinh.returnnotfound.findhouse.UI.Main.Map.MapSecond.MapSecondFragment;
-import com.giangdinh.returnnotfound.findhouse.UI.Main.Map.MapThird.MapThirdFragment;
+import com.giangdinh.returnnotfound.findhouse.UI.Main.Map.FindHouse.FindHouseFragment;
+import com.giangdinh.returnnotfound.findhouse.UI.Main.Map.HouseForRent.HouseForRentFragment;
 
 /**
  * Created by GiangDinh on 14/03/2018.
@@ -21,14 +20,12 @@ public class MapPagerAdapter extends FragmentStatePagerAdapter {
     public MapPagerAdapter(FragmentManager fm) {
         super(fm);
         fragments = new Fragment[]{
-                new MapFirstFragment(),
-                new MapSecondFragment(),
-                new MapThirdFragment()
+                new HouseForRentFragment(),
+                new FindHouseFragment()
         };
         titles = new String[]{
-                "Tin cho thuê",
-                "Tin thuê",
-                "Tin ở ghép"
+                "Phòng cho thuê",
+                "Tìm phòng"
         };
     }
 

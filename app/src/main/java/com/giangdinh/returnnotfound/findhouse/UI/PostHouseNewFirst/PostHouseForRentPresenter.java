@@ -1,4 +1,4 @@
-package com.giangdinh.returnnotfound.findhouse.UI.PostNewHouseFirst;
+package com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst;
 
 import android.Manifest;
 import android.app.Activity;
@@ -15,7 +15,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.giangdinh.returnnotfound.findhouse.Model.Address;
-import com.giangdinh.returnnotfound.findhouse.Model.NewHouseFirst;
+import com.giangdinh.returnnotfound.findhouse.Model.HouseForRent;
 import com.giangdinh.returnnotfound.findhouse.Model.Province;
 import com.giangdinh.returnnotfound.findhouse.Model.Town;
 import com.giangdinh.returnnotfound.findhouse.R;
@@ -47,13 +47,13 @@ import java.util.Date;
 import java.util.HashMap;
 
 import static android.app.Activity.RESULT_OK;
-import static com.giangdinh.returnnotfound.findhouse.UI.PostNewHouseFirst.PostNewHouseFirstActivity.RC_LATLNG;
-import static com.giangdinh.returnnotfound.findhouse.UI.PostNewHouseFirst.PostNewHouseFirstActivity.RC_PICK_1;
-import static com.giangdinh.returnnotfound.findhouse.UI.PostNewHouseFirst.PostNewHouseFirstActivity.RC_PICK_2;
-import static com.giangdinh.returnnotfound.findhouse.UI.PostNewHouseFirst.PostNewHouseFirstActivity.RC_PICK_3;
-import static com.giangdinh.returnnotfound.findhouse.UI.PostNewHouseFirst.PostNewHouseFirstActivity.RC_PICK_4;
-import static com.giangdinh.returnnotfound.findhouse.UI.PostNewHouseFirst.PostNewHouseFirstActivity.RC_PICK_5;
-import static com.giangdinh.returnnotfound.findhouse.UI.PostNewHouseFirst.PostNewHouseFirstActivity.RC_PICK_6;
+import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst.PostHouseForRentActivity.RC_LATLNG;
+import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst.PostHouseForRentActivity.RC_PICK_1;
+import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst.PostHouseForRentActivity.RC_PICK_2;
+import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst.PostHouseForRentActivity.RC_PICK_3;
+import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst.PostHouseForRentActivity.RC_PICK_4;
+import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst.PostHouseForRentActivity.RC_PICK_5;
+import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst.PostHouseForRentActivity.RC_PICK_6;
 import static com.giangdinh.returnnotfound.findhouse.Utils.VariableGlobal.EXTRA_LAT;
 import static com.giangdinh.returnnotfound.findhouse.Utils.VariableGlobal.EXTRA_LNG;
 
@@ -61,18 +61,18 @@ import static com.giangdinh.returnnotfound.findhouse.Utils.VariableGlobal.EXTRA_
  * Created by GiangDinh on 29/01/2018.
  */
 
-public class PostNewHouseFirstPresenter implements IPostNewHouseFirstPresenter {
+public class PostHouseForRentPresenter implements IPostHouseForRentPresenter {
     private Activity activity;
-    private IPostNewHouseFirstView iPostNewHouseFirstView;
+    private IPostHouseForRentView iPostHouseForRentView;
 
     private HashMap<String, Uri> housePictureUri;
-    private NewHouseFirst newHouseFirst;
+    private HouseForRent houseForRent;
 
     private boolean isUploadPictureComplete[];
     private boolean isUploadPictureFailue;
 
     private FirebaseDatabase firebaseDatabase;
-    private DatabaseReference databaseReferenceNewsHouseFirst;
+    private DatabaseReference databaseReferenceHouseForRent;
     private FirebaseStorage firebaseStorage;
     private StorageReference storageReference;
 
@@ -82,24 +82,24 @@ public class PostNewHouseFirstPresenter implements IPostNewHouseFirstPresenter {
     private FusedLocationProviderClient mFusedLocationClient;
     private LocationCallback mLocationCallback;
 
-    public PostNewHouseFirstPresenter(IPostNewHouseFirstView iPostNewHouseFirstView) {
-        this.iPostNewHouseFirstView = iPostNewHouseFirstView;
-        this.activity = (Activity) iPostNewHouseFirstView;
-        setupFirebase();
-        setupHouse();
+    public PostHouseForRentPresenter(IPostHouseForRentView iPostHouseForRentView) {
+        this.iPostHouseForRentView = iPostHouseForRentView;
+        this.activity = (Activity) iPostHouseForRentView;
+        initFirebase();
+        initHouse();
     }
 
-    public void setupFirebase() {
+    public void initFirebase() {
         firebaseDatabase = FirebaseUtils.getDatabase();
-        databaseReferenceNewsHouseFirst = firebaseDatabase.getReference().child("news/newsHouseFirst").push();
+        databaseReferenceHouseForRent = firebaseDatabase.getReference().child("news/houseForRent").push();
         firebaseStorage = FirebaseStorage.getInstance();
         storageReference = firebaseStorage.getReference();
     }
 
-    public void setupHouse() {
+    public void initHouse() {
         housePictureUri = new HashMap<>();
-        newHouseFirst = new NewHouseFirst();
-        newHouseFirst.setId(databaseReferenceNewsHouseFirst.getKey());
+        houseForRent = new HouseForRent();
+        houseForRent.setId(databaseReferenceHouseForRent.getKey());
     }
 
     @Override
@@ -111,7 +111,7 @@ public class PostNewHouseFirstPresenter implements IPostNewHouseFirstPresenter {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 provinces.addAll(FirebaseUtils.getProvinces(dataSnapshot));
-                iPostNewHouseFirstView.loadSpinnerProvinces(provinces);
+                iPostHouseForRentView.loadSpinnerProvinces(provinces);
             }
 
             @Override
@@ -150,26 +150,26 @@ public class PostNewHouseFirstPresenter implements IPostNewHouseFirstPresenter {
     @Override
     public void handleProvinceSelected(Province province, int position) {
         if (position == 0) {
-            newHouseFirst.getAddress().setProvinceId(null);
+            houseForRent.getAddress().setProvinceId(null);
         } else {
-            newHouseFirst.getAddress().setProvinceId(province.getId());
+            houseForRent.getAddress().setProvinceId(province.getId());
         }
-        iPostNewHouseFirstView.loadSpinnerTowns(province.getTowns());
+        iPostHouseForRentView.loadSpinnerTowns(province.getTowns());
     }
 
     @Override
     public void handleTownSelected(Town town, int position) {
         if (position == 0) {
-            newHouseFirst.getAddress().setTownId(null);
+            houseForRent.getAddress().setTownId(null);
         } else {
-            newHouseFirst.getAddress().setTownId(town.getId());
+            houseForRent.getAddress().setTownId(town.getId());
         }
     }
 
     @Override
     public void handleGetCurrentHouseLocation(final boolean isNeedZoom, final boolean isNeedAnimate, final int zoom) {
-        iPostNewHouseFirstView.removeHouseMarker();
-        if (newHouseFirst.getLatitude() == 0 && newHouseFirst.getLongitude() == 0) {
+        iPostHouseForRentView.removeHouseMarker();
+        if (houseForRent.getLatitude() == 0 && houseForRent.getLongitude() == 0) {
             mFusedLocationClient = LocationServices.getFusedLocationProviderClient(activity);
 
             if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -182,10 +182,10 @@ public class PostNewHouseFirstPresenter implements IPostNewHouseFirstPresenter {
                     Location location = task.getResult();
                     if (location != null) {
                         LatLng currentHousePosition = new LatLng(location.getLatitude(), location.getLongitude());
-                        iPostNewHouseFirstView.addHouseMarker(currentHousePosition);
-                        iPostNewHouseFirstView.moveCamera(currentHousePosition, isNeedZoom, isNeedAnimate, zoom);
-                        newHouseFirst.setLatitude(currentHousePosition.latitude);
-                        newHouseFirst.setLongitude(currentHousePosition.longitude);
+                        iPostHouseForRentView.addHouseMarker(currentHousePosition);
+                        iPostHouseForRentView.moveCamera(currentHousePosition, isNeedZoom, isNeedAnimate, zoom);
+                        houseForRent.setLatitude(currentHousePosition.latitude);
+                        houseForRent.setLongitude(currentHousePosition.longitude);
                     } else {
                         if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                             return;
@@ -202,10 +202,10 @@ public class PostNewHouseFirstPresenter implements IPostNewHouseFirstPresenter {
                     Toast.makeText(activity, "onLocationResult", Toast.LENGTH_SHORT).show();
                     super.onLocationResult(locationResult);
                     LatLng currentHousePosition = new LatLng(locationResult.getLastLocation().getLatitude(), locationResult.getLastLocation().getLongitude());
-                    iPostNewHouseFirstView.addHouseMarker(currentHousePosition);
-                    iPostNewHouseFirstView.moveCamera(currentHousePosition, isNeedZoom, isNeedAnimate, zoom);
-                    newHouseFirst.setLatitude(currentHousePosition.latitude);
-                    newHouseFirst.setLongitude(currentHousePosition.longitude);
+                    iPostHouseForRentView.addHouseMarker(currentHousePosition);
+                    iPostHouseForRentView.moveCamera(currentHousePosition, isNeedZoom, isNeedAnimate, zoom);
+                    houseForRent.setLatitude(currentHousePosition.latitude);
+                    houseForRent.setLongitude(currentHousePosition.longitude);
                     mFusedLocationClient.removeLocationUpdates(mLocationCallback);
                 }
             };
@@ -215,18 +215,18 @@ public class PostNewHouseFirstPresenter implements IPostNewHouseFirstPresenter {
             mLocationRequest.setFastestInterval(1000);
             mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
         } else {
-            LatLng currentHousePosition = new LatLng(newHouseFirst.getLatitude(), newHouseFirst.getLongitude());
-            iPostNewHouseFirstView.addHouseMarker(currentHousePosition);
-            iPostNewHouseFirstView.moveCamera(currentHousePosition, isNeedZoom, isNeedAnimate, zoom);
+            LatLng currentHousePosition = new LatLng(houseForRent.getLatitude(), houseForRent.getLongitude());
+            iPostHouseForRentView.addHouseMarker(currentHousePosition);
+            iPostHouseForRentView.moveCamera(currentHousePosition, isNeedZoom, isNeedAnimate, zoom);
         }
     }
 
     @Override
     public void handleChooseHouseLocationClick() {
         Intent intentChooseHouseLocationActivity = new Intent(activity, ChooseHouseLocationActivity.class);
-        intentChooseHouseLocationActivity.putExtra(EXTRA_LAT, newHouseFirst.getLatitude());
-        intentChooseHouseLocationActivity.putExtra(EXTRA_LNG, newHouseFirst.getLongitude());
-        activity.startActivityForResult(intentChooseHouseLocationActivity, PostNewHouseFirstActivity.RC_LATLNG);
+        intentChooseHouseLocationActivity.putExtra(EXTRA_LAT, houseForRent.getLatitude());
+        intentChooseHouseLocationActivity.putExtra(EXTRA_LNG, houseForRent.getLongitude());
+        activity.startActivityForResult(intentChooseHouseLocationActivity, PostHouseForRentActivity.RC_LATLNG);
     }
 
     @Override
@@ -239,9 +239,9 @@ public class PostNewHouseFirstPresenter implements IPostNewHouseFirstPresenter {
                         Toast.makeText(activity, "Bạn đã chọn ảnh đó rồi", Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    iPostNewHouseFirstView.setImagePictureFirst(uri);
+                    iPostHouseForRentView.setImagePictureFirst(uri);
                     housePictureUri.put("pictureFirst", uri);
-                    newHouseFirst.putPicture("pictureFirst");
+                    houseForRent.putPicture("pictureFirst");
                 }
                 break;
             case RC_PICK_2:
@@ -251,9 +251,9 @@ public class PostNewHouseFirstPresenter implements IPostNewHouseFirstPresenter {
                         Toast.makeText(activity, "Bạn đã chọn ảnh đó rồi", Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    iPostNewHouseFirstView.setImagePictureSecond(uri);
+                    iPostHouseForRentView.setImagePictureSecond(uri);
                     housePictureUri.put("pictureSecond", uri);
-                    newHouseFirst.putPicture("pictureSecond");
+                    houseForRent.putPicture("pictureSecond");
                 }
                 break;
             case RC_PICK_3:
@@ -263,9 +263,9 @@ public class PostNewHouseFirstPresenter implements IPostNewHouseFirstPresenter {
                         Toast.makeText(activity, "Bạn đã chọn ảnh đó rồi", Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    iPostNewHouseFirstView.setImagePictureThird(uri);
+                    iPostHouseForRentView.setImagePictureThird(uri);
                     housePictureUri.put("pictureThird", uri);
-                    newHouseFirst.putPicture("pictureThird");
+                    houseForRent.putPicture("pictureThird");
                 }
                 break;
             case RC_PICK_4:
@@ -275,9 +275,9 @@ public class PostNewHouseFirstPresenter implements IPostNewHouseFirstPresenter {
                         Toast.makeText(activity, "Bạn đã chọn ảnh đó rồi", Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    iPostNewHouseFirstView.setImagePictureFourth(uri);
+                    iPostHouseForRentView.setImagePictureFourth(uri);
                     housePictureUri.put("pictureFourth", uri);
-                    newHouseFirst.putPicture("pictureFourth");
+                    houseForRent.putPicture("pictureFourth");
                 }
                 break;
             case RC_PICK_5:
@@ -287,9 +287,9 @@ public class PostNewHouseFirstPresenter implements IPostNewHouseFirstPresenter {
                         Toast.makeText(activity, "Bạn đã chọn ảnh đó rồi", Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    iPostNewHouseFirstView.setImagePictureFifth(uri);
+                    iPostHouseForRentView.setImagePictureFifth(uri);
                     housePictureUri.put("pictureFifth", uri);
-                    newHouseFirst.putPicture("pictureFifth");
+                    houseForRent.putPicture("pictureFifth");
                 }
                 break;
             case RC_PICK_6:
@@ -299,17 +299,17 @@ public class PostNewHouseFirstPresenter implements IPostNewHouseFirstPresenter {
                         Toast.makeText(activity, "Bạn đã chọn ảnh đó rồi", Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    iPostNewHouseFirstView.setImagePictureSixth(uri);
+                    iPostHouseForRentView.setImagePictureSixth(uri);
                     housePictureUri.put("pictureSixth", uri);
-                    newHouseFirst.putPicture("pictureSixth");
+                    houseForRent.putPicture("pictureSixth");
                 }
                 break;
             case RC_LATLNG:
                 if (resultCode == RESULT_OK) {
                     double latitudeHouse = data.getDoubleExtra(EXTRA_LAT, 0);
                     double longitudeHouse = data.getDoubleExtra(EXTRA_LNG, 0);
-                    newHouseFirst.setLatitude(latitudeHouse);
-                    newHouseFirst.setLongitude(longitudeHouse);
+                    houseForRent.setLatitude(latitudeHouse);
+                    houseForRent.setLongitude(longitudeHouse);
                     handleGetCurrentHouseLocation(true, true, 14);
                 }
                 break;
@@ -324,26 +324,26 @@ public class PostNewHouseFirstPresenter implements IPostNewHouseFirstPresenter {
             return;
         }
 
-        iPostNewHouseFirstView.showDialogPostLoading("Đăng tin", "Đang đăng tin...");
+        iPostHouseForRentView.showDialogPostLoading("Đăng tin", "Đang đăng tin...");
 
-        String error = checkError(newHouseFirst.getPictures(), newHouseFirst.getAddress(), addressDetail, price, stretch, phone, email, describe);
+        String error = checkError(houseForRent.getPictures(), houseForRent.getAddress(), addressDetail, price, stretch, phone, email, describe);
         if (error != null) {
-            iPostNewHouseFirstView.showDialogPostFailue("Có lỗi xảy ra!", error, new SweetAlertDialog.OnSweetClickListener() {
+            iPostHouseForRentView.showDialogPostFailue("Có lỗi xảy ra!", error, new SweetAlertDialog.OnSweetClickListener() {
                 @Override
                 public void onClick(SweetAlertDialog sweetAlertDialog) {
-                    iPostNewHouseFirstView.hideDialogPost();
+                    iPostHouseForRentView.hideDialogPost();
                 }
             });
             return;
         }
 
-        newHouseFirst.getAddress().setDetail(addressDetail);
-        newHouseFirst.setDescription(describe);
-        newHouseFirst.setEmail(email);
-        newHouseFirst.setPhone(phone);
-        newHouseFirst.setPrice(Long.parseLong(price));
-        newHouseFirst.setStretch(Double.parseDouble(stretch));
-        newHouseFirst.setUserId(FirebaseUtils.getCurrentUserId());
+        houseForRent.getAddress().setDetail(addressDetail);
+        houseForRent.setDescription(describe);
+        houseForRent.setEmail(email);
+        houseForRent.setPhone(phone);
+        houseForRent.setPrice(Long.parseLong(price));
+        houseForRent.setStretch(Double.parseDouble(stretch));
+        houseForRent.setUserId(FirebaseUtils.getCurrentUserId());
 
         // Handle upload
         handleUpload();
@@ -351,12 +351,12 @@ public class PostNewHouseFirstPresenter implements IPostNewHouseFirstPresenter {
 
     public void handleUpload() {
         String[] pictureUploadPath = new String[]{
-                newHouseFirst.getPictures().get("pictureFirst") == null ? null : newHouseFirst.getPictures().get("pictureFirst").toString(),
-                newHouseFirst.getPictures().get("pictureSecond") == null ? null : newHouseFirst.getPictures().get("pictureSecond").toString(),
-                newHouseFirst.getPictures().get("pictureThird") == null ? null : newHouseFirst.getPictures().get("pictureThird").toString(),
-                newHouseFirst.getPictures().get("pictureFourth") == null ? null : newHouseFirst.getPictures().get("pictureFourth").toString(),
-                newHouseFirst.getPictures().get("pictureFifth") == null ? null : newHouseFirst.getPictures().get("pictureFifth").toString(),
-                newHouseFirst.getPictures().get("pictureSixth") == null ? null : newHouseFirst.getPictures().get("pictureSixth").toString()
+                houseForRent.getPictures().get("pictureFirst") == null ? null : houseForRent.getPictures().get("pictureFirst").toString(),
+                houseForRent.getPictures().get("pictureSecond") == null ? null : houseForRent.getPictures().get("pictureSecond").toString(),
+                houseForRent.getPictures().get("pictureThird") == null ? null : houseForRent.getPictures().get("pictureThird").toString(),
+                houseForRent.getPictures().get("pictureFourth") == null ? null : houseForRent.getPictures().get("pictureFourth").toString(),
+                houseForRent.getPictures().get("pictureFifth") == null ? null : houseForRent.getPictures().get("pictureFifth").toString(),
+                houseForRent.getPictures().get("pictureSixth") == null ? null : houseForRent.getPictures().get("pictureSixth").toString()
         };
 
         Uri[] housePictureUriArray = new Uri[]{
@@ -413,30 +413,30 @@ public class PostNewHouseFirstPresenter implements IPostNewHouseFirstPresenter {
 
     public void uploadDatabase() {
         if (isUploadPictureFailue) {
-            iPostNewHouseFirstView.showDialogPostFailue("Có lỗi xảy ra!", String.valueOf(errorUploadPicture), new SweetAlertDialog.OnSweetClickListener() {
+            iPostHouseForRentView.showDialogPostFailue("Có lỗi xảy ra!", String.valueOf(errorUploadPicture), new SweetAlertDialog.OnSweetClickListener() {
                 @Override
                 public void onClick(SweetAlertDialog sweetAlertDialog) {
-                    iPostNewHouseFirstView.hideDialogPost();
+                    iPostHouseForRentView.hideDialogPost();
                 }
             });
             return;
         }
-        newHouseFirst.setPubDate(-new Date().getTime());
-        databaseReferenceNewsHouseFirst.setValue(newHouseFirst).addOnCompleteListener(new OnCompleteListener<Void>() {
+        houseForRent.setPubDate(-new Date().getTime());
+        databaseReferenceHouseForRent.setValue(houseForRent).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    iPostNewHouseFirstView.showDialogPostSuccess("Đăng tin", "Đăng tin thành công", new SweetAlertDialog.OnSweetClickListener() {
+                    iPostHouseForRentView.showDialogPostSuccess("Đăng tin", "Đăng tin thành công", new SweetAlertDialog.OnSweetClickListener() {
                         @Override
                         public void onClick(SweetAlertDialog sweetAlertDialog) {
-                            iPostNewHouseFirstView.finishActivity();
+                            iPostHouseForRentView.finishActivity();
                         }
                     });
                 } else {
-                    iPostNewHouseFirstView.showDialogPostFailue("Có lỗi xảy ra!", "" + task.getException(), new SweetAlertDialog.OnSweetClickListener() {
+                    iPostHouseForRentView.showDialogPostFailue("Có lỗi xảy ra!", "" + task.getException(), new SweetAlertDialog.OnSweetClickListener() {
                         @Override
                         public void onClick(SweetAlertDialog sweetAlertDialog) {
-                            iPostNewHouseFirstView.hideDialogPost();
+                            iPostHouseForRentView.hideDialogPost();
                         }
                     });
                 }

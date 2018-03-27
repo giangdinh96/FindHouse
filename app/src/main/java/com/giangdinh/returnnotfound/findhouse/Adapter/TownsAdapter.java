@@ -13,6 +13,9 @@ import com.giangdinh.returnnotfound.findhouse.R;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by GiangDinh on 02/02/2018.
  */
@@ -64,10 +67,11 @@ public class TownsAdapter extends BaseAdapter {
     }
 
     public static class TownHolder {
-        public TextView tvTownName;
+        @BindView(R.id.tvTownName)
+        TextView tvTownName;
 
         public TownHolder(View view) {
-            tvTownName = view.findViewById(R.id.tvTownName);
+            ButterKnife.bind(this, view);
         }
     }
 }

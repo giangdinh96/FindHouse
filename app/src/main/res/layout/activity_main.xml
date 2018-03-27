@@ -18,21 +18,22 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" />
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="@dimen/fab_margin_bottom"
-        android:layout_marginRight="@dimen/fab_margin_right"
-        android:visibility="gone"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
-
-    <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
-        android:id="@+id/ahbnMain"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom" />
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.giangdinh.returnnotfound.findhouse.CustomView.NonSwipeableViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/nsvpMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/ahbnMain"
+            android:layout_alignParentTop="true" />
+
+        <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
+            android:id="@+id/ahbnMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>

@@ -1,4 +1,4 @@
-package com.giangdinh.returnnotfound.findhouse.UI.Main.Map.MapFirst;
+package com.giangdinh.returnnotfound.findhouse.UI.Main.Map.HouseForRent;
 
 
 import android.os.Bundle;
@@ -16,7 +16,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MapFirstFragment extends Fragment implements OnMapReadyCallback {
+public class HouseForRentFragment extends Fragment implements OnMapReadyCallback {
 
     @BindView(R.id.mapView)
     MapView mapView;
@@ -31,7 +31,7 @@ public class MapFirstFragment extends Fragment implements OnMapReadyCallback {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_map_first, container, false);
+        View view = inflater.inflate(R.layout.fragment_map_house_for_rent, container, false);
         ButterKnife.bind(this, view);
 
         initMapView(savedInstanceState);

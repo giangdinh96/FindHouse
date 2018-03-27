@@ -7,21 +7,25 @@
     <color name="colorBackgroundMain">#DCDEE3</color>
     <color name="colorDivider">#EEEEEE</color>
     <color name="colorShadowTitle">#6415989b</color>
-    <color name="colorWarn">#fda01c</color>
+    <color name="colorWarn">#ff4545</color>
 
 
     <color name="colorActionTab">#4080FF</color>
     <color name="colorActionNewsNormal">#606770</color>
-    <color name="colorActionNewsPressed">#4080FF</color>
-    <color name="colorActionNewsSelected">#4080FF</color>
+    <color name="colorActionNewsPressed">#1abcbf</color>
+    <color name="colorActionNewsSelected">#1abcbf</color>
 
     ////// Color for BottomNavigation
-    <color name="colorBackgroundBottomNavigation">#ffffff</color>
+
 
     <color name="colorTabNews">#B0B69696</color>
     <color name="colorTabMap">#B084BF84</color>
     <color name="colorTabProfile">#B07A7AC2</color>
 
+    <!--<color name="colorTabAccent">#FF15989B</color>-->
+    <!--<color name="colorTabInActive">#9c9c9c</color>-->
+
+    <color name="colorBackgroundBottomNavigation">#FFF</color>
     <color name="colorTabAccent">#FF15989B</color>
-    <color name="colorTabInActive">#9c9c9c</color>
+    <color name="colorTabInActive">#000000</color>
 </resources>

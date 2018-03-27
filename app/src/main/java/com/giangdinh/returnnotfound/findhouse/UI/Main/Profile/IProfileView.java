@@ -28,7 +28,7 @@ public interface IProfileView {
 
     void hideUser(int duration);
 
-    void setInformationForUser(String name,String photoUrl);
+    void setInformationForUser(String name, String photoUrl);
 
     void showSignOut(int duration);
 
@@ -53,5 +53,4 @@ public interface IProfileView {
     void delayClickSupport(int duration);
 
     void delayClickInformation(int duration);
-
 }

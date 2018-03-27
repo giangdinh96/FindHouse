@@ -47,7 +47,6 @@ public class ChooseHouseLocationActivity extends FragmentActivity implements OnM
     private Marker currentUserMarker;
 
     public static final int RC_PLACE_AUTOCOMPLETE = 1;
-    public static final String EXTRA_HOUSE = "com.giangdinh.returnnotfound.project.UI.ChooseHouseLocationActivity.EXTRA_HOUSE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

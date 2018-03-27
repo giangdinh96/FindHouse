@@ -13,6 +13,9 @@ import com.giangdinh.returnnotfound.findhouse.R;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by GiangDinh on 02/02/2018.
  */
@@ -65,10 +68,11 @@ public class ProvincesAdapter extends BaseAdapter {
     }
 
     public static class ProvinceHolder {
-        public TextView tvProvinceName;
+        @BindView(R.id.tvProvinceName)
+        TextView tvProvinceName;
 
         public ProvinceHolder(View view) {
-            tvProvinceName = view.findViewById(R.id.tvPrice);
+            ButterKnife.bind(this,view);
         }
     }
 }

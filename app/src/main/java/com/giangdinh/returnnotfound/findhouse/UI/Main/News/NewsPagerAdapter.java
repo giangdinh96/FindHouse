@@ -4,9 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.giangdinh.returnnotfound.findhouse.UI.Main.News.NewsFirst.NewsFirstFragment;
-import com.giangdinh.returnnotfound.findhouse.UI.Main.News.NewsSecond.NewsSecondFragment;
-import com.giangdinh.returnnotfound.findhouse.UI.Main.News.NewsThird.NewsThirdFragment;
+import com.giangdinh.returnnotfound.findhouse.UI.Main.News.FindHouse.FindHouseFragment;
+import com.giangdinh.returnnotfound.findhouse.UI.Main.News.HouseForRent.HouseForRentFragment;
 
 /**
  * Created by GiangDinh on 14/03/2018.
@@ -20,14 +19,12 @@ public class NewsPagerAdapter extends FragmentStatePagerAdapter {
     public NewsPagerAdapter(FragmentManager fm) {
         super(fm);
         fragments = new Fragment[]{
-                new NewsFirstFragment(),
-                new NewsSecondFragment(),
-                new NewsThirdFragment()
+                new HouseForRentFragment(),
+                new FindHouseFragment()
         };
         titles = new String[]{
-                "Tin cho thuê",
-                "Tin thuê",
-                "Tin ở ghép"
+                "Phòng cho thuê",
+                "Tìm phòng",
         };
     }
 
