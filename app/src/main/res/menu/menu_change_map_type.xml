@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mnNormal"
+        android:title="Bình thường" />
+    <item
+        android:id="@+id/mnSatellite"
+        android:title="Vệ tinh" />
+    <item
+        android:id="@+id/mnTerrain"
+        android:title="Địa hình" />
+    <item
+        android:id="@+id/mnHybrid"
+        android:title="Hỗn hợp" />
+</menu>

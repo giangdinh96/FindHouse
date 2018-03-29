@@ -1,4 +1,4 @@
-package com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst;
+package com.giangdinh.returnnotfound.findhouse.UI.PostHouseForRent;
 
 import android.Manifest;
 import android.app.Activity;
@@ -47,13 +47,13 @@ import java.util.Date;
 import java.util.HashMap;
 
 import static android.app.Activity.RESULT_OK;
-import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst.PostHouseForRentActivity.RC_LATLNG;
-import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst.PostHouseForRentActivity.RC_PICK_1;
-import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst.PostHouseForRentActivity.RC_PICK_2;
-import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst.PostHouseForRentActivity.RC_PICK_3;
-import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst.PostHouseForRentActivity.RC_PICK_4;
-import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst.PostHouseForRentActivity.RC_PICK_5;
-import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst.PostHouseForRentActivity.RC_PICK_6;
+import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseForRent.PostHouseForRentActivity.RC_LATLNG;
+import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseForRent.PostHouseForRentActivity.RC_PICK_1;
+import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseForRent.PostHouseForRentActivity.RC_PICK_2;
+import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseForRent.PostHouseForRentActivity.RC_PICK_3;
+import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseForRent.PostHouseForRentActivity.RC_PICK_4;
+import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseForRent.PostHouseForRentActivity.RC_PICK_5;
+import static com.giangdinh.returnnotfound.findhouse.UI.PostHouseForRent.PostHouseForRentActivity.RC_PICK_6;
 import static com.giangdinh.returnnotfound.findhouse.Utils.VariableGlobal.EXTRA_LAT;
 import static com.giangdinh.returnnotfound.findhouse.Utils.VariableGlobal.EXTRA_LNG;
 

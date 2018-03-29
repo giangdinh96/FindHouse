@@ -20,23 +20,24 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 public class HouseForRentFragment extends Fragment implements IHouseForRentView {
-
     public IHouseForRentPresenter iHouseForRentPresenter;
+
     @BindView(R.id.ptrvHouseForRent)
     PullToRefreshView ptrvHouseForRent;
     @BindView(R.id.rvHouseForRent)
     RecyclerView rvHouseForRent;
-    private HouseForRentAdapter houseForRentAdapter;
 
-    public static final String EXTRA_HOUSE_NEW_FIRST = "com.giangdinh.returnnotfound.findhouse.UI.Main.News.HouseNewsFirst.EXTRA_HOUSE_NEW_FIRST";
+    private HouseForRentAdapter houseForRentAdapter;
     public static boolean isNeedLoad = true;
+    Unbinder unbinder;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_news_house_for_rent, container, false);
-        ButterKnife.bind(this, view);
+        unbinder = ButterKnife.bind(this, view);
         iHouseForRentPresenter = new HouseForRentPresenter(this);
         initViews(view);
 
@@ -68,10 +69,7 @@ public class HouseForRentFragment extends Fragment implements IHouseForRentView 
         rvHouseForRent.setItemViewCacheSize(1);
         rvHouseForRent.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
         rvHouseForRent.setAdapter(this.houseForRentAdapter);
-        if (isNeedLoad) {
-            isNeedLoad = false;
-            iHouseForRentPresenter.handleGetNews();
-        }
+        iHouseForRentPresenter.handleGetNews();
     }
 
     @Override
@@ -125,6 +123,7 @@ public class HouseForRentFragment extends Fragment implements IHouseForRentView 
     @Override
     public void onDetach() {
         super.onDetach();
+        unbinder.unbind();
         iHouseForRentPresenter.handleDestroy();
     }
 }

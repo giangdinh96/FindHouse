@@ -54,7 +54,6 @@ public class ProfilePresenter implements IProfilePresenter {
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull final FirebaseAuth firebaseAuth) {
-                Log.d("Test", "ABC");
                 if (!isFirstStart) {
 //                    NewsFragment.isNeedLoad = true;
 //                    MapFragment.isNeedLoad = true;

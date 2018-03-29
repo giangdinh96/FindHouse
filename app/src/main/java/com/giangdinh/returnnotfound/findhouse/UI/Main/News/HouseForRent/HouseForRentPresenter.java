@@ -241,6 +241,7 @@ public class HouseForRentPresenter implements IHouseForRentPresenter {
 
     @Override
     public void handleGetNews() {
+        HouseForRentFragment.isNeedLoad = false;
         timeStartRequest = new Date().getTime();
         DatabaseReference databaseReferenceHouses = FirebaseUtils.getDatabase().getReference().child("news/houseForRent");
         Query query = databaseReferenceHouses.orderByChild("pubDate");

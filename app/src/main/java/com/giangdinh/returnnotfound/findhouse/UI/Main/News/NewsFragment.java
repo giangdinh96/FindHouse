@@ -16,11 +16,12 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.giangdinh.returnnotfound.findhouse.R;
-import com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst.PostHouseForRentActivity;
+import com.giangdinh.returnnotfound.findhouse.UI.PostHouseForRent.PostHouseForRentActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 
 /**
  * Created by GiangDinh on 14/03/2018.
@@ -37,6 +38,8 @@ public class NewsFragment extends Fragment implements INewsView {
     @BindView(R.id.fabPost)
     FloatingActionButton fabPost;
 
+    Unbinder unbinder;
+
     public NewsFragment() {
         setHasOptionsMenu(true);
     }
@@ -46,7 +49,7 @@ public class NewsFragment extends Fragment implements INewsView {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         setHasOptionsMenu(true);
         View view = inflater.inflate(R.layout.fragment_news, container, false);
-        ButterKnife.bind(this, view);
+        unbinder = ButterKnife.bind(this, view);
         iNewsPresenter = new NewsPresenter(this);
 
         initView();
@@ -76,9 +79,9 @@ public class NewsFragment extends Fragment implements INewsView {
     ////// Override
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
         menu.clear();
         inflater.inflate(R.menu.menu_news, menu);
-        super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override
@@ -100,5 +103,11 @@ public class NewsFragment extends Fragment implements INewsView {
     @Override
     public void showMessage(String message) {
         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        unbinder.unbind();
     }
 }

@@ -15,6 +15,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 public class HouseForRentFragment extends Fragment implements OnMapReadyCallback {
 
@@ -22,6 +23,8 @@ public class HouseForRentFragment extends Fragment implements OnMapReadyCallback
     MapView mapView;
 
     GoogleMap map;
+
+    Unbinder unbinder;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,7 +35,7 @@ public class HouseForRentFragment extends Fragment implements OnMapReadyCallback
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_map_house_for_rent, container, false);
-        ButterKnife.bind(this, view);
+        unbinder = ButterKnife.bind(this, view);
 
         initMapView(savedInstanceState);
 
@@ -64,6 +67,12 @@ public class HouseForRentFragment extends Fragment implements OnMapReadyCallback
     }
 
     @Override
+    public void onStop() {
+        super.onStop();
+        mapView.onStop();
+    }
+
+    @Override
     public void onLowMemory() {
         super.onLowMemory();
         mapView.onLowMemory();
@@ -73,5 +82,11 @@ public class HouseForRentFragment extends Fragment implements OnMapReadyCallback
     public void onDestroy() {
         super.onDestroy();
         mapView.onDestroy();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        unbinder.unbind();
     }
 }

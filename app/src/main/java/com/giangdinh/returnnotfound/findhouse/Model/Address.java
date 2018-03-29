@@ -2,11 +2,13 @@ package com.giangdinh.returnnotfound.findhouse.Model;
 
 import com.google.firebase.database.Exclude;
 
+import java.io.Serializable;
+
 /**
  * Created by GiangDinh on 02/02/2018.
  */
 
-public class Address {
+public class Address implements Serializable {
     private String id;
     private String detail;
     private String provinceId;

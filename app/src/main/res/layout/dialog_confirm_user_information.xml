@@ -86,7 +86,8 @@
                 android:inputType="phone"
                 android:maxLines="1"
                 android:paddingLeft="16dp"
-                android:paddingRight="16dp" />
+                android:paddingRight="16dp"
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -111,7 +112,8 @@
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:paddingLeft="16dp"
-                android:paddingRight="16dp" />
+                android:paddingRight="16dp"
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -136,7 +138,8 @@
                 android:inputType="numberSigned"
                 android:maxLines="1"
                 android:paddingLeft="16dp"
-                android:paddingRight="16dp" />
+                android:paddingRight="16dp"
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:layout_width="match_parent"

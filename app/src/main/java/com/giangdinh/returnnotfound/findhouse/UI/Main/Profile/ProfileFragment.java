@@ -43,6 +43,7 @@ import java.util.Arrays;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 
 /**
  * Created by GiangDinh on 24/01/2018.
@@ -89,6 +90,8 @@ public class ProfileFragment extends Fragment implements IProfileView, ISignOutD
     public static final int RC_SIGN_IN = 1000;
     public static final String EXTRA_USER = "com.giangdinh.returnnotfound.findhouse.UI.Main.Profile.EXTRA_USER";
 
+    Unbinder unbinder;
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -106,7 +109,7 @@ public class ProfileFragment extends Fragment implements IProfileView, ISignOutD
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        ButterKnife.bind(this, view);
+        unbinder = ButterKnife.bind(this, view);
         iProfilePresenter = new ProfilePresenter(this);
 
         initViews();
@@ -364,5 +367,11 @@ public class ProfileFragment extends Fragment implements IProfileView, ISignOutD
     public void onDestroy() {
         super.onDestroy();
         iProfilePresenter.handleDestroy();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        unbinder.unbind();
     }
 }

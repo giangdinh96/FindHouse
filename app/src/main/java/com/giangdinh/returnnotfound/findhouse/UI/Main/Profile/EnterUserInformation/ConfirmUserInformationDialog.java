@@ -32,6 +32,7 @@ import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 
 /**
  * Created by GiangDinh on 17/03/2018.
@@ -61,6 +62,7 @@ public class ConfirmUserInformationDialog extends DialogFragment implements ICof
 
     private RequestManager requestManager;
     private SweetAlertDialog confirmDialog;
+    Unbinder unbinder;
 
     public ConfirmUserInformationDialog() {
 
@@ -95,7 +97,7 @@ public class ConfirmUserInformationDialog extends DialogFragment implements ICof
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.dialog_confirm_user_information, container, false);
-        ButterKnife.bind(this, view);
+        unbinder = ButterKnife.bind(this, view);
 
         initViews();
         initDialog();
@@ -275,5 +277,11 @@ public class ConfirmUserInformationDialog extends DialogFragment implements ICof
 //        if (String.valueOf(error).endsWith("\n")) {
 //        }
         return String.valueOf(error);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        unbinder.unbind();
     }
 }

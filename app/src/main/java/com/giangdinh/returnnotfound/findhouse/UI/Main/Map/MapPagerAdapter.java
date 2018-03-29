@@ -13,7 +13,6 @@ import com.giangdinh.returnnotfound.findhouse.UI.Main.Map.HouseForRent.HouseForR
 
 public class MapPagerAdapter extends FragmentStatePagerAdapter {
 
-
     private Fragment[] fragments;
     private String[] titles;
 

@@ -21,10 +21,12 @@ import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.giangdinh.returnnotfound.findhouse.Model.HouseForRent;
 import com.giangdinh.returnnotfound.findhouse.R;
+import com.giangdinh.returnnotfound.findhouse.UI.HouseForRentDetail.HouseForRentDetailActivity;
 import com.giangdinh.returnnotfound.findhouse.Utils.DateUtils;
 import com.giangdinh.returnnotfound.findhouse.Utils.FirebaseUtils;
 import com.giangdinh.returnnotfound.findhouse.Utils.InternetUtils;
 import com.giangdinh.returnnotfound.findhouse.Utils.TextUtils;
+import com.giangdinh.returnnotfound.findhouse.Utils.VariableGlobal;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -269,9 +271,9 @@ public class HouseForRentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         houseForRentHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intentHouseDetail = new Intent(context, HouseDetailActivity.class);
-//                intentHouseDetail.putExtra(NewsFragment.EXTRA_HOUSE_NEW_FIRST, houseForRent);
-//                context.startActivity(intentHouseDetail);
+                Intent intentHouseForRentDetail = new Intent(context, HouseForRentDetailActivity.class);
+                intentHouseForRentDetail.putExtra(VariableGlobal.EXTRA_HOUSE_FOR_RENT, houseForRent);
+                context.startActivity(intentHouseForRentDetail);
             }
         });
     }

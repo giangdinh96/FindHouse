@@ -1,4 +1,4 @@
-package com.giangdinh.returnnotfound.findhouse.UI.PostHouseNewFirst;
+package com.giangdinh.returnnotfound.findhouse.UI.PostHouseForRent;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
