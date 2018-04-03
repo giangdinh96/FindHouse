@@ -31,7 +31,16 @@
     <color name="colorTabAccent">#FFFFFF</color>
     <color name="colorTabInActive">#000000</color>
 
+    ////// Tablayout
+
     <color name="tabBackground">#FFF</color>
     <color name="tabIndicatorColor">@color/colorPrimary</color>
     <color name="tabSelectedTextColor">@color/colorPrimary</color>
+
+
+    // SeekBar
+    <color name="colorBar">@color/colorBackgroundMain</color>
+    <color name="colorBarHighLight">#25B7D3</color>
+    <color name="colorThumb">#25B7D3</color>
+    <color name="colorThumbHighLight">#52c4da</color>
 </resources>

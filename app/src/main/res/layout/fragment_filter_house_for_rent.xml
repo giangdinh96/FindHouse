@@ -1,0 +1,110 @@
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Tỉnh thành"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/sProvinces"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_input_1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Huyện"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/sTowns"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_input_1" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Giá phòng" />
+
+        <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+            android:id="@+id/crsPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            app:bar_color="@color/colorBar"
+            app:bar_highlight_color="@color/colorBarHighLight"
+            app:left_thumb_color="@color/colorThumb"
+            app:left_thumb_color_pressed="@color/colorThumbHighLight"
+            app:right_thumb_color="@color/colorThumb"
+            app:right_thumb_color_pressed="@color/colorThumbHighLight" />
+
+
+        <TextView
+            android:id="@+id/tvStretch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Diện tích" />
+
+        <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+            android:id="@+id/crsStretch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            app:bar_color="@color/colorBar"
+            app:bar_highlight_color="@color/colorBarHighLight"
+            app:left_thumb_color="@color/colorThumb"
+            app:left_thumb_color_pressed="@color/colorThumbHighLight"
+            app:right_thumb_color="@color/colorThumb"
+            app:right_thumb_color_pressed="@color/colorThumbHighLight" />
+
+
+        <TextView
+            android:id="@+id/tvPubDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Thời gian" />
+
+        <com.crystal.crystalrangeseekbar.widgets.CrystalSeekbar
+            android:id="@+id/csPubDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            app:bar_color="@color/colorBar"
+            app:bar_highlight_color="@color/colorBarHighLight"
+            app:left_thumb_color="@color/colorThumb"
+            app:left_thumb_color_pressed="@color/colorThumbHighLight" />
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

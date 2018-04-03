@@ -6,12 +6,15 @@ import android.util.Log;
 import com.giangdinh.returnnotfound.findhouse.Model.HouseForRent;
 import com.giangdinh.returnnotfound.findhouse.Model.Province;
 import com.giangdinh.returnnotfound.findhouse.Model.Town;
+import com.giangdinh.returnnotfound.findhouse.UI.Main.Filter.HouseForRent.FilterHouseForRentFragment;
+import com.giangdinh.returnnotfound.findhouse.Utils.DateUtils;
 import com.giangdinh.returnnotfound.findhouse.Utils.FirebaseUtils;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Query;
+import com.orhanobut.hawk.Hawk;
 
 import java.util.Date;
 
@@ -42,38 +45,38 @@ public class NewsHouseForRentPresenter implements INewsHouseForRentPresenter {
     }
 
     public void getHawk() {
-//        hawkProvince = Hawk.get(FilterFragment.HAWK_PROVINCE);
-//        hawkTown = Hawk.get(FilterFragment.HAWK_TOWN);
-//
-//        if (Hawk.get(FilterFragment.HAWK_MIN_START_PRICE) != null) {
-//            hawkMinStartPrice = Hawk.get(FilterFragment.HAWK_MIN_START_PRICE);
-//        } else {
-//            hawkMinStartPrice = FilterFragment.MIN_PRICE;
-//        }
-//
-//        if (Hawk.get(FilterFragment.HAWK_MAX_START_PRICE) != null) {
-//            hawkMaxStartPrice = Hawk.get(FilterFragment.HAWK_MAX_START_PRICE);
-//        } else {
-//            hawkMaxStartPrice = FilterFragment.MAX_PRICE;
-//        }
-//
-//        if (Hawk.get(FilterFragment.HAWK_MIN_START_STRETCH) != null) {
-//            hawkMinStartStretch = Hawk.get(FilterFragment.HAWK_MIN_START_STRETCH);
-//        } else {
-//            hawkMinStartStretch = FilterFragment.MIN_STRETCH;
-//        }
-//
-//        if (Hawk.get(FilterFragment.HAWK_MAX_START_STRETCH) != null) {
-//            hawkMaxStartStretch = Hawk.get(FilterFragment.HAWK_MAX_START_STRETCH);
-//        } else {
-//            hawkMaxStartStretch = FilterFragment.MAX_STRETCH;
-//        }
-//
-//        if (Hawk.get(FilterFragment.HAWK_MIN_START_PUBDATE) != null) {
-//            hawkMinStartPubDate = Hawk.get(FilterFragment.HAWK_MIN_START_PUBDATE);
-//        } else {
-//            hawkMinStartPubDate = FilterFragment.MAX_PUBDATE;
-//        }
+        hawkProvince = Hawk.get(FilterHouseForRentFragment.HAWK_PROVINCE);
+        hawkTown = Hawk.get(FilterHouseForRentFragment.HAWK_TOWN);
+
+        if (Hawk.get(FilterHouseForRentFragment.HAWK_MIN_START_PRICE) != null) {
+            hawkMinStartPrice = Hawk.get(FilterHouseForRentFragment.HAWK_MIN_START_PRICE);
+        } else {
+            hawkMinStartPrice = FilterHouseForRentFragment.MIN_PRICE;
+        }
+
+        if (Hawk.get(FilterHouseForRentFragment.HAWK_MAX_START_PRICE) != null) {
+            hawkMaxStartPrice = Hawk.get(FilterHouseForRentFragment.HAWK_MAX_START_PRICE);
+        } else {
+            hawkMaxStartPrice = FilterHouseForRentFragment.MAX_PRICE;
+        }
+
+        if (Hawk.get(FilterHouseForRentFragment.HAWK_MIN_START_STRETCH) != null) {
+            hawkMinStartStretch = Hawk.get(FilterHouseForRentFragment.HAWK_MIN_START_STRETCH);
+        } else {
+            hawkMinStartStretch = FilterHouseForRentFragment.MIN_STRETCH;
+        }
+
+        if (Hawk.get(FilterHouseForRentFragment.HAWK_MAX_START_STRETCH) != null) {
+            hawkMaxStartStretch = Hawk.get(FilterHouseForRentFragment.HAWK_MAX_START_STRETCH);
+        } else {
+            hawkMaxStartStretch = FilterHouseForRentFragment.MAX_STRETCH;
+        }
+
+        if (Hawk.get(FilterHouseForRentFragment.HAWK_MIN_START_PUBDATE) != null) {
+            hawkMinStartPubDate = Hawk.get(FilterHouseForRentFragment.HAWK_MIN_START_PUBDATE);
+        } else {
+            hawkMinStartPubDate = FilterHouseForRentFragment.MAX_PUBDATE;
+        }
 
     }
 
@@ -103,53 +106,53 @@ public class NewsHouseForRentPresenter implements INewsHouseForRentPresenter {
             Log.e("Test", "onChildAdded-------New-------" + dataSnapshot.getKey());
             HouseForRent houseForRent = dataSnapshot.getValue(HouseForRent.class);
 
-            // Filter
-            // Province
-//            if (hawkProvince != null && !houseForRent.getAddress().getProvinceId().equals(hawkProvince.getId())) {
-//                return;
-//            }
-//            // Town
-//            if (hawkTown != null && !houseForRent.getAddress().getTownId().equals(hawkTown.getId())) {
-//                return;
-//            }
-//            // Price
-//            if (hawkMinStartPrice == FilterFragment.MIN_PRICE && hawkMaxStartPrice == FilterFragment.MAX_PRICE) {
-//
-//            } else if (hawkMinStartPrice == FilterFragment.MIN_PRICE) {
-//                if (houseForRent.getPrice() > hawkMaxStartPrice)
-//                    return;
-//            } else if (hawkMaxStartPrice == FilterFragment.MAX_PRICE) {
-//                if (houseForRent.getPrice() < hawkMinStartPrice)
-//                    return;
-//            } else if (hawkMinStartPrice == hawkMaxStartPrice) {
-//                if (houseForRent.getPrice() != hawkMinStartPrice)
-//                    return;
-//            } else {
-//                if (houseForRent.getPrice() < hawkMinStartPrice || houseForRent.getPrice() > hawkMaxStartPrice)
-//                    return;
-//            }
-//            // Stretch
-//            if (hawkMinStartStretch == FilterFragment.MIN_STRETCH && hawkMaxStartStretch == FilterFragment.MAX_STRETCH) {
-//
-//            } else if (hawkMinStartStretch == FilterFragment.MIN_STRETCH) {
-//                if (houseForRent.getStretch() > hawkMaxStartStretch)
-//                    return;
-//            } else if (hawkMaxStartStretch == FilterFragment.MAX_STRETCH) {
-//                if (houseForRent.getStretch() < hawkMinStartStretch)
-//                    return;
-//            } else if (hawkMinStartStretch == hawkMaxStartStretch) {
-//                if (houseForRent.getStretch() != hawkMinStartStretch)
-//                    return;
-//            } else {
-//                if (houseForRent.getStretch() < hawkMinStartStretch || houseForRent.getStretch() > hawkMaxStartStretch)
-//                    return;
-//            }
-//
-//            // PubDate
-//            if (hawkMinStartPubDate == FilterFragment.MAX_PUBDATE) {
-//            } else if (DateUtils.getDayAgoFromPubDate(-houseForRent.getPubDate()) > hawkMinStartPubDate) {
-//                return;
-//            }
+            //////Filter
+            //Province
+            if (hawkProvince != null && !houseForRent.getAddress().getProvinceId().equals(hawkProvince.getId())) {
+                return;
+            }
+            // Town
+            if (hawkTown != null && !houseForRent.getAddress().getTownId().equals(hawkTown.getId())) {
+                return;
+            }
+            // Price
+            if (hawkMinStartPrice == FilterHouseForRentFragment.MIN_PRICE && hawkMaxStartPrice == FilterHouseForRentFragment.MAX_PRICE) {
+
+            } else if (hawkMinStartPrice == FilterHouseForRentFragment.MIN_PRICE) {
+                if (houseForRent.getPrice() > hawkMaxStartPrice)
+                    return;
+            } else if (hawkMaxStartPrice == FilterHouseForRentFragment.MAX_PRICE) {
+                if (houseForRent.getPrice() < hawkMinStartPrice)
+                    return;
+            } else if (hawkMinStartPrice == hawkMaxStartPrice) {
+                if (houseForRent.getPrice() != hawkMinStartPrice)
+                    return;
+            } else {
+                if (houseForRent.getPrice() < hawkMinStartPrice || houseForRent.getPrice() > hawkMaxStartPrice)
+                    return;
+            }
+            // Stretch
+            if (hawkMinStartStretch == FilterHouseForRentFragment.MIN_STRETCH && hawkMaxStartStretch == FilterHouseForRentFragment.MAX_STRETCH) {
+
+            } else if (hawkMinStartStretch == FilterHouseForRentFragment.MIN_STRETCH) {
+                if (houseForRent.getStretch() > hawkMaxStartStretch)
+                    return;
+            } else if (hawkMaxStartStretch == FilterHouseForRentFragment.MAX_STRETCH) {
+                if (houseForRent.getStretch() < hawkMinStartStretch)
+                    return;
+            } else if (hawkMinStartStretch == hawkMaxStartStretch) {
+                if (houseForRent.getStretch() != hawkMinStartStretch)
+                    return;
+            } else {
+                if (houseForRent.getStretch() < hawkMinStartStretch || houseForRent.getStretch() > hawkMaxStartStretch)
+                    return;
+            }
+
+            // PubDate
+            if (hawkMinStartPubDate == FilterHouseForRentFragment.MAX_PUBDATE) {
+            } else if (DateUtils.getDayAgoFromPubDate(-houseForRent.getPubDate()) > hawkMinStartPubDate) {
+                return;
+            }
 
             // Check ok
             // Add to List
@@ -173,51 +176,51 @@ public class NewsHouseForRentPresenter implements INewsHouseForRentPresenter {
 
             // Filter
             // Province
-//            if (hawkProvince != null && !houseForRent.getAddress().getProvinceId().equals(hawkProvince.getId())) {
-//                return;
-//            }
-//            // Town
-//            if (hawkTown != null && !houseForRent.getAddress().getTownId().equals(hawkTown.getId())) {
-//                return;
-//            }
-//            // Price
-//            if (hawkMinStartPrice == FilterFragment.MIN_PRICE && hawkMaxStartPrice == FilterFragment.MAX_PRICE) {
-//
-//            } else if (hawkMinStartPrice == FilterFragment.MIN_PRICE) {
-//                if (houseForRent.getPrice() > hawkMaxStartPrice)
-//                    return;
-//            } else if (hawkMaxStartPrice == FilterFragment.MAX_PRICE) {
-//                if (houseForRent.getPrice() < hawkMinStartPrice)
-//                    return;
-//            } else if (hawkMinStartPrice == hawkMaxStartPrice) {
-//                if (houseForRent.getPrice() != hawkMinStartPrice)
-//                    return;
-//            } else {
-//                if (houseForRent.getPrice() < hawkMinStartPrice || houseForRent.getPrice() > hawkMaxStartPrice)
-//                    return;
-//            }
-//            // Stretch
-//            if (hawkMinStartStretch == FilterFragment.MIN_STRETCH && hawkMaxStartStretch == FilterFragment.MAX_STRETCH) {
-//
-//            } else if (hawkMinStartStretch == FilterFragment.MIN_STRETCH) {
-//                if (houseForRent.getStretch() > hawkMaxStartStretch)
-//                    return;
-//            } else if (hawkMaxStartStretch == FilterFragment.MAX_STRETCH) {
-//                if (houseForRent.getStretch() < hawkMinStartStretch)
-//                    return;
-//            } else if (hawkMinStartStretch == hawkMaxStartStretch) {
-//                if (houseForRent.getStretch() != hawkMinStartStretch)
-//                    return;
-//            } else {
-//                if (houseForRent.getStretch() < hawkMinStartStretch || houseForRent.getStretch() > hawkMaxStartStretch)
-//                    return;
-//            }
-//
-//            // PubDate
-//            if (hawkMinStartPubDate == FilterFragment.MAX_PUBDATE) {
-//            } else if (DateUtils.getDayAgoFromPubDate(-houseForRent.getPubDate()) > hawkMinStartPubDate) {
-//                return;
-//            }
+            if (hawkProvince != null && !houseForRent.getAddress().getProvinceId().equals(hawkProvince.getId())) {
+                return;
+            }
+            // Town
+            if (hawkTown != null && !houseForRent.getAddress().getTownId().equals(hawkTown.getId())) {
+                return;
+            }
+            // Price
+            if (hawkMinStartPrice == FilterHouseForRentFragment.MIN_PRICE && hawkMaxStartPrice == FilterHouseForRentFragment.MAX_PRICE) {
+
+            } else if (hawkMinStartPrice == FilterHouseForRentFragment.MIN_PRICE) {
+                if (houseForRent.getPrice() > hawkMaxStartPrice)
+                    return;
+            } else if (hawkMaxStartPrice == FilterHouseForRentFragment.MAX_PRICE) {
+                if (houseForRent.getPrice() < hawkMinStartPrice)
+                    return;
+            } else if (hawkMinStartPrice == hawkMaxStartPrice) {
+                if (houseForRent.getPrice() != hawkMinStartPrice)
+                    return;
+            } else {
+                if (houseForRent.getPrice() < hawkMinStartPrice || houseForRent.getPrice() > hawkMaxStartPrice)
+                    return;
+            }
+            // Stretch
+            if (hawkMinStartStretch == FilterHouseForRentFragment.MIN_STRETCH && hawkMaxStartStretch == FilterHouseForRentFragment.MAX_STRETCH) {
+
+            } else if (hawkMinStartStretch == FilterHouseForRentFragment.MIN_STRETCH) {
+                if (houseForRent.getStretch() > hawkMaxStartStretch)
+                    return;
+            } else if (hawkMaxStartStretch == FilterHouseForRentFragment.MAX_STRETCH) {
+                if (houseForRent.getStretch() < hawkMinStartStretch)
+                    return;
+            } else if (hawkMinStartStretch == hawkMaxStartStretch) {
+                if (houseForRent.getStretch() != hawkMinStartStretch)
+                    return;
+            } else {
+                if (houseForRent.getStretch() < hawkMinStartStretch || houseForRent.getStretch() > hawkMaxStartStretch)
+                    return;
+            }
+
+            // PubDate
+            if (hawkMinStartPubDate == FilterHouseForRentFragment.MAX_PUBDATE) {
+            } else if (DateUtils.getDayAgoFromPubDate(-houseForRent.getPubDate()) > hawkMinStartPubDate) {
+                return;
+            }
 
             houseForRent.setId(dataSnapshot.getKey());
             iNewsHouseForRentView.changeItemHouse(houseForRent);
