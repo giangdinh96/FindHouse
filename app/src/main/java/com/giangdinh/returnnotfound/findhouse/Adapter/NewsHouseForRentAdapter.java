@@ -1,4 +1,4 @@
-package com.giangdinh.returnnotfound.findhouse.UI.Main.News.HouseForRent;
+package com.giangdinh.returnnotfound.findhouse.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -44,13 +44,13 @@ import butterknife.ButterKnife;
  * Created by GiangDinh on 25/01/2018.
  */
 
-public class HouseForRentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class NewsHouseForRentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
     private ArrayList<HouseForRent> items;
     private LayoutInflater layoutInflater;
     private RequestManager requestManager;
 
-    public HouseForRentAdapter(Context context) {
+    public NewsHouseForRentAdapter(Context context) {
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
         this.requestManager = Glide.with(context);

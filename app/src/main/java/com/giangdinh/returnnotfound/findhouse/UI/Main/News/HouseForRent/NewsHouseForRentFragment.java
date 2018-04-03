@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.giangdinh.returnnotfound.findhouse.Adapter.NewsHouseForRentAdapter;
 import com.giangdinh.returnnotfound.findhouse.Model.HouseForRent;
 import com.giangdinh.returnnotfound.findhouse.R;
 import com.giangdinh.returnnotfound.findhouse.Utils.PreCachingLayoutManager;
@@ -22,15 +23,15 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class HouseForRentFragment extends Fragment implements IHouseForRentView {
-    public IHouseForRentPresenter iHouseForRentPresenter;
+public class NewsHouseForRentFragment extends Fragment implements INewsHouseForRentView {
+    public INewsHouseForRentPresenter iNewsHouseForRentPresenter;
 
     @BindView(R.id.ptrvHouseForRent)
     PullToRefreshView ptrvHouseForRent;
     @BindView(R.id.rvHouseForRent)
     RecyclerView rvHouseForRent;
 
-    private HouseForRentAdapter houseForRentAdapter;
+    private NewsHouseForRentAdapter newsHouseForRentAdapter;
     public static boolean isNeedLoad = true;
     Unbinder unbinder;
 
@@ -38,7 +39,7 @@ public class HouseForRentFragment extends Fragment implements IHouseForRentView 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_news_house_for_rent, container, false);
         unbinder = ButterKnife.bind(this, view);
-        iHouseForRentPresenter = new HouseForRentPresenter(this);
+        iNewsHouseForRentPresenter = new NewsHouseForRentPresenter(this);
         initViews(view);
 
         initNews();
@@ -53,14 +54,14 @@ public class HouseForRentFragment extends Fragment implements IHouseForRentView 
         ptrvHouseForRent.setOnRefreshListener(new PullToRefreshView.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                iHouseForRentPresenter.handleRefresh();
+                iNewsHouseForRentPresenter.handleRefresh();
             }
         });
     }
 
     @Override
     public void initNews() {
-        houseForRentAdapter = new HouseForRentAdapter(getContext());
+        newsHouseForRentAdapter = new NewsHouseForRentAdapter(getContext());
         PreCachingLayoutManager preCachingLayoutManager = new PreCachingLayoutManager(getContext());
         preCachingLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         preCachingLayoutManager.setExtraLayoutSpace(2 * getContext().getResources().getDisplayMetrics().heightPixels);
@@ -68,15 +69,15 @@ public class HouseForRentFragment extends Fragment implements IHouseForRentView 
         rvHouseForRent.setLayoutManager(preCachingLayoutManager);
         rvHouseForRent.setItemViewCacheSize(1);
         rvHouseForRent.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
-        rvHouseForRent.setAdapter(this.houseForRentAdapter);
-        iHouseForRentPresenter.handleGetNews();
+        rvHouseForRent.setAdapter(this.newsHouseForRentAdapter);
+        iNewsHouseForRentPresenter.handleGetNews();
     }
 
     @Override
     public void refreshList() {
-        houseForRentAdapter.removeAllItemHouse();
-        houseForRentAdapter = new HouseForRentAdapter(getContext());
-        rvHouseForRent.setAdapter(houseForRentAdapter);
+        newsHouseForRentAdapter.removeAllItemHouse();
+        newsHouseForRentAdapter = new NewsHouseForRentAdapter(getContext());
+        rvHouseForRent.setAdapter(newsHouseForRentAdapter);
     }
 
     @Override
@@ -86,27 +87,27 @@ public class HouseForRentFragment extends Fragment implements IHouseForRentView 
 
     @Override
     public void addItemHouse(HouseForRent houseForRent) {
-        houseForRentAdapter.addItemHouse(houseForRent);
+        newsHouseForRentAdapter.addItemHouse(houseForRent);
     }
 
     @Override
     public void addItemHouse(int position, HouseForRent houseForRent) {
-        houseForRentAdapter.addItemHouse(position, houseForRent);
+        newsHouseForRentAdapter.addItemHouse(position, houseForRent);
     }
 
     @Override
     public void changeItemHouse(HouseForRent houseForRent) {
-        houseForRentAdapter.changeItemHouse(houseForRent);
+        newsHouseForRentAdapter.changeItemHouse(houseForRent);
     }
 
     @Override
     public void removeAllItemHouse() {
-        houseForRentAdapter.removeAllItemHouse();
+        newsHouseForRentAdapter.removeAllItemHouse();
     }
 
     @Override
     public void loadNews(ArrayList<HouseForRent> houseForRents) {
-        houseForRentAdapter.addAllItemHouse(houseForRents);
+        newsHouseForRentAdapter.addAllItemHouse(houseForRents);
     }
 
     @Override
@@ -124,6 +125,6 @@ public class HouseForRentFragment extends Fragment implements IHouseForRentView 
     public void onDetach() {
         super.onDetach();
         unbinder.unbind();
-        iHouseForRentPresenter.handleDestroy();
+        iNewsHouseForRentPresenter.handleDestroy();
     }
 }

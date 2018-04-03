@@ -28,6 +28,9 @@ public class MainPresenter implements IMainPresenter {
                 iMainView.setTitle(context.getResources().getString(R.string.titleTabMap));
                 break;
             case 2:
+                iMainView.setTitle(context.getResources().getString(R.string.titleTabFilter));
+                break;
+            case 3:
                 iMainView.setTitle(context.getResources().getString(R.string.titleTabProfile));
                 break;
         }

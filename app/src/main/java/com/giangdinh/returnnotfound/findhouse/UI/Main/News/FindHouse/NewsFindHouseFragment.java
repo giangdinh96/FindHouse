@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.giangdinh.returnnotfound.findhouse.R;
 
-public class FindHouseFragment extends Fragment {
+public class NewsFindHouseFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

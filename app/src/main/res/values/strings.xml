@@ -4,6 +4,7 @@
 
     <string name="titleTabNews">Bảng tin</string>
     <string name="titleTabMap">Bản đồ</string>
+    <string name="titleTabFilter">Lọc tin</string>
     <string name="titleTabProfile">Hồ sơ</string>
 
     <string name="postNewsNow">Đăng tin ngay</string>

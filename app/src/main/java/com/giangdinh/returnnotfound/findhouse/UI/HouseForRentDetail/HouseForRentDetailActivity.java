@@ -96,8 +96,6 @@ public class HouseForRentDetailActivity extends AppCompatActivity implements IHo
 
     private void receiveHouse() {
         houseForRent = (HouseForRent) getIntent().getSerializableExtra(VariableGlobal.EXTRA_HOUSE_FOR_RENT);
-//        if (houseForRent == null)
-//            houseForRent = (HouseForRent) getIntent().getSerializableExtra(MapFragment.EXTRA_HOUSE);
         iHouseForRentDetailPresenter.handleReceiveHouseForRent(houseForRent);
     }
 

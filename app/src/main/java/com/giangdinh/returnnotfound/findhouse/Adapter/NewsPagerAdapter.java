@@ -1,30 +1,30 @@
-package com.giangdinh.returnnotfound.findhouse.UI.Main.Map;
+package com.giangdinh.returnnotfound.findhouse.Adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.giangdinh.returnnotfound.findhouse.UI.Main.Map.FindHouse.MapFindHouseFragment;
-import com.giangdinh.returnnotfound.findhouse.UI.Main.Map.HouseForRent.MapHouseForRentFragment;
+import com.giangdinh.returnnotfound.findhouse.UI.Main.News.FindHouse.NewsFindHouseFragment;
+import com.giangdinh.returnnotfound.findhouse.UI.Main.News.HouseForRent.NewsHouseForRentFragment;
 
 /**
  * Created by GiangDinh on 14/03/2018.
  */
 
-public class MapPagerAdapter extends FragmentStatePagerAdapter {
+public class NewsPagerAdapter extends FragmentStatePagerAdapter {
 
-    private Fragment[] fragments;
     private String[] titles;
+    private Fragment[] fragments;
 
-    public MapPagerAdapter(FragmentManager fm) {
+    public NewsPagerAdapter(FragmentManager fm) {
         super(fm);
         fragments = new Fragment[]{
-                new MapHouseForRentFragment(),
-                new MapFindHouseFragment()
+                new NewsHouseForRentFragment(),
+                new NewsFindHouseFragment()
         };
         titles = new String[]{
                 "Phòng cho thuê",
-                "Tìm phòng"
+                "Tìm phòng",
         };
     }
 

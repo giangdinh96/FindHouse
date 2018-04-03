@@ -10,7 +10,9 @@
         android:id="@+id/tlNews"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabSelectedTextColor="@color/colorPrimary" />
+        app:tabBackground="@color/tabBackground"
+        app:tabIndicatorColor="@color/tabIndicatorColor"
+        app:tabSelectedTextColor="@color/tabSelectedTextColor" />
 
     <View
         android:layout_width="match_parent"

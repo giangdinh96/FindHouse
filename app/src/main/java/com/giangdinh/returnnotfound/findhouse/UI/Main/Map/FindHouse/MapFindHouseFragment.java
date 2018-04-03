@@ -17,7 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class FindHouseFragment extends Fragment implements OnMapReadyCallback {
+public class MapFindHouseFragment extends Fragment implements OnMapReadyCallback {
 
     @BindView(R.id.mapView)
     MapView mapView;

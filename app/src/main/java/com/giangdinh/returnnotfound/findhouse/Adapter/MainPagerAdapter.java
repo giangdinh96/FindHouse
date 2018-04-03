@@ -1,9 +1,10 @@
-package com.giangdinh.returnnotfound.findhouse.UI.Main;
+package com.giangdinh.returnnotfound.findhouse.Adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.giangdinh.returnnotfound.findhouse.UI.Main.Filter.FilterFragment;
 import com.giangdinh.returnnotfound.findhouse.UI.Main.Map.MapFragment;
 import com.giangdinh.returnnotfound.findhouse.UI.Main.News.NewsFragment;
 import com.giangdinh.returnnotfound.findhouse.UI.Main.Profile.ProfileFragment;
@@ -20,6 +21,7 @@ public class MainPagerAdapter extends FragmentStatePagerAdapter {
         fragments = new Fragment[]{
                 new NewsFragment(),
                 new MapFragment(),
+                new FilterFragment(),
                 new ProfileFragment()
         };
     }

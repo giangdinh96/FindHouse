@@ -20,12 +20,18 @@
 
     <color name="colorTabNews">#B0B69696</color>
     <color name="colorTabMap">#B084BF84</color>
+    <color name="colorTabFilter">#B084BF84</color>
     <color name="colorTabProfile">#B07A7AC2</color>
 
+    <!--<color name="colorBackgroundBottomNavigation">#FFF</color>-->
     <!--<color name="colorTabAccent">#FF15989B</color>-->
-    <!--<color name="colorTabInActive">#9c9c9c</color>-->
+    <!--<color name="colorTabInActive">#000000</color>-->
 
-    <color name="colorBackgroundBottomNavigation">#FFF</color>
-    <color name="colorTabAccent">#FF15989B</color>
+    <color name="colorBackgroundBottomNavigation">@color/colorPrimary</color>
+    <color name="colorTabAccent">#FFFFFF</color>
     <color name="colorTabInActive">#000000</color>
+
+    <color name="tabBackground">#FFF</color>
+    <color name="tabIndicatorColor">@color/colorPrimary</color>
+    <color name="tabSelectedTextColor">@color/colorPrimary</color>
 </resources>

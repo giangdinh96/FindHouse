@@ -19,8 +19,8 @@ import java.util.Date;
  * Created by GiangDinh on 22/03/2018.
  */
 
-public class HouseForRentPresenter implements IHouseForRentPresenter {
-    private IHouseForRentView iHouseForRentView;
+public class NewsHouseForRentPresenter implements INewsHouseForRentPresenter {
+    private INewsHouseForRentView iNewsHouseForRentView;
     private long timeStartRequest;
     private int newsCount;
     private boolean isRefreshShow;
@@ -34,8 +34,8 @@ public class HouseForRentPresenter implements IHouseForRentPresenter {
     private Integer hawkMaxStartStretch;
     private Integer hawkMinStartPubDate;
 
-    public HouseForRentPresenter(IHouseForRentView iHouseForRentView) {
-        this.iHouseForRentView = iHouseForRentView;
+    public NewsHouseForRentPresenter(INewsHouseForRentView iNewsHouseForRentView) {
+        this.iNewsHouseForRentView = iNewsHouseForRentView;
         this.getHawk();
         this.newsCount = 0;
         this.timeStartRequest = -1;
@@ -82,16 +82,16 @@ public class HouseForRentPresenter implements IHouseForRentPresenter {
         if (isRefreshShow)
             return;
         isRefreshShow = true;
-        iHouseForRentView.showRefresh(true);
+        iNewsHouseForRentView.showRefresh(true);
         getHawk();
         newsCount = 0;
         removeGetHousesEvent();
-        iHouseForRentView.refreshList();
+        iNewsHouseForRentView.refreshList();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 isRefreshShow = false;
-                iHouseForRentView.showRefresh(false);
+                iNewsHouseForRentView.showRefresh(false);
                 handleGetNews();
             }
         }, 1000);
@@ -155,13 +155,13 @@ public class HouseForRentPresenter implements IHouseForRentPresenter {
             // Add to List
             houseForRent.setId(dataSnapshot.getKey());
             if (timeStartRequest >= (-houseForRent.getPubDate())) {
-                iHouseForRentView.addItemHouse(houseForRent);
+                iNewsHouseForRentView.addItemHouse(houseForRent);
             } else {
                 if (FirebaseUtils.isSignIn() && houseForRent.getUserId().equals(FirebaseUtils.getCurrentUserId())) {
-                    iHouseForRentView.addItemHouse(0, houseForRent);
+                    iNewsHouseForRentView.addItemHouse(0, houseForRent);
                 } else {
                     newsCount++;
-                    iHouseForRentView.showNotification("Bài đăng mới", "Có " + newsCount + " tin mới");
+                    iNewsHouseForRentView.showNotification("Bài đăng mới", "Có " + newsCount + " tin mới");
                 }
             }
         }
@@ -220,7 +220,7 @@ public class HouseForRentPresenter implements IHouseForRentPresenter {
 //            }
 
             houseForRent.setId(dataSnapshot.getKey());
-            iHouseForRentView.changeItemHouse(houseForRent);
+            iNewsHouseForRentView.changeItemHouse(houseForRent);
         }
 
         @Override
@@ -241,7 +241,7 @@ public class HouseForRentPresenter implements IHouseForRentPresenter {
 
     @Override
     public void handleGetNews() {
-        HouseForRentFragment.isNeedLoad = false;
+        NewsHouseForRentFragment.isNeedLoad = false;
         timeStartRequest = new Date().getTime();
         DatabaseReference databaseReferenceHouses = FirebaseUtils.getDatabase().getReference().child("news/houseForRent");
         Query query = databaseReferenceHouses.orderByChild("pubDate");
@@ -251,7 +251,7 @@ public class HouseForRentPresenter implements IHouseForRentPresenter {
     @Override
     public void handleDestroy() {
         removeGetHousesEvent();
-        HouseForRentFragment.isNeedLoad = true;
+        NewsHouseForRentFragment.isNeedLoad = true;
     }
 
     public void removeGetHousesEvent() {

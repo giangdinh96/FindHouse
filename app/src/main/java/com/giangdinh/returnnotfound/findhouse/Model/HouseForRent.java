@@ -23,7 +23,6 @@ public class HouseForRent implements Serializable {
     private long pubDate;
     private double stretch;
     private String userId;
-    private HashMap<String, Object> usersHide;
     private HashMap<String, Object> usersLike;
 
     public HouseForRent() {
@@ -39,7 +38,6 @@ public class HouseForRent implements Serializable {
         this.pubDate = 0;
         this.stretch = 0;
         this.userId = "";
-        this.usersHide = new HashMap<>();
         this.usersLike = new HashMap<>();
     }
 
@@ -137,14 +135,6 @@ public class HouseForRent implements Serializable {
 
     public void setUserId(String userId) {
         this.userId = userId;
-    }
-
-    public HashMap<String, Object> getUsersHide() {
-        return usersHide;
-    }
-
-    public void setUsersHide(HashMap<String, Object> usersHide) {
-        this.usersHide = usersHide;
     }
 
     public HashMap<String, Object> getUsersLike() {

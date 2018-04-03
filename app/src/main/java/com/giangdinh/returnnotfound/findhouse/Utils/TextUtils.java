@@ -60,7 +60,7 @@ public class TextUtils {
         if (relsult.endsWith(",0")) {
             relsult = relsult.substring(0, relsult.length() - 2);
         }
-        relsult = relsult + " m";
+        relsult = relsult + " m2";
         return relsult;
     }
 }

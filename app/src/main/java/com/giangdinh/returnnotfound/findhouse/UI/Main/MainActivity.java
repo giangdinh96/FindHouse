@@ -3,11 +3,11 @@ package com.giangdinh.returnnotfound.findhouse.UI.Main;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.widget.Toast;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
+import com.giangdinh.returnnotfound.findhouse.Adapter.MainPagerAdapter;
 import com.giangdinh.returnnotfound.findhouse.CustomView.NonSwipeableViewPager;
 import com.giangdinh.returnnotfound.findhouse.R;
 
@@ -57,10 +57,12 @@ public class MainActivity extends AppCompatActivity implements IMainView {
     private void initBottomNavigation() {
         AHBottomNavigationItem tabNews = new AHBottomNavigationItem(R.string.titleTabNews, R.drawable.ic_news, R.color.colorTabNews);
         AHBottomNavigationItem tabMap = new AHBottomNavigationItem(R.string.titleTabMap, R.drawable.ic_map, R.color.colorTabMap);
+        AHBottomNavigationItem tabFilter = new AHBottomNavigationItem(R.string.titleTabFilter, R.drawable.ic_filter, R.color.colorTabFilter);
         AHBottomNavigationItem tabProfile = new AHBottomNavigationItem(R.string.titleTabProfile, R.drawable.ic_profile, R.color.colorTabProfile);
 
         ahbnMain.addItem(tabNews);
         ahbnMain.addItem(tabMap);
+        ahbnMain.addItem(tabFilter);
         ahbnMain.addItem(tabProfile);
 
         ahbnMain.setTitleState(AHBottomNavigation.TitleState.ALWAYS_HIDE);
@@ -96,12 +98,6 @@ public class MainActivity extends AppCompatActivity implements IMainView {
     @Override
     public void showMessage(String message) {
         Toast.makeText(this, "" + message, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
     }
 
     @Override

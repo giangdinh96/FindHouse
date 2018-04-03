@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.giangdinh.returnnotfound.findhouse.Adapter.NewsPagerAdapter;
 import com.giangdinh.returnnotfound.findhouse.R;
 import com.giangdinh.returnnotfound.findhouse.UI.PostHouseForRent.PostHouseForRentActivity;
 

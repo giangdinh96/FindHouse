@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * Created by GiangDinh on 22/03/2018.
  */
 
-public interface IHouseForRentView {
+public interface INewsHouseForRentView {
     void initNews();
 
     void refreshList();
