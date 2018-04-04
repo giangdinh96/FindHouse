@@ -3,6 +3,7 @@ package com.giangdinh.returnnotfound.findhouse.UI.Main.Filter.HouseForRent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -253,6 +254,7 @@ public class FilterHouseForRentFragment extends Fragment implements IFilterHouse
         crsPrice.setOnRangeSeekbarChangeListener(new OnRangeSeekbarChangeListener() {
             @Override
             public void valueChanged(Number minValue, Number maxValue) {
+                Log.d("Test", "" + "crsPrice Change");
                 iFilterHouseForRentPresenter.handlePriceChange(minValue, maxValue);
             }
         });
@@ -260,6 +262,7 @@ public class FilterHouseForRentFragment extends Fragment implements IFilterHouse
         crsPrice.setOnRangeSeekbarFinalValueListener(new OnRangeSeekbarFinalValueListener() {
             @Override
             public void finalValue(Number minValue, Number maxValue) {
+                Log.d("Test", "" + "crsPrice Change Final");
                 iFilterHouseForRentPresenter.handlePriceFinalChange(minValue, maxValue);
             }
         });
@@ -274,6 +277,7 @@ public class FilterHouseForRentFragment extends Fragment implements IFilterHouse
         crsStretch.setOnRangeSeekbarFinalValueListener(new OnRangeSeekbarFinalValueListener() {
             @Override
             public void finalValue(Number minValue, Number maxValue) {
+                Log.d("Test", "" + "crsStretch Change Final");
                 iFilterHouseForRentPresenter.handleStretchFinalChange(minValue, maxValue);
             }
         });
@@ -288,6 +292,7 @@ public class FilterHouseForRentFragment extends Fragment implements IFilterHouse
         csPubDate.setOnSeekbarFinalValueListener(new OnSeekbarFinalValueListener() {
             @Override
             public void finalValue(Number value) {
+                Log.d("Test", "" + "csPubDate Change Final");
                 iFilterHouseForRentPresenter.handlePubDateFinalChange(value);
             }
         });

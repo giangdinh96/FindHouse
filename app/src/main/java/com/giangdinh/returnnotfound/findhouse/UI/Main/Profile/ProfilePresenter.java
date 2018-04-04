@@ -12,6 +12,8 @@ import com.facebook.FacebookException;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.giangdinh.returnnotfound.findhouse.Model.User;
+import com.giangdinh.returnnotfound.findhouse.UI.Main.Map.HouseForRent.MapHouseForRentFragment;
+import com.giangdinh.returnnotfound.findhouse.UI.Main.News.HouseForRent.NewsHouseForRentFragment;
 import com.giangdinh.returnnotfound.findhouse.Utils.FirebaseUtils;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -42,6 +44,7 @@ public class ProfilePresenter implements IProfilePresenter {
     private FirebaseAuth.AuthStateListener authStateListener;
 
     private boolean isFirstStart = true;
+    private boolean isCancelConfirm = false;
 
     public ProfilePresenter(IProfileView iProfileView) {
         this.context = ((ProfileFragment) iProfileView).getContext();
@@ -63,6 +66,8 @@ public class ProfilePresenter implements IProfilePresenter {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 if (dataSnapshot != null && dataSnapshot.exists()) {
+                                    NewsHouseForRentFragment.isNeedLoad = true;
+                                    MapHouseForRentFragment.isNeedLoad = true;
                                     iProfileView.setInformationForUser(FirebaseUtils.getCurrentUserName(), FirebaseUtils.getCurrentUserPhotoUrl());
                                     iProfileView.updateUISignIn(1000, 300);
                                 } else {
@@ -82,6 +87,12 @@ public class ProfilePresenter implements IProfilePresenter {
                         });
                     } else {
                         // SignOut
+                        if (!isCancelConfirm) {
+                            NewsHouseForRentFragment.isNeedLoad = true;
+                            MapHouseForRentFragment.isNeedLoad = true;
+                        } else {
+                            isCancelConfirm = false;
+                        }
                         iProfileView.updateUISignOut(1000, 300);
                     }
                 } else {
@@ -123,12 +134,15 @@ public class ProfilePresenter implements IProfilePresenter {
 
     @Override
     public void handleConfirmInformationSuccess() {
+        NewsHouseForRentFragment.isNeedLoad = true;
+        MapHouseForRentFragment.isNeedLoad = true;
         iProfileView.setInformationForUser(FirebaseUtils.getCurrentUserName(), FirebaseUtils.getCurrentUserPhotoUrl());
         iProfileView.updateUISignIn(1000, 300);
     }
 
     @Override
     public void handleConfirmInformationCancel() {
+        isCancelConfirm = true;
         iProfileView.signOut();
     }
 

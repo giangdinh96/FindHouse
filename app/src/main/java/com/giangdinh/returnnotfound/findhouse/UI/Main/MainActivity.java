@@ -10,6 +10,8 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.giangdinh.returnnotfound.findhouse.Adapter.MainPagerAdapter;
 import com.giangdinh.returnnotfound.findhouse.CustomView.NonSwipeableViewPager;
 import com.giangdinh.returnnotfound.findhouse.R;
+import com.giangdinh.returnnotfound.findhouse.UI.Main.Map.MapFragment;
+import com.giangdinh.returnnotfound.findhouse.UI.Main.News.NewsFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements IMainView {
     @BindView(R.id.ahbnMain)
     AHBottomNavigation ahbnMain;
 
+    private MainPagerAdapter mainPagerAdapter;
     Unbinder unbinder;
 
     @Override
@@ -48,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements IMainView {
     }
 
     private void initPager() {
-        MainPagerAdapter mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
+        mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
         nsvpMain.setAdapter(mainPagerAdapter);
         nsvpMain.setOffscreenPageLimit(4);
     }
@@ -79,6 +82,20 @@ public class MainActivity extends AppCompatActivity implements IMainView {
             @Override
             public boolean onTabSelected(int position, boolean wasSelected) {
                 iMainPresenter.handleBottomNavigationTabSelected(position, wasSelected);
+                switch (position) {
+                    case 0:
+                        NewsFragment newsFragment = (NewsFragment) mainPagerAdapter.getFragment(0);
+                        newsFragment.refreshUI();
+                        break;
+                    case 1:
+                        MapFragment mapFragment = (MapFragment) mainPagerAdapter.getFragment(1);
+                        mapFragment.refreshUI();
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                }
                 return true;
             }
         });

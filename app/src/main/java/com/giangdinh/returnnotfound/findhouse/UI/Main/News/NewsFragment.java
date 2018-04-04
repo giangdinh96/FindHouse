@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.giangdinh.returnnotfound.findhouse.Adapter.NewsPagerAdapter;
 import com.giangdinh.returnnotfound.findhouse.R;
+import com.giangdinh.returnnotfound.findhouse.UI.Main.News.HouseForRent.NewsHouseForRentFragment;
 import com.giangdinh.returnnotfound.findhouse.UI.PostHouseForRent.PostHouseForRentActivity;
 
 import butterknife.BindView;
@@ -39,6 +40,7 @@ public class NewsFragment extends Fragment implements INewsView {
     @BindView(R.id.fabPost)
     FloatingActionButton fabPost;
 
+    private NewsPagerAdapter newsPagerAdapter;
     Unbinder unbinder;
 
     public NewsFragment() {
@@ -53,24 +55,68 @@ public class NewsFragment extends Fragment implements INewsView {
         unbinder = ButterKnife.bind(this, view);
         iNewsPresenter = new NewsPresenter(this);
 
-        initView();
+        initViews();
+        initEvents();
 
         return view;
     }
 
     ////// Init views
-    private void initView() {
+    private void initViews() {
         initPager();
     }
 
     private void initPager() {
-        NewsPagerAdapter newsPagerAdapter = new NewsPagerAdapter(getFragmentManager());
+        newsPagerAdapter = new NewsPagerAdapter(getFragmentManager());
         vpNews.setOffscreenPageLimit(4);
         vpNews.setAdapter(newsPagerAdapter);
         tlNews.setupWithViewPager(vpNews);
     }
 
     ////// Init events
+    private void initEvents() {
+        tlNews.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                switch (tab.getPosition()) {
+                    case 0:
+                        NewsHouseForRentFragment newsHouseForRentFragment = (NewsHouseForRentFragment) newsPagerAdapter.getFragment(0);
+                        newsHouseForRentFragment.getPresenter().handleRefresh();
+                        break;
+                    case 1:
+                        break;
+                }
+            }
+        });
+
+        vpNews.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                refreshUI();
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+    }
+
     @OnClick(R.id.fabPost)
     public void postClick() {
         iNewsPresenter.handlePostClick();
@@ -110,5 +156,16 @@ public class NewsFragment extends Fragment implements INewsView {
     public void onDetach() {
         super.onDetach();
         unbinder.unbind();
+    }
+
+    public void refreshUI() {
+        if (vpNews.getCurrentItem() == 0) {
+            if (NewsHouseForRentFragment.isNeedLoad) {
+                NewsHouseForRentFragment newsHouseForRentFragment = (NewsHouseForRentFragment) newsPagerAdapter.getFragment(0);
+                newsHouseForRentFragment.getPresenter().handleRefresh();
+            }
+        } else {
+
+        }
     }
 }

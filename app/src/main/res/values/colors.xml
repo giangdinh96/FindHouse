@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#17ADB0</color>
     <color name="colorPrimaryDark">#FF15989B</color>
-    <color name="colorAccent">#17ADB0</color>
+    <color name="colorAccent">#eb17adb0</color>
 
     <color name="colorBackgroundMain">#DCDEE3</color>
     <color name="colorDivider">#EEEEEE</color>
@@ -17,7 +17,6 @@
 
     ////// Color for BottomNavigation
 
-
     <color name="colorTabNews">#B0B69696</color>
     <color name="colorTabMap">#B084BF84</color>
     <color name="colorTabFilter">#B084BF84</color>
@@ -27,9 +26,9 @@
     <!--<color name="colorTabAccent">#FF15989B</color>-->
     <!--<color name="colorTabInActive">#000000</color>-->
 
-    <color name="colorBackgroundBottomNavigation">@color/colorPrimary</color>
-    <color name="colorTabAccent">#FFFFFF</color>
-    <color name="colorTabInActive">#000000</color>
+    <color name="colorBackgroundBottomNavigation">#17ADB0</color>
+    <color name="colorTabAccent">#ffffff</color>
+    <color name="colorTabInActive">#660202</color>
 
     ////// Tablayout
 

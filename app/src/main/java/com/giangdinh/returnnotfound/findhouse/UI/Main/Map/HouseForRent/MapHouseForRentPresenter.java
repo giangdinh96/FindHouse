@@ -234,6 +234,8 @@ public class MapHouseForRentPresenter implements IMapHouseForRentPresenter {
 
     @Override
     public void handleGetNews() {
+        MapHouseForRentFragment.isNeedLoad = false;
+        handleGetCurrentUserLocation(true, true, 6);
         DatabaseReference databaseReferenceHouses = FirebaseUtils.getDatabase().getReference().child("news/houseForRent");
         Query query = databaseReferenceHouses.orderByChild("time");
         query.addChildEventListener(childEventListener);

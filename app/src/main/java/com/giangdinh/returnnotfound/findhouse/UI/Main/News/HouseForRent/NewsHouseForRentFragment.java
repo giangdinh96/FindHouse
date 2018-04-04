@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 public class NewsHouseForRentFragment extends Fragment implements INewsHouseForRentView {
-    public INewsHouseForRentPresenter iNewsHouseForRentPresenter;
+    INewsHouseForRentPresenter iNewsHouseForRentPresenter;
 
     @BindView(R.id.ptrvHouseForRent)
     PullToRefreshView ptrvHouseForRent;
@@ -34,6 +34,10 @@ public class NewsHouseForRentFragment extends Fragment implements INewsHouseForR
     private NewsHouseForRentAdapter newsHouseForRentAdapter;
     public static boolean isNeedLoad = true;
     Unbinder unbinder;
+
+    public INewsHouseForRentPresenter getPresenter() {
+        return iNewsHouseForRentPresenter;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

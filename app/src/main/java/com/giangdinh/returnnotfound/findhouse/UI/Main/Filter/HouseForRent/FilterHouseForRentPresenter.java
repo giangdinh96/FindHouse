@@ -57,10 +57,12 @@ public class FilterHouseForRentPresenter implements IFilterHouseForRentPresenter
         if (isProvinceFirstLoad) {
             isProvinceFirstLoad = false;
         } else {
-            iFilterHouseForRentView.loadSpinnerTowns((ArrayList<Town>) province.getTowns());
-            if (isLoadProvinceHawk && townHawk != null) {
-                iFilterHouseForRentView.selectTown(townHawk);
+            iFilterHouseForRentView.loadSpinnerTowns(province.getTowns());
+            if (isLoadProvinceHawk) {
                 isLoadProvinceHawk = false;
+                if (townHawk != null) {
+                    iFilterHouseForRentView.selectTown(townHawk);
+                }
             } else {
                 if (position == 0) {
                     Hawk.put(FilterHouseForRentFragment.HAWK_PROVINCE, null);

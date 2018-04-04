@@ -49,6 +49,10 @@ public class MapHouseForRentFragment extends Fragment implements IMapHouseForRen
 
     Unbinder unbinder;
 
+    public IMapHouseForRentPresenter getPresenter() {
+        return iMapHouseForRentPresenter;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_map_house_for_rent, container, false);
@@ -164,7 +168,6 @@ public class MapHouseForRentFragment extends Fragment implements IMapHouseForRen
             }
         });
         iMapHouseForRentPresenter.handleGetCurrentUserLocation(true, true, 6);
-        iMapHouseForRentPresenter.handleGetNews();
     }
 
     @Override
@@ -201,5 +204,6 @@ public class MapHouseForRentFragment extends Fragment implements IMapHouseForRen
     public void onDetach() {
         super.onDetach();
         unbinder.unbind();
+        iMapHouseForRentPresenter.handleDestroy();
     }
 }
