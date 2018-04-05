@@ -234,7 +234,7 @@ public class MapHouseForRentPresenter implements IMapHouseForRentPresenter {
 
     @Override
     public void handleGetNews() {
-        MapHouseForRentFragment.isNeedLoad = false;
+        MapHouseForRentFragment.IS_NEED_LOAD = false;
         handleGetCurrentUserLocation(true, true, 6);
         DatabaseReference databaseReferenceHouses = FirebaseUtils.getDatabase().getReference().child("news/houseForRent");
         Query query = databaseReferenceHouses.orderByChild("time");
@@ -294,7 +294,7 @@ public class MapHouseForRentPresenter implements IMapHouseForRentPresenter {
     @Override
     public void handleDestroy() {
         removeGetHousesEvent();
-        MapHouseForRentFragment.isNeedLoad = true;
+        MapHouseForRentFragment.IS_NEED_LOAD = true;
     }
 
     public void removeGetHousesEvent() {

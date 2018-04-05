@@ -17,7 +17,9 @@ import android.widget.Toast;
 
 import com.giangdinh.returnnotfound.findhouse.Adapter.NewsPagerAdapter;
 import com.giangdinh.returnnotfound.findhouse.R;
+import com.giangdinh.returnnotfound.findhouse.UI.Main.News.FindHouse.NewsFindHouseFragment;
 import com.giangdinh.returnnotfound.findhouse.UI.Main.News.HouseForRent.NewsHouseForRentFragment;
+import com.giangdinh.returnnotfound.findhouse.UI.PostFindHouse.PostFindHouseActivity;
 import com.giangdinh.returnnotfound.findhouse.UI.PostHouseForRent.PostHouseForRentActivity;
 
 import butterknife.BindView;
@@ -94,6 +96,8 @@ public class NewsFragment extends Fragment implements INewsView {
                         newsHouseForRentFragment.getPresenter().handleRefresh();
                         break;
                     case 1:
+                        NewsFindHouseFragment newsFindHouseFragment = (NewsFindHouseFragment) newsPagerAdapter.getFragment(1);
+                        newsFindHouseFragment.getPresenter().handleRefresh();
                         break;
                 }
             }
@@ -142,9 +146,15 @@ public class NewsFragment extends Fragment implements INewsView {
     }
 
     @Override
-    public void navigateToPostHouseNewFist() {
+    public void navigateToPostHouseForRent() {
         Intent intentPostHouseForRent = new Intent(getContext(), PostHouseForRentActivity.class);
         startActivity(intentPostHouseForRent);
+    }
+
+    @Override
+    public void navigateToPostFindHouse() {
+        Intent intentPostFindHouse = new Intent(getContext(), PostFindHouseActivity.class);
+        startActivity(intentPostFindHouse);
     }
 
     @Override
@@ -160,12 +170,15 @@ public class NewsFragment extends Fragment implements INewsView {
 
     public void refreshUI() {
         if (vpNews.getCurrentItem() == 0) {
-            if (NewsHouseForRentFragment.isNeedLoad) {
+            if (NewsHouseForRentFragment.IS_NEED_LOAD) {
                 NewsHouseForRentFragment newsHouseForRentFragment = (NewsHouseForRentFragment) newsPagerAdapter.getFragment(0);
                 newsHouseForRentFragment.getPresenter().handleRefresh();
             }
         } else {
-
+            if (NewsFindHouseFragment.IS_NEED_LOAD) {
+                NewsFindHouseFragment newsFindHouseFragment = (NewsFindHouseFragment) newsPagerAdapter.getFragment(1);
+                newsFindHouseFragment.getPresenter().handleRefresh();
+            }
         }
     }
 }

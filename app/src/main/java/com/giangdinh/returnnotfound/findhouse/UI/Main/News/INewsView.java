@@ -5,7 +5,9 @@ package com.giangdinh.returnnotfound.findhouse.UI.Main.News;
  */
 
 public interface INewsView {
-    void navigateToPostHouseNewFist();
+    void navigateToPostHouseForRent();
+
+    void navigateToPostFindHouse();
 
     void showMessage(String message);
 }

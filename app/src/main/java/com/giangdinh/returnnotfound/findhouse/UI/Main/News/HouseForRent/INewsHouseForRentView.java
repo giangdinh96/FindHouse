@@ -9,8 +9,6 @@ import java.util.ArrayList;
  */
 
 public interface INewsHouseForRentView {
-    void initNews();
-
     void refreshList();
 
     void showRefresh(boolean show);

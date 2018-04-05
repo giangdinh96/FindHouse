@@ -135,7 +135,7 @@ public class MapFragment extends Fragment {
 
     public void refreshUI() {
         if (nsvpMap.getCurrentItem() == 0) {
-            if (MapHouseForRentFragment.isNeedLoad) {
+            if (MapHouseForRentFragment.IS_NEED_LOAD) {
                 MapHouseForRentFragment mapHouseForRentFragment = (MapHouseForRentFragment) mapPagerAdapter.getFragment(0);
                 mapHouseForRentFragment.getPresenter().handleRefresh();
             }

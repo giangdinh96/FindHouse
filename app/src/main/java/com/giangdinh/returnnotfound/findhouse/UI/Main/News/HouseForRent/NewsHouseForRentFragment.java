@@ -32,7 +32,7 @@ public class NewsHouseForRentFragment extends Fragment implements INewsHouseForR
     RecyclerView rvHouseForRent;
 
     private NewsHouseForRentAdapter newsHouseForRentAdapter;
-    public static boolean isNeedLoad = true;
+    public static boolean IS_NEED_LOAD = true;
     Unbinder unbinder;
 
     public INewsHouseForRentPresenter getPresenter() {
@@ -44,26 +44,16 @@ public class NewsHouseForRentFragment extends Fragment implements INewsHouseForR
         View view = inflater.inflate(R.layout.fragment_news_house_for_rent, container, false);
         unbinder = ButterKnife.bind(this, view);
         iNewsHouseForRentPresenter = new NewsHouseForRentPresenter(this);
-        initViews(view);
 
-        initNews();
+        initViews();
         initEvents();
         return view;
     }
 
-    public void initViews(View view) {
+    public void initViews() {
+        initNews();
     }
 
-    public void initEvents() {
-        ptrvHouseForRent.setOnRefreshListener(new PullToRefreshView.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                iNewsHouseForRentPresenter.handleRefresh();
-            }
-        });
-    }
-
-    @Override
     public void initNews() {
         newsHouseForRentAdapter = new NewsHouseForRentAdapter(getContext());
         PreCachingLayoutManager preCachingLayoutManager = new PreCachingLayoutManager(getContext());
@@ -73,8 +63,17 @@ public class NewsHouseForRentFragment extends Fragment implements INewsHouseForR
         rvHouseForRent.setLayoutManager(preCachingLayoutManager);
         rvHouseForRent.setItemViewCacheSize(1);
         rvHouseForRent.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
-        rvHouseForRent.setAdapter(this.newsHouseForRentAdapter);
+        rvHouseForRent.setAdapter(newsHouseForRentAdapter);
         iNewsHouseForRentPresenter.handleGetNews();
+    }
+
+    public void initEvents() {
+        ptrvHouseForRent.setOnRefreshListener(new PullToRefreshView.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                iNewsHouseForRentPresenter.handleRefresh();
+            }
+        });
     }
 
     @Override

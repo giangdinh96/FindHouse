@@ -183,7 +183,7 @@ public class MapDetailActivity extends FragmentActivity implements OnMapReadyCal
 
     @Override
     public void addHouseMarker(LatLng latLng) {
-        View iconMarker = LayoutInflater.from(this).inflate(R.layout.item_house_marker, null);
+        View iconMarker = LayoutInflater.from(this).inflate(R.layout.item_house_for_rent_marker, null);
         currentHouseMarker = map.addMarker(new MarkerOptions().position(latLng).icon(BitmapDescriptorFactory.fromBitmap(BitmapUltils.loadBitmapFromView(this, iconMarker))));
         currentHouseMarker.setDraggable(true);
         currentHouseMarker.setTitle("Vị trí phòng trọ");

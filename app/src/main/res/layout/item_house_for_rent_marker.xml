@@ -6,5 +6,5 @@
     <ImageView
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:src="@drawable/ic_marker_house" />
+        android:src="@drawable/ic_marker_house_for_rent" />
 </FrameLayout>

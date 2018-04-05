@@ -1,9 +1,9 @@
-package com.giangdinh.returnnotfound.findhouse.UI.Main.News.HouseForRent;
+package com.giangdinh.returnnotfound.findhouse.UI.Main.News.FindHouse;
 
 import android.os.Handler;
 import android.util.Log;
 
-import com.giangdinh.returnnotfound.findhouse.Model.HouseForRent;
+import com.giangdinh.returnnotfound.findhouse.Model.FindHouse;
 import com.giangdinh.returnnotfound.findhouse.Model.Province;
 import com.giangdinh.returnnotfound.findhouse.Model.Town;
 import com.giangdinh.returnnotfound.findhouse.UI.Main.Filter.HouseForRent.FilterHouseForRentFragment;
@@ -19,11 +19,11 @@ import com.orhanobut.hawk.Hawk;
 import java.util.Date;
 
 /**
- * Created by GiangDinh on 22/03/2018.
+ * Created by GiangDinh on 05/04/2018.
  */
 
-public class NewsHouseForRentPresenter implements INewsHouseForRentPresenter {
-    private INewsHouseForRentView iNewsHouseForRentView;
+public class NewsFindHousePresenter implements INewsFindHousePresenter {
+    private INewsFindHouseView iNewsFindHouseView;
     private long timeStartRequest;
     private int newsCount;
     private boolean isRefreshShow;
@@ -37,8 +37,8 @@ public class NewsHouseForRentPresenter implements INewsHouseForRentPresenter {
     private Integer hawkMaxStartStretch;
     private Integer hawkMinStartPubDate;
 
-    public NewsHouseForRentPresenter(INewsHouseForRentView iNewsHouseForRentView) {
-        this.iNewsHouseForRentView = iNewsHouseForRentView;
+    public NewsFindHousePresenter(INewsFindHouseView iNewsFindHouseView) {
+        this.iNewsFindHouseView = iNewsFindHouseView;
         this.getHawk();
         this.newsCount = 0;
         this.timeStartRequest = -1;
@@ -85,16 +85,16 @@ public class NewsHouseForRentPresenter implements INewsHouseForRentPresenter {
         if (isRefreshShow)
             return;
         isRefreshShow = true;
-        iNewsHouseForRentView.showRefresh(true);
+        iNewsFindHouseView.showRefresh(true);
         getHawk();
         newsCount = 0;
         removeGetHousesEvent();
-        iNewsHouseForRentView.refreshList();
+        iNewsFindHouseView.refreshList();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 isRefreshShow = false;
-                iNewsHouseForRentView.showRefresh(false);
+                iNewsFindHouseView.showRefresh(false);
                 handleGetNews();
             }
         }, 1000);
@@ -104,67 +104,67 @@ public class NewsHouseForRentPresenter implements INewsHouseForRentPresenter {
         @Override
         public void onChildAdded(DataSnapshot dataSnapshot, String s) {
             Log.e("Test", "onChildAdded-------New-------" + dataSnapshot.getKey());
-            HouseForRent houseForRent = dataSnapshot.getValue(HouseForRent.class);
+            FindHouse findHouse = dataSnapshot.getValue(FindHouse.class);
 
             //////Filter
             //Province
-            if (hawkProvince != null && !houseForRent.getAddress().getProvinceId().equals(hawkProvince.getId())) {
+            if (hawkProvince != null && !findHouse.getAddress().getProvinceId().equals(hawkProvince.getId())) {
                 return;
             }
             // Town
-            if (hawkTown != null && !houseForRent.getAddress().getTownId().equals(hawkTown.getId())) {
+            if (hawkTown != null && !findHouse.getAddress().getTownId().equals(hawkTown.getId())) {
                 return;
             }
             // Price
             if (hawkMinStartPrice == FilterHouseForRentFragment.MIN_PRICE && hawkMaxStartPrice == FilterHouseForRentFragment.MAX_PRICE) {
 
             } else if (hawkMinStartPrice == FilterHouseForRentFragment.MIN_PRICE) {
-                if (houseForRent.getPrice() > hawkMaxStartPrice)
+                if (findHouse.getPrice() > hawkMaxStartPrice)
                     return;
             } else if (hawkMaxStartPrice == FilterHouseForRentFragment.MAX_PRICE) {
-                if (houseForRent.getPrice() < hawkMinStartPrice)
+                if (findHouse.getPrice() < hawkMinStartPrice)
                     return;
             } else if (hawkMinStartPrice == hawkMaxStartPrice) {
-                if (houseForRent.getPrice() != hawkMinStartPrice)
+                if (findHouse.getPrice() != hawkMinStartPrice)
                     return;
             } else {
-                if (houseForRent.getPrice() < hawkMinStartPrice || houseForRent.getPrice() > hawkMaxStartPrice)
+                if (findHouse.getPrice() < hawkMinStartPrice || findHouse.getPrice() > hawkMaxStartPrice)
                     return;
             }
             // Stretch
             if (hawkMinStartStretch == FilterHouseForRentFragment.MIN_STRETCH && hawkMaxStartStretch == FilterHouseForRentFragment.MAX_STRETCH) {
 
             } else if (hawkMinStartStretch == FilterHouseForRentFragment.MIN_STRETCH) {
-                if (houseForRent.getStretch() > hawkMaxStartStretch)
+                if (findHouse.getStretch() > hawkMaxStartStretch)
                     return;
             } else if (hawkMaxStartStretch == FilterHouseForRentFragment.MAX_STRETCH) {
-                if (houseForRent.getStretch() < hawkMinStartStretch)
+                if (findHouse.getStretch() < hawkMinStartStretch)
                     return;
             } else if (hawkMinStartStretch == hawkMaxStartStretch) {
-                if (houseForRent.getStretch() != hawkMinStartStretch)
+                if (findHouse.getStretch() != hawkMinStartStretch)
                     return;
             } else {
-                if (houseForRent.getStretch() < hawkMinStartStretch || houseForRent.getStretch() > hawkMaxStartStretch)
+                if (findHouse.getStretch() < hawkMinStartStretch || findHouse.getStretch() > hawkMaxStartStretch)
                     return;
             }
 
             // PubDate
             if (hawkMinStartPubDate == FilterHouseForRentFragment.MAX_PUBDATE) {
-            } else if (DateUtils.getDayAgoFromPubDate(-houseForRent.getPubDate()) > hawkMinStartPubDate) {
+            } else if (DateUtils.getDayAgoFromPubDate(-findHouse.getPubDate()) > hawkMinStartPubDate) {
                 return;
             }
 
             // Check ok
             // Add to List
-            houseForRent.setId(dataSnapshot.getKey());
-            if (timeStartRequest >= (-houseForRent.getPubDate())) {
-                iNewsHouseForRentView.addItemHouse(houseForRent);
+            findHouse.setId(dataSnapshot.getKey());
+            if (timeStartRequest >= (-findHouse.getPubDate())) {
+                iNewsFindHouseView.addItemHouse(findHouse);
             } else {
-                if (FirebaseUtils.isSignIn() && houseForRent.getUserId().equals(FirebaseUtils.getCurrentUserId())) {
-                    iNewsHouseForRentView.addItemHouse(0, houseForRent);
+                if (FirebaseUtils.isSignIn() && findHouse.getUserId().equals(FirebaseUtils.getCurrentUserId())) {
+                    iNewsFindHouseView.addItemHouse(0, findHouse);
                 } else {
                     newsCount++;
-                    iNewsHouseForRentView.showNotification("Bài đăng mới", "Có " + newsCount + " tin mới");
+                    iNewsFindHouseView.showNotification("Bài đăng mới", "Có " + newsCount + " tin mới");
                 }
             }
         }
@@ -172,58 +172,58 @@ public class NewsHouseForRentPresenter implements INewsHouseForRentPresenter {
         @Override
         public void onChildChanged(DataSnapshot dataSnapshot, String s) {
             Log.e("Test", "onChildChanged-------New-------" + dataSnapshot.getKey());
-            HouseForRent houseForRent = dataSnapshot.getValue(HouseForRent.class);
+            FindHouse findHouse = dataSnapshot.getValue(FindHouse.class);
 
             // Filter
             // Province
-            if (hawkProvince != null && !houseForRent.getAddress().getProvinceId().equals(hawkProvince.getId())) {
+            if (hawkProvince != null && !findHouse.getAddress().getProvinceId().equals(hawkProvince.getId())) {
                 return;
             }
             // Town
-            if (hawkTown != null && !houseForRent.getAddress().getTownId().equals(hawkTown.getId())) {
+            if (hawkTown != null && !findHouse.getAddress().getTownId().equals(hawkTown.getId())) {
                 return;
             }
             // Price
             if (hawkMinStartPrice == FilterHouseForRentFragment.MIN_PRICE && hawkMaxStartPrice == FilterHouseForRentFragment.MAX_PRICE) {
 
             } else if (hawkMinStartPrice == FilterHouseForRentFragment.MIN_PRICE) {
-                if (houseForRent.getPrice() > hawkMaxStartPrice)
+                if (findHouse.getPrice() > hawkMaxStartPrice)
                     return;
             } else if (hawkMaxStartPrice == FilterHouseForRentFragment.MAX_PRICE) {
-                if (houseForRent.getPrice() < hawkMinStartPrice)
+                if (findHouse.getPrice() < hawkMinStartPrice)
                     return;
             } else if (hawkMinStartPrice == hawkMaxStartPrice) {
-                if (houseForRent.getPrice() != hawkMinStartPrice)
+                if (findHouse.getPrice() != hawkMinStartPrice)
                     return;
             } else {
-                if (houseForRent.getPrice() < hawkMinStartPrice || houseForRent.getPrice() > hawkMaxStartPrice)
+                if (findHouse.getPrice() < hawkMinStartPrice || findHouse.getPrice() > hawkMaxStartPrice)
                     return;
             }
             // Stretch
             if (hawkMinStartStretch == FilterHouseForRentFragment.MIN_STRETCH && hawkMaxStartStretch == FilterHouseForRentFragment.MAX_STRETCH) {
 
             } else if (hawkMinStartStretch == FilterHouseForRentFragment.MIN_STRETCH) {
-                if (houseForRent.getStretch() > hawkMaxStartStretch)
+                if (findHouse.getStretch() > hawkMaxStartStretch)
                     return;
             } else if (hawkMaxStartStretch == FilterHouseForRentFragment.MAX_STRETCH) {
-                if (houseForRent.getStretch() < hawkMinStartStretch)
+                if (findHouse.getStretch() < hawkMinStartStretch)
                     return;
             } else if (hawkMinStartStretch == hawkMaxStartStretch) {
-                if (houseForRent.getStretch() != hawkMinStartStretch)
+                if (findHouse.getStretch() != hawkMinStartStretch)
                     return;
             } else {
-                if (houseForRent.getStretch() < hawkMinStartStretch || houseForRent.getStretch() > hawkMaxStartStretch)
+                if (findHouse.getStretch() < hawkMinStartStretch || findHouse.getStretch() > hawkMaxStartStretch)
                     return;
             }
 
             // PubDate
             if (hawkMinStartPubDate == FilterHouseForRentFragment.MAX_PUBDATE) {
-            } else if (DateUtils.getDayAgoFromPubDate(-houseForRent.getPubDate()) > hawkMinStartPubDate) {
+            } else if (DateUtils.getDayAgoFromPubDate(-findHouse.getPubDate()) > hawkMinStartPubDate) {
                 return;
             }
 
-            houseForRent.setId(dataSnapshot.getKey());
-            iNewsHouseForRentView.changeItemHouse(houseForRent);
+            findHouse.setId(dataSnapshot.getKey());
+            iNewsFindHouseView.changeItemHouse(findHouse);
         }
 
         @Override
@@ -244,9 +244,9 @@ public class NewsHouseForRentPresenter implements INewsHouseForRentPresenter {
 
     @Override
     public void handleGetNews() {
-        NewsHouseForRentFragment.IS_NEED_LOAD = false;
+        NewsFindHouseFragment.IS_NEED_LOAD = false;
         timeStartRequest = new Date().getTime();
-        DatabaseReference databaseReferenceHouses = FirebaseUtils.getDatabase().getReference().child("news/houseForRent");
+        DatabaseReference databaseReferenceHouses = FirebaseUtils.getDatabase().getReference().child("news/findHouse");
         Query query = databaseReferenceHouses.orderByChild("pubDate");
         query.addChildEventListener(childEventListener);
     }
@@ -254,10 +254,10 @@ public class NewsHouseForRentPresenter implements INewsHouseForRentPresenter {
     @Override
     public void handleDestroy() {
         removeGetHousesEvent();
-        NewsHouseForRentFragment.IS_NEED_LOAD = true;
+        NewsFindHouseFragment.IS_NEED_LOAD = true;
     }
 
     public void removeGetHousesEvent() {
-        FirebaseUtils.getDatabase().getReference().child("news/houseForRent").removeEventListener(childEventListener);
+        FirebaseUtils.getDatabase().getReference().child("news/findHouse").removeEventListener(childEventListener);
     }
 }

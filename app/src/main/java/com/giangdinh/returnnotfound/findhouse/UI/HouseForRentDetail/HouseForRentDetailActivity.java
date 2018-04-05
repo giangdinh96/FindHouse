@@ -251,7 +251,7 @@ public class HouseForRentDetailActivity extends AppCompatActivity implements IHo
     @Override
     public void addMarker(double latitude, double longitude) {
         LayoutInflater layoutInflater = LayoutInflater.from(this);
-        View viewMarker = layoutInflater.inflate(R.layout.item_house_marker, null);
+        View viewMarker = layoutInflater.inflate(R.layout.item_house_for_rent_marker, null);
         LatLng housePosition = new LatLng(latitude, longitude);
         map.getUiSettings().setMapToolbarEnabled(false);
         map.addMarker(new MarkerOptions().position(housePosition).title("Vị trí phòng trọ").icon(BitmapDescriptorFactory.fromBitmap(BitmapUltils.loadBitmapFromView(this, viewMarker)))).showInfoWindow();

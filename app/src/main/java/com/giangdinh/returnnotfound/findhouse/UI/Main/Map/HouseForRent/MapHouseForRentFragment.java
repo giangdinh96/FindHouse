@@ -44,7 +44,7 @@ public class MapHouseForRentFragment extends Fragment implements IMapHouseForRen
     private ArrayList<Marker> markers;
     private ArrayList<HouseForRent> houseForRents;
 
-    public static boolean isNeedLoad = true;
+    public static boolean IS_NEED_LOAD = true;
     public static boolean isMapReady = false;
 
     Unbinder unbinder;
@@ -86,7 +86,7 @@ public class MapHouseForRentFragment extends Fragment implements IMapHouseForRen
     @Override
     public void addHouseMarker(HouseForRent houseForRent) {
         map.setInfoWindowAdapter(new InfoWindowAdapter(getContext()));
-        View iconMarker = LayoutInflater.from(getContext()).inflate(R.layout.item_house_marker, null);
+        View iconMarker = LayoutInflater.from(getContext()).inflate(R.layout.item_house_for_rent_marker, null);
         Marker marker = map.addMarker(new MarkerOptions().position(new LatLng(houseForRent.getLatitude(), houseForRent.getLongitude())).icon(BitmapDescriptorFactory.fromBitmap(BitmapUltils.loadBitmapFromView(getContext(), iconMarker))));
         marker.setTag(houseForRent);
         markers.add(marker);
@@ -155,9 +155,11 @@ public class MapHouseForRentFragment extends Fragment implements IMapHouseForRen
         map.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
             @Override
             public void onInfoWindowClick(Marker marker) {
-                Intent intentHouseForRentDetail = new Intent(getContext(), HouseForRentDetailActivity.class);
-                intentHouseForRentDetail.putExtra(VariableGlobal.EXTRA_HOUSE_FOR_RENT, (HouseForRent) marker.getTag());
-                getContext().startActivity(intentHouseForRentDetail);
+                if (marker.getTag() instanceof HouseForRent) {
+                    Intent intentHouseForRentDetail = new Intent(getContext(), HouseForRentDetailActivity.class);
+                    intentHouseForRentDetail.putExtra(VariableGlobal.EXTRA_HOUSE_FOR_RENT, (HouseForRent) marker.getTag());
+                    getContext().startActivity(intentHouseForRentDetail);
+                }
             }
         });
 

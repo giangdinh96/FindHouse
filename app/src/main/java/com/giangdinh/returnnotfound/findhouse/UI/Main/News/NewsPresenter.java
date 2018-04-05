@@ -30,9 +30,9 @@ public class NewsPresenter implements INewsPresenter {
                                 return;
                             User user = dataSnapshot.getValue(User.class);
                             if (user.getRole().equals("1")) {
-                                iNewsView.navigateToPostHouseNewFist();
+                                iNewsView.navigateToPostHouseForRent();
                             } else if (user.getRole().equals("2")) {
-
+                                iNewsView.navigateToPostFindHouse();
                             } else {
                                 // Not
                             }
