@@ -1,18 +1,18 @@
-package com.giangdinh.returnnotfound.findhouse.UI.Main.Map.HouseForRent;
+package com.giangdinh.returnnotfound.findhouse.UI.Main.Map.FindHouse;
 
-import com.giangdinh.returnnotfound.findhouse.Model.HouseForRent;
+import com.giangdinh.returnnotfound.findhouse.Model.FindHouse;
 import com.google.android.gms.maps.model.LatLng;
 
 /**
- * Created by GiangDinh on 03/04/2018.
+ * Created by GiangDinh on 05/04/2018.
  */
 
-public interface IMapHouseForRentView {
+public interface IMapFindHouseView {
     void setSearchAddress(String searchAddress);
 
-    void addHouseMarker(HouseForRent houseForRent);
+    void addHouseMarker(FindHouse findHouse);
 
-    void removeHouseMarker(HouseForRent houseForRent);
+    void removeHouseMarker(FindHouse findHouse);
 
     void removeAllHousesMaker();
 

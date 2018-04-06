@@ -12,6 +12,7 @@ import com.facebook.FacebookException;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.giangdinh.returnnotfound.findhouse.Model.User;
+import com.giangdinh.returnnotfound.findhouse.UI.Main.Map.FindHouse.MapFindHouseFragment;
 import com.giangdinh.returnnotfound.findhouse.UI.Main.Map.HouseForRent.MapHouseForRentFragment;
 import com.giangdinh.returnnotfound.findhouse.UI.Main.News.FindHouse.NewsFindHouseFragment;
 import com.giangdinh.returnnotfound.findhouse.UI.Main.News.HouseForRent.NewsHouseForRentFragment;
@@ -70,6 +71,7 @@ public class ProfilePresenter implements IProfilePresenter {
                                     NewsHouseForRentFragment.IS_NEED_LOAD = true;
                                     NewsFindHouseFragment.IS_NEED_LOAD = true;
                                     MapHouseForRentFragment.IS_NEED_LOAD = true;
+                                    MapFindHouseFragment.IS_NEED_LOAD = true;
                                     iProfileView.setInformationForUser(FirebaseUtils.getCurrentUserName(), FirebaseUtils.getCurrentUserPhotoUrl());
                                     iProfileView.updateUISignIn(1000, 300);
                                 } else {
@@ -93,6 +95,7 @@ public class ProfilePresenter implements IProfilePresenter {
                             NewsHouseForRentFragment.IS_NEED_LOAD = true;
                             NewsFindHouseFragment.IS_NEED_LOAD = true;
                             MapHouseForRentFragment.IS_NEED_LOAD = true;
+                            MapFindHouseFragment.IS_NEED_LOAD = true;
                         } else {
                             isCancelConfirm = false;
                         }
@@ -140,6 +143,7 @@ public class ProfilePresenter implements IProfilePresenter {
         NewsHouseForRentFragment.IS_NEED_LOAD = true;
         NewsFindHouseFragment.IS_NEED_LOAD = true;
         MapHouseForRentFragment.IS_NEED_LOAD = true;
+        MapFindHouseFragment.IS_NEED_LOAD = true;
         iProfileView.setInformationForUser(FirebaseUtils.getCurrentUserName(), FirebaseUtils.getCurrentUserPhotoUrl());
         iProfileView.updateUISignIn(1000, 300);
     }

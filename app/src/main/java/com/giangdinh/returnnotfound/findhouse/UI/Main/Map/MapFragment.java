@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.giangdinh.returnnotfound.findhouse.CustomView.NonSwipeableViewPager;
 import com.giangdinh.returnnotfound.findhouse.R;
+import com.giangdinh.returnnotfound.findhouse.UI.Main.Map.FindHouse.MapFindHouseFragment;
 import com.giangdinh.returnnotfound.findhouse.UI.Main.Map.HouseForRent.MapHouseForRentFragment;
 
 import butterknife.BindView;
@@ -83,6 +84,8 @@ public class MapFragment extends Fragment {
                         mapHouseForRentFragment.getPresenter().handleRefresh();
                         break;
                     case 1:
+                        MapFindHouseFragment mapFindHouseFragment = (MapFindHouseFragment) mapPagerAdapter.getFragment(1);
+                        mapFindHouseFragment.getPresenter().handleRefresh();
                         break;
                 }
             }
@@ -140,7 +143,10 @@ public class MapFragment extends Fragment {
                 mapHouseForRentFragment.getPresenter().handleRefresh();
             }
         } else {
-
+            if (MapFindHouseFragment.IS_NEED_LOAD) {
+                MapFindHouseFragment mapFindHouseFragment = (MapFindHouseFragment) mapPagerAdapter.getFragment(1);
+                mapFindHouseFragment.getPresenter().handleRefresh();
+            }
         }
     }
 }

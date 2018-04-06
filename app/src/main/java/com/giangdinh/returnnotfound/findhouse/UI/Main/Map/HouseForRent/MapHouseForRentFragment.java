@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.giangdinh.returnnotfound.findhouse.Adapter.InfoWindowAdapter;
+import com.giangdinh.returnnotfound.findhouse.Adapter.HouseForRentInfoWindowAdapter;
 import com.giangdinh.returnnotfound.findhouse.Model.HouseForRent;
 import com.giangdinh.returnnotfound.findhouse.R;
 import com.giangdinh.returnnotfound.findhouse.UI.HouseForRentDetail.HouseForRentDetailActivity;
@@ -85,7 +85,7 @@ public class MapHouseForRentFragment extends Fragment implements IMapHouseForRen
 
     @Override
     public void addHouseMarker(HouseForRent houseForRent) {
-        map.setInfoWindowAdapter(new InfoWindowAdapter(getContext()));
+        map.setInfoWindowAdapter(new HouseForRentInfoWindowAdapter(getContext()));
         View iconMarker = LayoutInflater.from(getContext()).inflate(R.layout.item_house_for_rent_marker, null);
         Marker marker = map.addMarker(new MarkerOptions().position(new LatLng(houseForRent.getLatitude(), houseForRent.getLongitude())).icon(BitmapDescriptorFactory.fromBitmap(BitmapUltils.loadBitmapFromView(getContext(), iconMarker))));
         marker.setTag(houseForRent);

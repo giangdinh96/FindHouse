@@ -120,9 +120,10 @@
     <View
         android:id="@+id/vDivider2"
         android:layout_width="0dp"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
         android:layout_marginTop="5dp"
-        android:background="@color/colorBackgroundMain"
+        android:background="@drawable/line"
+        android:layerType="software"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvUsersLike" />

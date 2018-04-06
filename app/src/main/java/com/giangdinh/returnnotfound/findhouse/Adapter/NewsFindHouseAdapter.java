@@ -148,7 +148,7 @@ public class NewsFindHouseAdapter extends RecyclerView.Adapter<RecyclerView.View
         // Set usersLike
         if (findHouse.getUsersLike().size() <= 0) {
             findHouseHolder.tvUsersLike.setVisibility(View.GONE);
-            findHouseHolder.vDivider2.setVisibility(View.GONE);
+//            findHouseHolder.vDivider2.setVisibility(View.GONE);
             findHouseHolder.tvLike.setSelected(false);
         } else {
             if (FirebaseUtils.isSignIn() && findHouse.getUsersLike().containsKey(FirebaseUtils.getCurrentUserId())) {
@@ -158,7 +158,7 @@ public class NewsFindHouseAdapter extends RecyclerView.Adapter<RecyclerView.View
             }
             findHouseHolder.tvUsersLike.setText(findHouse.getUsersLike().size() + " lượt thích");
             findHouseHolder.tvUsersLike.setVisibility(View.VISIBLE);
-            findHouseHolder.vDivider2.setVisibility(View.VISIBLE);
+//            findHouseHolder.vDivider2.setVisibility(View.VISIBLE);
         }
 
         // Set call click
@@ -306,8 +306,8 @@ public class NewsFindHouseAdapter extends RecyclerView.Adapter<RecyclerView.View
         public TextView tvStretch;
         @BindView(R.id.tvUsersLike)
         public TextView tvUsersLike;
-        @BindView(R.id.vDivider2)
-        public View vDivider2;
+//        @BindView(R.id.vDivider2)
+//        public View vDivider2;
         @BindView(R.id.tvCall)
         public TextView tvCall;
         @BindView(R.id.tvLike)

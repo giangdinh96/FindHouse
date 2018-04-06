@@ -14,7 +14,7 @@ import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.bumptech.glide.request.target.Target;
-import com.giangdinh.returnnotfound.findhouse.Model.HouseForRent;
+import com.giangdinh.returnnotfound.findhouse.Model.FindHouse;
 import com.giangdinh.returnnotfound.findhouse.R;
 import com.giangdinh.returnnotfound.findhouse.Utils.DateUtils;
 import com.giangdinh.returnnotfound.findhouse.Utils.TextUtils;
@@ -25,12 +25,12 @@ import com.google.android.gms.maps.model.Marker;
  * Created by GiangDinh on 09/01/2018.
  */
 
-public class InfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
+public class FindHouseInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
 
     private Context context;
     private RequestManager requestManager;
 
-    public InfoWindowAdapter(Context context) {
+    public FindHouseInfoWindowAdapter(Context context) {
         this.context = context;
         this.requestManager = Glide.with(context);
     }
@@ -43,7 +43,7 @@ public class InfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
     @Override
     public View getInfoContents(final Marker marker) {
         View view;
-        if (marker.getTag() instanceof HouseForRent) {
+        if (marker.getTag() instanceof FindHouse) {
             view = LayoutInflater.from(context).inflate(R.layout.item_house_infor_window, null);
 
             final ImageView ivUserPicture = view.findViewById(R.id.ivUserPicture);
@@ -52,10 +52,10 @@ public class InfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
             TextView tvAddress = view.findViewById(R.id.tvFullAddress);
             TextView tvPrice = view.findViewById(R.id.tvPrice);
             TextView tvStretch = view.findViewById(R.id.tvStretch);
-            HouseForRent houseForRent = (HouseForRent) marker.getTag();
+            FindHouse findHouse = (FindHouse) marker.getTag();
 
             // set UserPicture
-            requestManager.load(houseForRent.getUserPicture()).asBitmap().override(50, 50).listener(new RequestListener<String, Bitmap>() {
+            requestManager.load(findHouse.getUserPicture()).asBitmap().override(50, 50).listener(new RequestListener<String, Bitmap>() {
                 @Override
                 public boolean onException(Exception e, String model, Target<Bitmap> target, boolean isFirstResource) {
                     return false;
@@ -75,11 +75,11 @@ public class InfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
                 }
             });
 
-            tvUsername.setText(houseForRent.getUserName());
-            tvTime.setText(DateUtils.getDateTimeAgoString(-houseForRent.getPubDate()));
-            tvAddress.setText(TextUtils.formatAddress(houseForRent.getFullAddress()));
-            tvPrice.setText(TextUtils.formatPrice(houseForRent.getPrice()));
-            tvStretch.setText(TextUtils.formatStretch(houseForRent.getStretch()));
+            tvUsername.setText(findHouse.getUserName());
+            tvTime.setText(DateUtils.getDateTimeAgoString(-findHouse.getPubDate()));
+            tvAddress.setText(TextUtils.formatAddress(findHouse.getFullAddress()));
+            tvPrice.setText(TextUtils.formatPrice(findHouse.getPrice()));
+            tvStretch.setText(TextUtils.formatStretch(findHouse.getStretch()));
         } else {
             view = LayoutInflater.from(context).inflate(R.layout.item_user_infor_window, null);
         }

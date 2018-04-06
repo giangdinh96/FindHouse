@@ -6,7 +6,7 @@ import android.util.Log;
 import com.giangdinh.returnnotfound.findhouse.Model.FindHouse;
 import com.giangdinh.returnnotfound.findhouse.Model.Province;
 import com.giangdinh.returnnotfound.findhouse.Model.Town;
-import com.giangdinh.returnnotfound.findhouse.UI.Main.Filter.HouseForRent.FilterHouseForRentFragment;
+import com.giangdinh.returnnotfound.findhouse.UI.Main.Filter.FindHouse.FilterFindHouseFragment;
 import com.giangdinh.returnnotfound.findhouse.Utils.DateUtils;
 import com.giangdinh.returnnotfound.findhouse.Utils.FirebaseUtils;
 import com.google.firebase.database.ChildEventListener;
@@ -45,37 +45,37 @@ public class NewsFindHousePresenter implements INewsFindHousePresenter {
     }
 
     public void getHawk() {
-        hawkProvince = Hawk.get(FilterHouseForRentFragment.HAWK_PROVINCE);
-        hawkTown = Hawk.get(FilterHouseForRentFragment.HAWK_TOWN);
+        hawkProvince = Hawk.get(FilterFindHouseFragment.HAWK_PROVINCE);
+        hawkTown = Hawk.get(FilterFindHouseFragment.HAWK_TOWN);
 
-        if (Hawk.get(FilterHouseForRentFragment.HAWK_MIN_START_PRICE) != null) {
-            hawkMinStartPrice = Hawk.get(FilterHouseForRentFragment.HAWK_MIN_START_PRICE);
+        if (Hawk.get(FilterFindHouseFragment.HAWK_MIN_START_PRICE) != null) {
+            hawkMinStartPrice = Hawk.get(FilterFindHouseFragment.HAWK_MIN_START_PRICE);
         } else {
-            hawkMinStartPrice = FilterHouseForRentFragment.MIN_PRICE;
+            hawkMinStartPrice = FilterFindHouseFragment.MIN_PRICE;
         }
 
-        if (Hawk.get(FilterHouseForRentFragment.HAWK_MAX_START_PRICE) != null) {
-            hawkMaxStartPrice = Hawk.get(FilterHouseForRentFragment.HAWK_MAX_START_PRICE);
+        if (Hawk.get(FilterFindHouseFragment.HAWK_MAX_START_PRICE) != null) {
+            hawkMaxStartPrice = Hawk.get(FilterFindHouseFragment.HAWK_MAX_START_PRICE);
         } else {
-            hawkMaxStartPrice = FilterHouseForRentFragment.MAX_PRICE;
+            hawkMaxStartPrice = FilterFindHouseFragment.MAX_PRICE;
         }
 
-        if (Hawk.get(FilterHouseForRentFragment.HAWK_MIN_START_STRETCH) != null) {
-            hawkMinStartStretch = Hawk.get(FilterHouseForRentFragment.HAWK_MIN_START_STRETCH);
+        if (Hawk.get(FilterFindHouseFragment.HAWK_MIN_START_STRETCH) != null) {
+            hawkMinStartStretch = Hawk.get(FilterFindHouseFragment.HAWK_MIN_START_STRETCH);
         } else {
-            hawkMinStartStretch = FilterHouseForRentFragment.MIN_STRETCH;
+            hawkMinStartStretch = FilterFindHouseFragment.MIN_STRETCH;
         }
 
-        if (Hawk.get(FilterHouseForRentFragment.HAWK_MAX_START_STRETCH) != null) {
-            hawkMaxStartStretch = Hawk.get(FilterHouseForRentFragment.HAWK_MAX_START_STRETCH);
+        if (Hawk.get(FilterFindHouseFragment.HAWK_MAX_START_STRETCH) != null) {
+            hawkMaxStartStretch = Hawk.get(FilterFindHouseFragment.HAWK_MAX_START_STRETCH);
         } else {
-            hawkMaxStartStretch = FilterHouseForRentFragment.MAX_STRETCH;
+            hawkMaxStartStretch = FilterFindHouseFragment.MAX_STRETCH;
         }
 
-        if (Hawk.get(FilterHouseForRentFragment.HAWK_MIN_START_PUBDATE) != null) {
-            hawkMinStartPubDate = Hawk.get(FilterHouseForRentFragment.HAWK_MIN_START_PUBDATE);
+        if (Hawk.get(FilterFindHouseFragment.HAWK_MIN_START_PUBDATE) != null) {
+            hawkMinStartPubDate = Hawk.get(FilterFindHouseFragment.HAWK_MIN_START_PUBDATE);
         } else {
-            hawkMinStartPubDate = FilterHouseForRentFragment.MAX_PUBDATE;
+            hawkMinStartPubDate = FilterFindHouseFragment.MAX_PUBDATE;
         }
 
     }
@@ -116,12 +116,12 @@ public class NewsFindHousePresenter implements INewsFindHousePresenter {
                 return;
             }
             // Price
-            if (hawkMinStartPrice == FilterHouseForRentFragment.MIN_PRICE && hawkMaxStartPrice == FilterHouseForRentFragment.MAX_PRICE) {
+            if (hawkMinStartPrice == FilterFindHouseFragment.MIN_PRICE && hawkMaxStartPrice == FilterFindHouseFragment.MAX_PRICE) {
 
-            } else if (hawkMinStartPrice == FilterHouseForRentFragment.MIN_PRICE) {
+            } else if (hawkMinStartPrice == FilterFindHouseFragment.MIN_PRICE) {
                 if (findHouse.getPrice() > hawkMaxStartPrice)
                     return;
-            } else if (hawkMaxStartPrice == FilterHouseForRentFragment.MAX_PRICE) {
+            } else if (hawkMaxStartPrice == FilterFindHouseFragment.MAX_PRICE) {
                 if (findHouse.getPrice() < hawkMinStartPrice)
                     return;
             } else if (hawkMinStartPrice == hawkMaxStartPrice) {
@@ -132,12 +132,12 @@ public class NewsFindHousePresenter implements INewsFindHousePresenter {
                     return;
             }
             // Stretch
-            if (hawkMinStartStretch == FilterHouseForRentFragment.MIN_STRETCH && hawkMaxStartStretch == FilterHouseForRentFragment.MAX_STRETCH) {
+            if (hawkMinStartStretch == FilterFindHouseFragment.MIN_STRETCH && hawkMaxStartStretch == FilterFindHouseFragment.MAX_STRETCH) {
 
-            } else if (hawkMinStartStretch == FilterHouseForRentFragment.MIN_STRETCH) {
+            } else if (hawkMinStartStretch == FilterFindHouseFragment.MIN_STRETCH) {
                 if (findHouse.getStretch() > hawkMaxStartStretch)
                     return;
-            } else if (hawkMaxStartStretch == FilterHouseForRentFragment.MAX_STRETCH) {
+            } else if (hawkMaxStartStretch == FilterFindHouseFragment.MAX_STRETCH) {
                 if (findHouse.getStretch() < hawkMinStartStretch)
                     return;
             } else if (hawkMinStartStretch == hawkMaxStartStretch) {
@@ -149,7 +149,7 @@ public class NewsFindHousePresenter implements INewsFindHousePresenter {
             }
 
             // PubDate
-            if (hawkMinStartPubDate == FilterHouseForRentFragment.MAX_PUBDATE) {
+            if (hawkMinStartPubDate == FilterFindHouseFragment.MAX_PUBDATE) {
             } else if (DateUtils.getDayAgoFromPubDate(-findHouse.getPubDate()) > hawkMinStartPubDate) {
                 return;
             }
@@ -184,12 +184,12 @@ public class NewsFindHousePresenter implements INewsFindHousePresenter {
                 return;
             }
             // Price
-            if (hawkMinStartPrice == FilterHouseForRentFragment.MIN_PRICE && hawkMaxStartPrice == FilterHouseForRentFragment.MAX_PRICE) {
+            if (hawkMinStartPrice == FilterFindHouseFragment.MIN_PRICE && hawkMaxStartPrice == FilterFindHouseFragment.MAX_PRICE) {
 
-            } else if (hawkMinStartPrice == FilterHouseForRentFragment.MIN_PRICE) {
+            } else if (hawkMinStartPrice == FilterFindHouseFragment.MIN_PRICE) {
                 if (findHouse.getPrice() > hawkMaxStartPrice)
                     return;
-            } else if (hawkMaxStartPrice == FilterHouseForRentFragment.MAX_PRICE) {
+            } else if (hawkMaxStartPrice == FilterFindHouseFragment.MAX_PRICE) {
                 if (findHouse.getPrice() < hawkMinStartPrice)
                     return;
             } else if (hawkMinStartPrice == hawkMaxStartPrice) {
@@ -200,12 +200,12 @@ public class NewsFindHousePresenter implements INewsFindHousePresenter {
                     return;
             }
             // Stretch
-            if (hawkMinStartStretch == FilterHouseForRentFragment.MIN_STRETCH && hawkMaxStartStretch == FilterHouseForRentFragment.MAX_STRETCH) {
+            if (hawkMinStartStretch == FilterFindHouseFragment.MIN_STRETCH && hawkMaxStartStretch == FilterFindHouseFragment.MAX_STRETCH) {
 
-            } else if (hawkMinStartStretch == FilterHouseForRentFragment.MIN_STRETCH) {
+            } else if (hawkMinStartStretch == FilterFindHouseFragment.MIN_STRETCH) {
                 if (findHouse.getStretch() > hawkMaxStartStretch)
                     return;
-            } else if (hawkMaxStartStretch == FilterHouseForRentFragment.MAX_STRETCH) {
+            } else if (hawkMaxStartStretch == FilterFindHouseFragment.MAX_STRETCH) {
                 if (findHouse.getStretch() < hawkMinStartStretch)
                     return;
             } else if (hawkMinStartStretch == hawkMaxStartStretch) {
@@ -217,7 +217,7 @@ public class NewsFindHousePresenter implements INewsFindHousePresenter {
             }
 
             // PubDate
-            if (hawkMinStartPubDate == FilterHouseForRentFragment.MAX_PUBDATE) {
+            if (hawkMinStartPubDate == FilterFindHouseFragment.MAX_PUBDATE) {
             } else if (DateUtils.getDayAgoFromPubDate(-findHouse.getPubDate()) > hawkMinStartPubDate) {
                 return;
             }
