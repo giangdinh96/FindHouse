@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvTitleDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:paddingRight="5dp"
+            android:shadowColor="@android:color/darker_gray"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="1"
+            android:text="Thông tin chi tiết"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/vDivider1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorBackgroundMain"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleDetail" />
+
+        <ImageView
+            android:id="@+id/ivUserPicture"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_profile"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vDivider1" />
+
+        <ImageView
+            android:id="@+id/ivMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:src="@drawable/ic_more_selector"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vDivider1" />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/ivUserPicture"
+            app:layout_constraintRight_toLeftOf="@id/ivMore"
+            app:layout_constraintTop_toTopOf="@id/ivUserPicture" />
+
+        <TextView
+            android:id="@+id/tvPubDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Hôm nay lúc 10:20"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            app:layout_constraintLeft_toLeftOf="@id/tvUserName"
+            app:layout_constraintRight_toRightOf="@id/tvUserName"
+            app:layout_constraintTop_toBottomOf="@id/tvUserName" />
+
+        <TextView
+            android:id="@+id/tvFullAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/ic_address"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="Địa chỉ: "
+            android:textColor="@android:color/black"
+            app:layout_constraintLeft_toLeftOf="@id/ivUserPicture"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivUserPicture" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/ic_price"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="Giá phòng: 800.000 đ"
+            android:textColor="@android:color/black"
+            app:layout_constraintLeft_toLeftOf="@id/tvFullAddress"
+            app:layout_constraintRight_toRightOf="@id/tvFullAddress"
+            app:layout_constraintTop_toBottomOf="@id/tvFullAddress" />
+
+        <TextView
+            android:id="@+id/tvStretch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/ic_stretch"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="Diện tích: 800 mét vuông"
+            android:textColor="@android:color/black"
+            app:layout_constraintLeft_toLeftOf="@id/tvPrice"
+            app:layout_constraintRight_toRightOf="@id/tvFullAddress"
+            app:layout_constraintTop_toBottomOf="@id/tvPrice" />
+
+        <TextView
+            android:id="@+id/tvPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/ic_phone"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="Điện thoại: 0964360061"
+            android:textColor="@android:color/black"
+            app:layout_constraintLeft_toLeftOf="@id/tvPrice"
+            app:layout_constraintRight_toRightOf="@id/tvFullAddress"
+            app:layout_constraintTop_toBottomOf="@id/tvStretch" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/ic_email"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="Email: giangdinhhaui@gmail.com"
+            android:textColor="@android:color/black"
+            app:layout_constraintLeft_toLeftOf="@id/tvPrice"
+            app:layout_constraintRight_toRightOf="@id/tvFullAddress"
+            app:layout_constraintTop_toBottomOf="@id/tvPhone" />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/ic_describe"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="Mô tả: sạch sẽ, gọn gàng, sang trọng, an ninh"
+            android:textColor="@android:color/black"
+            app:layout_constraintLeft_toLeftOf="@id/tvPrice"
+            app:layout_constraintRight_toRightOf="@id/tvFullAddress"
+            app:layout_constraintTop_toBottomOf="@id/tvEmail" />
+
+        <View
+            android:id="@+id/vDivider2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorBackgroundMain"
+            android:scaleType="fitXY"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+
+        <LinearLayout
+            android:id="@+id/llActionContainer"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vDivider2">
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                app:mrl_rippleAlpha="0.2"
+                app:mrl_rippleColor="@color/colorPrimary"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDimension="1dp"
+                app:mrl_rippleDuration="200"
+                app:mrl_rippleFadeDuration="200"
+                app:mrl_rippleHover="true"
+                app:mrl_rippleOverlay="false"
+                app:mrl_rippleRoundedCorners="5dp">
+
+                <TextView
+                    android:id="@+id/tvCall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/ic_call_selector"
+                    android:drawablePadding="5dp"
+                    android:text="Gọi"
+                    android:textColor="@color/color_action_new_selector" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                app:mrl_rippleAlpha="0.2"
+                app:mrl_rippleColor="@color/colorPrimary"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDimension="1dp"
+                app:mrl_rippleDuration="200"
+                app:mrl_rippleFadeDuration="200"
+                app:mrl_rippleHover="true"
+                app:mrl_rippleOverlay="false"
+                app:mrl_rippleRoundedCorners="5dp">
+
+                <TextView
+                    android:id="@+id/tvLike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/ic_like_selector"
+                    android:drawablePadding="5dp"
+                    android:text="Thích"
+                    android:textColor="@color/color_action_new_selector" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                app:mrl_rippleAlpha="0.2"
+                app:mrl_rippleColor="@color/colorPrimary"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDimension="1dp"
+                app:mrl_rippleDuration="200"
+                app:mrl_rippleFadeDuration="200"
+                app:mrl_rippleHover="true"
+                app:mrl_rippleOverlay="false"
+                app:mrl_rippleRoundedCorners="5dp">
+
+                <TextView
+                    android:id="@+id/tvShare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/ic_share_selector"
+                    android:drawablePadding="5dp"
+                    android:text="Chia sẻ"
+                    android:textColor="@color/color_action_new_selector" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/vDivider3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/colorBackgroundMain"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llActionContainer" />
+
+        <TextView
+            android:id="@+id/tvUsersLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/ic_users_like"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="Chưa có lượt thích"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vDivider3" />
+
+        <View
+            android:id="@+id/vDivider4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvUsersLike" />
+
+        <View
+            android:id="@+id/vDivider5"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:background="@color/colorBackgroundMain"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vDivider4" />
+
+        <TextView
+            android:id="@+id/tvTitleMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:paddingRight="5dp"
+            android:shadowColor="@android:color/darker_gray"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="1"
+            android:text="Bản đồ"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vDivider5" />
+
+        <View
+            android:id="@+id/vDivider6"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorBackgroundMain"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleMap" />
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/mapViewContainer"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_margin="10dp"
+            android:background="@color/colorBackgroundMain"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vDivider6">
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fabMapDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:src="@drawable/ic_action_map_normal"
+                app:backgroundTint="#0E7886"
+                app:elevation="10dp"
+                app:fabSize="mini"
+                app:pressedTranslationZ="20dp"
+                app:rippleColor="#94ffffff" />
+        </android.support.v7.widget.CardView>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/mapViewContainer" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>
