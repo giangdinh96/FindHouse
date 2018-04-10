@@ -155,8 +155,10 @@ public class ChooseHouseLocationActivity extends FragmentActivity implements OnM
 
     @Override
     public void removeHouseMarker() {
-        if (currentHouseMarker != null)
+        if (currentHouseMarker != null) {
             currentHouseMarker.remove();
+            currentHouseMarker = null;
+        }
     }
 
     @Override
@@ -164,14 +166,15 @@ public class ChooseHouseLocationActivity extends FragmentActivity implements OnM
         View iconMarker = LayoutInflater.from(this).inflate(R.layout.item_user_marker, null);
         currentUserMarker = map.addMarker(new MarkerOptions().position(latLng).icon(BitmapDescriptorFactory.fromBitmap(BitmapUltils.loadBitmapFromView(this, iconMarker))));
         currentUserMarker.setTitle("Vị trí của bạn");
-        currentUserMarker.setVisible(true);
         currentUserMarker.showInfoWindow();
     }
 
     @Override
     public void removeUserMarker() {
-        if (currentUserMarker != null)
+        if (currentUserMarker != null) {
             currentUserMarker.remove();
+            currentUserMarker = null;
+        }
     }
 
     @Override

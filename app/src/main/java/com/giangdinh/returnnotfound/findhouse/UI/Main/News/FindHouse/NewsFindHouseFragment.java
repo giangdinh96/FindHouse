@@ -122,7 +122,7 @@ public class NewsFindHouseFragment extends Fragment implements INewsFindHouseVie
                 .setTicker("Có tin mới về nhà trọ!")
                 .setContentTitle(title)
                 .setContentText(content);
-        notificationManager.notify(0, noti.build());
+        notificationManager.notify(1, noti.build());
     }
 
     @Override

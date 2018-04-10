@@ -12,7 +12,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.giangdinh.returnnotfound.findhouse.CustomView.NonSwipeableViewPager;
 import com.giangdinh.returnnotfound.findhouse.R;
@@ -119,14 +118,6 @@ public class MapFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.mnMapFilter:
-                Toast.makeText(getContext(), "Click item filter map: " + nsvpMap.getCurrentItem(), Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.mnMapSearch:
-                Toast.makeText(getContext(), "Click item search map: " + nsvpMap.getCurrentItem(), Toast.LENGTH_SHORT).show();
-                break;
-        }
         return super.onOptionsItemSelected(item);
     }
 

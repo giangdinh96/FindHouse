@@ -32,9 +32,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import me.relex.circleindicator.CircleIndicator;
 
 public class HouseForRentDetailActivity extends AppCompatActivity implements IHouseForRentDetailView, OnMapReadyCallback {
+    private IHouseForRentDetailPresenter iHouseForRentDetailPresenter;
+
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.vpHousePicture)
@@ -79,16 +82,16 @@ public class HouseForRentDetailActivity extends AppCompatActivity implements IHo
     GoogleMap map;
 
     private HouseForRent houseForRent;
-    private IHouseForRentDetailPresenter iHouseForRentDetailPresenter;
+    private Unbinder unbinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_house_for_rent_detail);
-        ButterKnife.bind(this);
+        unbinder = ButterKnife.bind(this);
         iHouseForRentDetailPresenter = new HouseForRentDetailPresenter(this);
-        initViews();
 
+        initViews();
         initMapView(savedInstanceState);
 
         initEvents();
@@ -108,6 +111,12 @@ public class HouseForRentDetailActivity extends AppCompatActivity implements IHo
 
     public void initToolbar() {
         setSupportActionBar(toolbar);
+    }
+
+    public void initMapView(Bundle savedInstanceState) {
+        mapView.onCreate(savedInstanceState);
+        mapView.onResume();
+        mapView.getMapAsync(this);
     }
 
     public void initHousePicturePager() {
@@ -242,13 +251,6 @@ public class HouseForRentDetailActivity extends AppCompatActivity implements IHo
     }
 
     @Override
-    public void initMapView(Bundle savedInstanceState) {
-        mapView.onCreate(savedInstanceState);
-        mapView.onResume();
-        mapView.getMapAsync(this);
-    }
-
-    @Override
     public void addMarker(double latitude, double longitude) {
         LayoutInflater layoutInflater = LayoutInflater.from(this);
         View viewMarker = layoutInflater.inflate(R.layout.item_house_for_rent_marker, null);
@@ -295,6 +297,7 @@ public class HouseForRentDetailActivity extends AppCompatActivity implements IHo
     protected void onDestroy() {
         super.onDestroy();
         mapView.onDestroy();
+        unbinder.unbind();
         iHouseForRentDetailPresenter.handleDestroy();
     }
 }

@@ -20,6 +20,12 @@ public interface IMapHouseForRentView {
 
     void removeUserMarker();
 
+    void addSearchMarker(LatLng latLng, String address);
+
+    void removeSearchMarker();
+
+    void navigateToSearchPlace();
+
     void moveCamera(LatLng latLng, boolean isNeedZoom, boolean isNeedAnimate, int zoom);
 
     void showToast(String message);

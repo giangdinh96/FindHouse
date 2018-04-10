@@ -164,7 +164,7 @@ public class NewsFindHousePresenter implements INewsFindHousePresenter {
                     iNewsFindHouseView.addItemHouse(0, findHouse);
                 } else {
                     newsCount++;
-                    iNewsFindHouseView.showNotification("Bài đăng mới", "Có " + newsCount + " tin mới");
+                    iNewsFindHouseView.showNotification("Tin Tìm phòng", "Có " + newsCount + " tin mới");
                 }
             }
         }

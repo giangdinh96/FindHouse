@@ -76,6 +76,11 @@
             android:name=".UI.HouseForRentDetail.HouseForRentDetailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.windowTranslucentStatus" />
+
+        <activity
+            android:name=".UI.FindHouseDetail.FindHouseDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".UI.MapDetailActivity.MapDetailActivity"
             android:screenOrientation="portrait" />

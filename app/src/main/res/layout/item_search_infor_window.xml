@@ -4,7 +4,8 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/tvTitleSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vị trí hiện tại của bạn" />
+        android:text="Vị trí tìm kiếm" />
 </android.support.constraint.ConstraintLayout>

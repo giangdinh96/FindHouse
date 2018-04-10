@@ -42,7 +42,7 @@ public class FindHouseInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
 
     @Override
     public View getInfoContents(final Marker marker) {
-        View view;
+        View view = null;
         if (marker.getTag() instanceof FindHouse) {
             view = LayoutInflater.from(context).inflate(R.layout.item_house_infor_window, null);
 
@@ -80,8 +80,12 @@ public class FindHouseInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
             tvAddress.setText(TextUtils.formatAddress(findHouse.getFullAddress()));
             tvPrice.setText(TextUtils.formatPrice(findHouse.getPrice()));
             tvStretch.setText(TextUtils.formatStretch(findHouse.getStretch()));
-        } else {
+        } else if (marker.getTag().equals(0)) {
             view = LayoutInflater.from(context).inflate(R.layout.item_user_infor_window, null);
+        } else if (marker.getTag().equals(-1)) {
+            view = LayoutInflater.from(context).inflate(R.layout.item_search_infor_window, null);
+            TextView tvTitleSearch = view.findViewById(R.id.tvTitleSearch);
+            tvTitleSearch.setText(marker.getTitle());
         }
         return view;
     }

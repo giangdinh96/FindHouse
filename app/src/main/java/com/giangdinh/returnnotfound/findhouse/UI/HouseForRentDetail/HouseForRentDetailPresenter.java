@@ -29,14 +29,14 @@ import java.util.HashMap;
  */
 
 public class HouseForRentDetailPresenter implements IHouseForRentDetailPresenter {
-    private IHouseForRentDetailView iHouseForRentDetailView;
     private Context context;
+    private IHouseForRentDetailView iHouseForRentDetailView;
     private HouseForRent houseForRent;
     private DatabaseReference databaseReferenceUsersLike;
 
     public HouseForRentDetailPresenter(IHouseForRentDetailView iHouseForRentDetailView) {
-        this.iHouseForRentDetailView = iHouseForRentDetailView;
         this.context = (Context) iHouseForRentDetailView;
+        this.iHouseForRentDetailView = iHouseForRentDetailView;
     }
 
     private ValueEventListener valueEventListenerUsersLike;

@@ -21,7 +21,7 @@ import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.giangdinh.returnnotfound.findhouse.Model.FindHouse;
 import com.giangdinh.returnnotfound.findhouse.R;
-import com.giangdinh.returnnotfound.findhouse.UI.HouseForRentDetail.HouseForRentDetailActivity;
+import com.giangdinh.returnnotfound.findhouse.UI.FindHouseDetail.FindHouseDetailActivity;
 import com.giangdinh.returnnotfound.findhouse.Utils.DateUtils;
 import com.giangdinh.returnnotfound.findhouse.Utils.FirebaseUtils;
 import com.giangdinh.returnnotfound.findhouse.Utils.TextUtils;
@@ -229,9 +229,9 @@ public class NewsFindHouseAdapter extends RecyclerView.Adapter<RecyclerView.View
         findHouseHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intentHouseForRentDetail = new Intent(context, HouseForRentDetailActivity.class);
-//                intentHouseForRentDetail.putExtra(VariableGlobal.EXTRA_HOUSE_FOR_RENT, findHouse);
-//                context.startActivity(intentHouseForRentDetail);
+                Intent intentFindHouseDetail = new Intent(context, FindHouseDetailActivity.class);
+                intentFindHouseDetail.putExtra(VariableGlobal.EXTRA_FIND_HOUSE, findHouse);
+                context.startActivity(intentFindHouseDetail);
             }
         });
     }
@@ -306,7 +306,7 @@ public class NewsFindHouseAdapter extends RecyclerView.Adapter<RecyclerView.View
         public TextView tvStretch;
         @BindView(R.id.tvUsersLike)
         public TextView tvUsersLike;
-//        @BindView(R.id.vDivider2)
+        //        @BindView(R.id.vDivider2)
 //        public View vDivider2;
         @BindView(R.id.tvCall)
         public TextView tvCall;

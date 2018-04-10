@@ -164,7 +164,7 @@ public class NewsHouseForRentPresenter implements INewsHouseForRentPresenter {
                     iNewsHouseForRentView.addItemHouse(0, houseForRent);
                 } else {
                     newsCount++;
-                    iNewsHouseForRentView.showNotification("Bài đăng mới", "Có " + newsCount + " tin mới");
+                    iNewsHouseForRentView.showNotification("Tin cho thuê", "Có " + newsCount + " tin mới");
                 }
             }
         }

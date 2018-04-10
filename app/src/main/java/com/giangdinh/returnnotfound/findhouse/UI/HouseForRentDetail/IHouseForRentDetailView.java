@@ -1,7 +1,5 @@
 package com.giangdinh.returnnotfound.findhouse.UI.HouseForRentDetail;
 
-import android.os.Bundle;
-
 /**
  * Created by GiangDinh on 28/01/2018.
  */
@@ -40,8 +38,6 @@ public interface IHouseForRentDetailView {
     void showDivider4();
 
     void hideDivider4();
-
-    void initMapView(Bundle savedInstanceState);
 
     void addMarker(double latitude, double longitude);
 }
