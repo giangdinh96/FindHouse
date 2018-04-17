@@ -1,0 +1,16 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.yalantis.phoenix.PullToRefreshView
+        android:id="@+id/ptrvFindHouse"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvFindHouse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.yalantis.phoenix.PullToRefreshView>
+</LinearLayout>
