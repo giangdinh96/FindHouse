@@ -1,11 +1,10 @@
-package com.giangdinh.returnnotfound.findhouse.UI.Profile.Favorite.HouseForRent;
+package com.giangdinh.returnnotfound.findhouse.UI.Profile.Posted.HouseForRent;
 
-import com.giangdinh.returnnotfound.findhouse.Model.FindHouse;
 import com.giangdinh.returnnotfound.findhouse.Model.HouseForRent;
 
 import java.util.ArrayList;
 
-public interface IFavoriteHouseForRentView {
+public interface IPostedHouseForRentView {
     void refreshList();
 
     void showRefresh(boolean show);

@@ -5,23 +5,23 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.giangdinh.returnnotfound.findhouse.Model.User;
-import com.giangdinh.returnnotfound.findhouse.UI.Profile.Favorite.FindHouse.FavoriteFindHouseFragment;
-import com.giangdinh.returnnotfound.findhouse.UI.Profile.Favorite.HouseForRent.FavoriteHouseForRentFragment;
+import com.giangdinh.returnnotfound.findhouse.UI.Profile.Posted.FindHouse.PostedFindHouseFragment;
+import com.giangdinh.returnnotfound.findhouse.UI.Profile.Posted.HouseForRent.PostedHouseForRentFragment;
 
 /**
  * Created by GiangDinh on 14/03/2018.
  */
 
-public class FavoritePagerAdapter extends FragmentStatePagerAdapter {
+public class PostedPagerAdapter extends FragmentStatePagerAdapter {
 
     private String[] titles;
     private Fragment[] fragments;
 
-    public FavoritePagerAdapter(FragmentManager fm, User user) {
+    public PostedPagerAdapter(FragmentManager fm, User user) {
         super(fm);
         fragments = new Fragment[]{
-                FavoriteHouseForRentFragment.newInstance(user),
-                FavoriteFindHouseFragment.newInstance(user)
+                PostedHouseForRentFragment.newInstance(user),
+                PostedFindHouseFragment.newInstance(user)
         };
         titles = new String[]{
                 "Phòng cho thuê",

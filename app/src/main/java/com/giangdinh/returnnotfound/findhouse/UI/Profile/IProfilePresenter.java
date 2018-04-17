@@ -1,4 +1,5 @@
 package com.giangdinh.returnnotfound.findhouse.UI.Profile;
 
-public class IProfilePresenter {
+public interface IProfilePresenter {
+    void handleBottomNavigationTabSelected(int postion,boolean wasSelected);
 }

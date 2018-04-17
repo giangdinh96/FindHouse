@@ -1,4 +1,4 @@
-package com.giangdinh.returnnotfound.findhouse.UI.Profile.Favorite.HouseForRent;
+package com.giangdinh.returnnotfound.findhouse.UI.Profile.Posted.HouseForRent;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.giangdinh.returnnotfound.findhouse.Adapter.NewsHouseForRentAdapter;
-import com.giangdinh.returnnotfound.findhouse.Model.FindHouse;
 import com.giangdinh.returnnotfound.findhouse.Model.HouseForRent;
 import com.giangdinh.returnnotfound.findhouse.Model.User;
 import com.giangdinh.returnnotfound.findhouse.R;
@@ -25,8 +24,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class FavoriteHouseForRentFragment extends Fragment implements IFavoriteHouseForRentView {
-    private IFavoriteHouseForRentPresenter iFavoriteHouseForRentPresenter;
+public class PostedHouseForRentFragment extends Fragment implements IPostedHouseForRentView {
+    private IPostedHouseForRentPresenter iPostedHouseForRentPresenter;
     private User user;
     private NewsHouseForRentAdapter newsHouseForRentAdapter;
 
@@ -37,8 +36,8 @@ public class FavoriteHouseForRentFragment extends Fragment implements IFavoriteH
 
     private Unbinder unbinder;
 
-    public static FavoriteHouseForRentFragment newInstance(User user) {
-        FavoriteHouseForRentFragment fragment = new FavoriteHouseForRentFragment();
+    public static PostedHouseForRentFragment newInstance(User user) {
+        PostedHouseForRentFragment fragment = new PostedHouseForRentFragment();
         Bundle args = new Bundle();
         args.putSerializable(VariableGlobal.EXTRA_USER, user);
         fragment.setArguments(args);
@@ -56,9 +55,9 @@ public class FavoriteHouseForRentFragment extends Fragment implements IFavoriteH
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_favorite_house_for_rent, container, false);
+        View view = inflater.inflate(R.layout.fragment_posted_house_for_rent, container, false);
         unbinder = ButterKnife.bind(this, view);
-        iFavoriteHouseForRentPresenter = new FavoriteHouseForRentPresenter(this, user);
+        iPostedHouseForRentPresenter = new PostedHouseForRentPresenter(this, user);
 
         initViews();
         initEvents();
@@ -80,14 +79,14 @@ public class FavoriteHouseForRentFragment extends Fragment implements IFavoriteH
         rvHouseForRent.setItemViewCacheSize(1);
         rvHouseForRent.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
         rvHouseForRent.setAdapter(newsHouseForRentAdapter);
-        iFavoriteHouseForRentPresenter.handleGetNews();
+        iPostedHouseForRentPresenter.handleGetNews();
     }
 
     public void initEvents() {
         ptrvHouseForRent.setOnRefreshListener(new PullToRefreshView.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                iFavoriteHouseForRentPresenter.handleRefresh();
+                iPostedHouseForRentPresenter.handleRefresh();
             }
         });
     }
@@ -134,6 +133,6 @@ public class FavoriteHouseForRentFragment extends Fragment implements IFavoriteH
     public void onDetach() {
         super.onDetach();
         unbinder.unbind();
-        iFavoriteHouseForRentPresenter.handleDestroy();
+        iPostedHouseForRentPresenter.handleDestroy();
     }
 }

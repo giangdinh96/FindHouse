@@ -1,4 +1,9 @@
 package com.giangdinh.returnnotfound.findhouse.UI.Profile;
 
-public class IProfileView {
+public interface IProfileView {
+    void setTitle(String title);
+
+    void setCurrentTab(int position);
+
+    void showMessage(String message);
 }

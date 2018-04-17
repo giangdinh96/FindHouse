@@ -198,7 +198,7 @@ public class ProfilePresenter implements IProfilePresenter {
                     }
 
                     @Override
-                    public void onError(FacebookException exception) {
+                    public void onError(final FacebookException exception) {
                         Log.d("Test", "Callback SignIn with Facebook error :" + exception);
                         if (exception.toString().contains("CONNECTION_FAILURE")) {
                             iProfileView.showDialogSignInFailue("Có lỗi xảy ra!", "Vui lòng kiểm tra lại đường truyền!", new SweetAlertDialog.OnSweetClickListener() {
@@ -212,6 +212,7 @@ public class ProfilePresenter implements IProfilePresenter {
                                 @Override
                                 public void onClick(SweetAlertDialog sweetAlertDialog) {
                                     iProfileView.hideDialogSignIn();
+                                    Log.d("Test", "exception: " + exception);
                                 }
                             });
                         }

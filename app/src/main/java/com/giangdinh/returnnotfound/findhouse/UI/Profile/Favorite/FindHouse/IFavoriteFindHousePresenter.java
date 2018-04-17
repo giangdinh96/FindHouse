@@ -1,4 +1,9 @@
 package com.giangdinh.returnnotfound.findhouse.UI.Profile.Favorite.FindHouse;
 
-public class IFavoriteFindHousePresenter {
+public interface IFavoriteFindHousePresenter {
+    void handleRefresh();
+
+    void handleGetNews();
+
+    void handleDestroy();
 }

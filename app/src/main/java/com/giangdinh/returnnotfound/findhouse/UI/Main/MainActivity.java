@@ -38,11 +38,15 @@ public class MainActivity extends AppCompatActivity implements IMainView {
         unbinder = ButterKnife.bind(this);
         iMainPresenter = new MainPresenter(this);
 
+        initViews();
+
+        initEvents();
+    }
+
+    private void initViews() {
         initToolbar();
         initPager();
         initBottomNavigation();
-
-        initEvents();
     }
 
     private void initToolbar() {
@@ -71,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements IMainView {
         ahbnMain.setTitleState(AHBottomNavigation.TitleState.ALWAYS_HIDE);
 
         ahbnMain.setAccentColor(getResources().getColor(R.color.colorTabAccent));
-        ahbnMain.setInactiveColor(getResources().getColor(R.color.colorTabInActive));
+        ahbnMain.setInactiveColor(getResources().getColor(R.color.colorTabInactive));
 
         ahbnMain.setDefaultBackgroundColor(getResources().getColor(R.color.colorBackgroundBottomNavigation));
     }

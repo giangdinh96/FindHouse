@@ -84,6 +84,9 @@
         <activity
             android:name=".UI.MapDetailActivity.MapDetailActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".UI.Profile.ProfileActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".UI.Splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

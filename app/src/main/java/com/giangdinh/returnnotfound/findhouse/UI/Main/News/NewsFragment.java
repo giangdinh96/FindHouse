@@ -2,6 +2,7 @@ package com.giangdinh.returnnotfound.findhouse.UI.Main.News;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
@@ -124,25 +125,6 @@ public class NewsFragment extends Fragment implements INewsView {
     @OnClick(R.id.fabPost)
     public void postClick() {
         iNewsPresenter.handlePostClick();
-    }
-
-
-    ////// Override
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        menu.clear();
-        inflater.inflate(R.menu.menu_news, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.mnNewsFilter:
-                Toast.makeText(getContext(), "Click item filter news: " + vpNews.getCurrentItem(), Toast.LENGTH_SHORT).show();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     @Override

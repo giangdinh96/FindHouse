@@ -1,6 +1,6 @@
-package com.giangdinh.returnnotfound.findhouse.UI.Profile.Favorite.HouseForRent;
+package com.giangdinh.returnnotfound.findhouse.UI.Profile.Posted.HouseForRent;
 
-public interface IFavoriteHouseForRentPresenter {
+public interface IPostedHouseForRentPresenter {
     void handleRefresh();
 
     void handleGetNews();

@@ -1,4 +1,7 @@
 package com.giangdinh.returnnotfound.findhouse.UI.Profile.Intro;
 
-public class IIntroPresenter {
+import com.giangdinh.returnnotfound.findhouse.Model.User;
+
+public interface IIntroPresenter {
+    void handleReceiveUser(User user);
 }

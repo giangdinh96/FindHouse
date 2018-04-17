@@ -31,11 +31,17 @@ import com.giangdinh.returnnotfound.findhouse.UI.Main.Profile.EnterUserInformati
 import com.giangdinh.returnnotfound.findhouse.UI.Main.Profile.EnterUserInformation.IConfirmUserInformationDialogListener;
 import com.giangdinh.returnnotfound.findhouse.UI.Main.Profile.SignOut.ISignOutDialogListener;
 import com.giangdinh.returnnotfound.findhouse.UI.Main.Profile.SignOut.SignOutDialog;
+import com.giangdinh.returnnotfound.findhouse.UI.Profile.ProfileActivity;
+import com.giangdinh.returnnotfound.findhouse.Utils.FirebaseUtils;
+import com.giangdinh.returnnotfound.findhouse.Utils.VariableGlobal;
 import com.giangdinh.returnnotfound.findhouse.Utils.ViewUtils;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
 
 import java.util.Arrays;
@@ -143,6 +149,29 @@ public class ProfileFragment extends Fragment implements IProfileView, ISignOutD
     ////// Init events
     public void initEvents() {
         iProfilePresenter.handleAuthStateChanged();
+    }
+
+    @OnClick(R.id.clUser)
+    public void userClick() {
+        if (!FirebaseUtils.isSignIn())
+            return;
+        FirebaseUtils.getDatabase().getReference().child("users").child(FirebaseUtils.getCurrentUserId())
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        User user = dataSnapshot.getValue(User.class);
+                        user.setId(FirebaseUtils.getCurrentUserId());
+
+                        Intent intentProfile = new Intent(getContext(), ProfileActivity.class);
+                        intentProfile.putExtra(VariableGlobal.EXTRA_USER, user);
+                        startActivity(intentProfile);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
     }
 
     @OnClick(R.id.clSignOut)

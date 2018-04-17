@@ -1,4 +1,4 @@
-package com.giangdinh.returnnotfound.findhouse.UI.Profile.Favorite.FindHouse;
+package com.giangdinh.returnnotfound.findhouse.UI.Profile.Posted.FindHouse;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -24,8 +24,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class FavoriteFindHouseFragment extends Fragment implements IFavoriteFindHouseView {
-    private IFavoriteFindHousePresenter iFavoriteFindHousePresenter;
+public class PostedFindHouseFragment extends Fragment implements IPostedFindHouseView {
+    private IPostedFindHousePresenter iPostedFindHousePresenter;
     private User user;
     private NewsFindHouseAdapter newsFindHouseAdapter;
 
@@ -36,8 +36,8 @@ public class FavoriteFindHouseFragment extends Fragment implements IFavoriteFind
 
     private Unbinder unbinder;
 
-    public static FavoriteFindHouseFragment newInstance(User user) {
-        FavoriteFindHouseFragment fragment = new FavoriteFindHouseFragment();
+    public static PostedFindHouseFragment newInstance(User user) {
+        PostedFindHouseFragment fragment = new PostedFindHouseFragment();
         Bundle args = new Bundle();
         args.putSerializable(VariableGlobal.EXTRA_USER, user);
         fragment.setArguments(args);
@@ -55,9 +55,9 @@ public class FavoriteFindHouseFragment extends Fragment implements IFavoriteFind
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_favorite_find_house, container, false);
+        View view = inflater.inflate(R.layout.fragment_posted_find_house, container, false);
         unbinder = ButterKnife.bind(this, view);
-        iFavoriteFindHousePresenter = new FavoriteFindHousePresenter(this, user);
+        iPostedFindHousePresenter = new PostedFindHousePresenter(this, user);
 
         initViews();
         initEvents();
@@ -79,14 +79,14 @@ public class FavoriteFindHouseFragment extends Fragment implements IFavoriteFind
         rvFindHouse.setItemViewCacheSize(1);
         rvFindHouse.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
         rvFindHouse.setAdapter(newsFindHouseAdapter);
-        iFavoriteFindHousePresenter.handleGetNews();
+        iPostedFindHousePresenter.handleGetNews();
     }
 
     public void initEvents() {
         ptrvFindHouse.setOnRefreshListener(new PullToRefreshView.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                iFavoriteFindHousePresenter.handleRefresh();
+                iPostedFindHousePresenter.handleRefresh();
             }
         });
     }
@@ -132,6 +132,6 @@ public class FavoriteFindHouseFragment extends Fragment implements IFavoriteFind
     public void onDetach() {
         super.onDetach();
         unbinder.unbind();
-        iFavoriteFindHousePresenter.handleDestroy();
+        iPostedFindHousePresenter.handleDestroy();
     }
 }

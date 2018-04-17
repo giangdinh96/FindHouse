@@ -1,4 +1,4 @@
-package com.giangdinh.returnnotfound.findhouse.UI.Profile.Favorite.FindHouse;
+package com.giangdinh.returnnotfound.findhouse.UI.Profile.Posted.FindHouse;
 
 import android.os.Handler;
 import android.util.Log;
@@ -14,14 +14,14 @@ import com.google.firebase.database.Query;
 
 import java.util.Date;
 
-public class FavoriteFindHousePresenter implements IFavoriteFindHousePresenter {
-    private IFavoriteFindHouseView iFavoriteFindHouseView;
+public class PostedFindHousePresenter implements IPostedFindHousePresenter {
+    private IPostedFindHouseView iPostedFindHouseView;
     private long timeStartRequest;
     private boolean isRefreshShow;
     private User user;
 
-    public FavoriteFindHousePresenter(IFavoriteFindHouseView iFavoriteFindHouseView, User user) {
-        this.iFavoriteFindHouseView = iFavoriteFindHouseView;
+    public PostedFindHousePresenter(IPostedFindHouseView iPostedFindHouseView, User user) {
+        this.iPostedFindHouseView = iPostedFindHouseView;
         this.timeStartRequest = -1;
         this.user = user;
     }
@@ -32,12 +32,12 @@ public class FavoriteFindHousePresenter implements IFavoriteFindHousePresenter {
             return;
         isRefreshShow = true;
         removeGetHousesEvent();
-        iFavoriteFindHouseView.refreshList();
+        iPostedFindHouseView.refreshList();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 isRefreshShow = false;
-                iFavoriteFindHouseView.showRefresh(false);
+                iPostedFindHouseView.showRefresh(false);
                 handleGetNews();
             }
         }, 1000);
@@ -51,11 +51,11 @@ public class FavoriteFindHousePresenter implements IFavoriteFindHousePresenter {
 
             // Check ok
             // Add to List
-            if (!findHouse.getUsersLike().containsKey(user.getId()))
+            if (!user.getId().equals(findHouse.getUserId()))
                 return;
             findHouse.setId(dataSnapshot.getKey());
             if (timeStartRequest >= (-findHouse.getPubDate())) {
-                iFavoriteFindHouseView.addItemHouse(findHouse);
+                iPostedFindHouseView.addItemHouse(findHouse);
             }
         }
 
@@ -65,7 +65,7 @@ public class FavoriteFindHousePresenter implements IFavoriteFindHousePresenter {
             FindHouse findHouse = dataSnapshot.getValue(FindHouse.class);
 
             findHouse.setId(dataSnapshot.getKey());
-            iFavoriteFindHouseView.changeItemHouse(findHouse);
+            iPostedFindHouseView.changeItemHouse(findHouse);
         }
 
         @Override

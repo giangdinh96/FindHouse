@@ -7,6 +7,10 @@
     <string name="titleTabFilter">Lọc tin</string>
     <string name="titleTabProfile">Hồ sơ</string>
 
+    <string name="titleTabIntro">Giới thiệu</string>
+    <string name="titleTabPosted">Đã đăng</string>
+    <string name="titleTabFavorite">Yêu thích</string>
+
     <string name="postNewsNow">Đăng tin ngay</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -17,7 +21,6 @@
 
 
     <string name="web_client_id">960517487936-03m690eqmh7aaro4kidh7o2qaa60qcde.apps.googleusercontent.com</string>
-
 
     <string-array name="town_arr">
         <item>Quận Ba Đình</item>

@@ -26,6 +26,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnLongClick;
 
 import static com.giangdinh.returnnotfound.findhouse.Utils.VariableGlobal.EXTRA_LAT;
 import static com.giangdinh.returnnotfound.findhouse.Utils.VariableGlobal.EXTRA_LNG;
@@ -93,9 +94,21 @@ public class ChooseHouseLocationActivity extends FragmentActivity implements OnM
         iChooseHouseLocationPresenter.handleCurrentUserLocationClick();
     }
 
+    @OnLongClick(R.id.ivCurrentUserLocation)
+    public boolean currentUserLocationLongClick(View view) {
+        iChooseHouseLocationPresenter.handleGetCurrentUserLocation(true, true, 14);
+        return false;
+    }
+
     @OnClick(R.id.ivCurrentHouseLocation)
     public void currentHouseLocationClick() {
         iChooseHouseLocationPresenter.handleCurrentHouseLocationClick();
+    }
+
+    @OnLongClick(R.id.ivCurrentHouseLocation)
+    public boolean currentHouseLocationLongClick(View view) {
+        iChooseHouseLocationPresenter.handleGetCurrentHouseLocation(true, true, 14);
+        return false;
     }
 
     @OnClick(R.id.ivDone)

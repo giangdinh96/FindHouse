@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.giangdinh.returnnotfound.findhouse.UI.Main.MainActivity">
+    tools:context="com.giangdinh.returnnotfound.findhouse.UI.Profile.ProfileActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="@string/titleTabNews" />
+            app:title="@string/titleTabIntro" />
     </android.support.design.widget.AppBarLayout>
 
     <RelativeLayout
@@ -25,14 +25,14 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <com.giangdinh.returnnotfound.findhouse.CustomView.NonSwipeableViewPager xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/nsvpMain"
+            android:id="@+id/nsvpProfile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/ahbnMain"
+            android:layout_above="@+id/ahbnProfile"
             android:layout_alignParentTop="true" />
 
         <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
-            android:id="@+id/ahbnMain"
+            android:id="@+id/ahbnProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true" />

@@ -23,7 +23,6 @@
         app:layout_constraintTop_toBottomOf="@id/vDivider1" />
 
     <ImageView
-        android:visibility="gone"
         android:id="@+id/ivMore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,6 +30,7 @@
         android:layout_marginTop="10dp"
         android:clickable="true"
         android:src="@drawable/ic_more_selector"
+        android:visibility="gone"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/ivUserPicture" />
 
@@ -160,7 +160,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:clickable="true"
             app:mrl_rippleAlpha="0.2"
             app:mrl_rippleColor="@color/colorPrimary"
             app:mrl_rippleDelayClick="false"
@@ -169,7 +168,7 @@
             app:mrl_rippleFadeDuration="200"
             app:mrl_rippleHover="true"
             app:mrl_rippleOverlay="false"
-            app:mrl_rippleRoundedCorners="500dp">
+            app:mrl_rippleRoundedCorners="5dp">
 
             <TextView
                 android:id="@+id/tvCall"
@@ -187,7 +186,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:clickable="true"
             app:mrl_rippleAlpha="0.2"
             app:mrl_rippleColor="@color/colorPrimary"
             app:mrl_rippleDelayClick="false"
@@ -213,7 +211,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:clickable="true"
             app:mrl_rippleAlpha="0.2"
             app:mrl_rippleColor="@color/colorPrimary"
             app:mrl_rippleDelayClick="false"

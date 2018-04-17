@@ -78,4 +78,9 @@ public class User implements Serializable {
     public void setRole(String role) {
         this.role = role;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s\n%s\n%s\n%s\n%s\n%s\n%s\n", id, name, photoUrl, email, phone, cmtnd, role);
+    }
 }

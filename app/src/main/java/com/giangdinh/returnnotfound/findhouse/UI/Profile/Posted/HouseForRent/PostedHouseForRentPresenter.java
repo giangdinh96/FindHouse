@@ -1,4 +1,4 @@
-package com.giangdinh.returnnotfound.findhouse.UI.Profile.Favorite.HouseForRent;
+package com.giangdinh.returnnotfound.findhouse.UI.Profile.Posted.HouseForRent;
 
 import android.os.Handler;
 import android.util.Log;
@@ -14,14 +14,14 @@ import com.google.firebase.database.Query;
 
 import java.util.Date;
 
-public class FavoriteHouseForRentPresenter implements IFavoriteHouseForRentPresenter {
-    private IFavoriteHouseForRentView iFavoriteHouseForRentView;
+public class PostedHouseForRentPresenter implements IPostedHouseForRentPresenter {
+    private IPostedHouseForRentView iPostedHouseForRentView;
     private long timeStartRequest;
     private boolean isRefreshShow;
     private User user;
 
-    public FavoriteHouseForRentPresenter(IFavoriteHouseForRentView iFavoriteHouseForRentView, User user) {
-        this.iFavoriteHouseForRentView = iFavoriteHouseForRentView;
+    public PostedHouseForRentPresenter(IPostedHouseForRentView iPostedHouseForRentView, User user) {
+        this.iPostedHouseForRentView = iPostedHouseForRentView;
         this.timeStartRequest = -1;
         this.user = user;
     }
@@ -32,12 +32,12 @@ public class FavoriteHouseForRentPresenter implements IFavoriteHouseForRentPrese
             return;
         isRefreshShow = true;
         removeGetHousesEvent();
-        iFavoriteHouseForRentView.refreshList();
+        iPostedHouseForRentView.refreshList();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 isRefreshShow = false;
-                iFavoriteHouseForRentView.showRefresh(false);
+                iPostedHouseForRentView.showRefresh(false);
                 handleGetNews();
             }
         }, 1000);
@@ -51,11 +51,12 @@ public class FavoriteHouseForRentPresenter implements IFavoriteHouseForRentPrese
 
             // Check ok
             // Add to List
-            if (!houseForRent.getUsersLike().containsKey(user.getId()))
+            Log.d("Test", user.getId() + "---" + dataSnapshot.getKey());
+            if (!user.getId().equals(houseForRent.getUserId()))
                 return;
             houseForRent.setId(dataSnapshot.getKey());
             if (timeStartRequest >= (-houseForRent.getPubDate())) {
-                iFavoriteHouseForRentView.addItemHouse(houseForRent);
+                iPostedHouseForRentView.addItemHouse(houseForRent);
             }
         }
 
@@ -65,7 +66,7 @@ public class FavoriteHouseForRentPresenter implements IFavoriteHouseForRentPrese
             HouseForRent houseForRent = dataSnapshot.getValue(HouseForRent.class);
 
             houseForRent.setId(dataSnapshot.getKey());
-            iFavoriteHouseForRentView.changeItemHouse(houseForRent);
+            iPostedHouseForRentView.changeItemHouse(houseForRent);
         }
 
         @Override

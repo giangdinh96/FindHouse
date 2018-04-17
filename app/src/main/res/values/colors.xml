@@ -28,7 +28,7 @@
 
     <color name="colorBackgroundBottomNavigation">#17ADB0</color>
     <color name="colorTabAccent">#ffffff</color>
-    <color name="colorTabInActive">#660202</color>
+    <color name="colorTabInactive">#660202</color>
 
     ////// Tablayout
 
